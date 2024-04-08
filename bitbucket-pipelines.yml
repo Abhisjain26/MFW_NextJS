@@ -1,0 +1,54 @@
+image: python:3.8.11
+
+pipelines:
+  branches:
+    '{main,next13}':
+      - step:
+          name: Bump Version
+          image: nikolaik/python-nodejs:python3.8-nodejs14
+          max-time: 30
+          caches:
+            - pip
+            - node
+          script:
+            - export CI=false
+            - npm install
+            - npx semantic-release
+    release:
+      - step:
+          name: Deploy to ACC
+          deployment: ACC
+          max-time: 30
+          image: nikolaik/python-nodejs:python3.8-nodejs14
+          caches:
+            - pip
+            - node
+          script:
+            - echo "Host git-codecommit.*.amazonaws.com" >> ~/.ssh/config
+            - export CI=false
+            - python -m pip install --upgrade setuptools
+            - python -m pip install gitpython
+            - python -m pip install environs
+            - pip install akinoncli
+            - export PATH="$HOME/.local/bin:$PATH"
+            - mkdir -p ~/.akinoncli
+            - (umask 077 ; echo $AKINONCLI_AUTH > ~/.akinoncli/token)
+            - git remote add acc $SSH_REMOTE_URL
+            - npm install
+            - npx semantic-release
+  pull-requests:
+    '**':
+      - step:
+          name: E2E Test
+          image: cypress/browsers:node16.16.0-chrome107-ff107
+          max-time: 30
+          script:
+            - if [ "${BITBUCKET_PR_DESTINATION_BRANCH}" != "main" ]; then exit; fi
+            - npm install --save --legacy-peer-deps
+            - npm run build
+            - git clone https://x-token-auth:$E2E_REPO_TOKEN@bitbucket.org/akinonteam/projectzeroe2e.git
+            - (cd projectzeroe2e && npm install)
+            - npm run e2e:headless
+          artifacts:
+            - projectzeroe2e/cypress/screenshots/**
+            - projectzeroe2e/cypress/videos/**

@@ -1,0 +1,39 @@
+{
+  "add_to_cart": "ADD TO CART",
+  "add_stock_alert": "ADD STOCK ALERT",
+  "add_to_favorites": "Add to Favorites",
+  "share": "Share",
+  "details_care": "DETAILS & CARE",
+  "delivery_collections": "DELIVERY, COLLECTIONS & RETURNS",
+  "installment_options": "INSTALLMENT OPTIONS",
+  "product_code": "Product Code",
+  "number_of_installments": "Number of Installments",
+  "monthly_amount": "Monthly Amount",
+  "total_amount": "Total Amount",
+  "off": "off",
+  "selected": "Selected",
+  "find_in_store": {
+    "title": "Find in Store",
+    "directions": "DIRECTIONS",
+    "store_not_found": "Store not found",
+    "working_hours": "Working hours",
+    "submit": "SUBMIT",
+    "description": "Stock moves super-fast. This look-up is an indication of where stock might be available but we can't guarantee it'll be there for long.",
+    "available": "Available",
+    "out_of_stock": "Out of Stock",
+    "limited_stock": "Limited Stock",
+    "select_an_option": "Select an option",
+    "required": "This field is required.",
+    "unknown": "Unknown"
+  },
+  "please_select_variant": "Please select <VariantName/>",
+  "installment_not_available": "Installment options not available",
+  "cash": "Cash",
+  "installment": "Installment",
+  "stock_alert": {
+    "title": "Stock Alert",
+    "success_description": "When your size is back in stock we’ll send an email to: <Email/>",
+    "error_description": "An unexpected error has occured. Please try again later.",
+    "close_button": "CLOSE"
+  }
+}

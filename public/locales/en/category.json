@@ -1,0 +1,26 @@
+{
+  "header": {
+    "view": "View",
+    "results": "Results"
+  },
+  "filters": {
+    "title": "Filters",
+    "results": "Results",
+    "ready_to_wear": "READY TO WEAR",
+    "48_products": "48 Products",
+    "96_products": "96 Products",
+    "clear_all": "Clear All Filters"
+  },
+  "search": {
+    "not_found": "The Result you were looking for was not found",
+    "link": "Home Page"
+  },
+  "pagination": {
+    "shown_items": "All items shown.",
+    "loading_error": "An error occurred when items loading.",
+    "more": "Show More",
+    "next": "Next",
+    "previous": "Previous",
+    "load_previous_page": "Load Previous Page"
+  }
+}

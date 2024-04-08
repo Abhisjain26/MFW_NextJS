@@ -1,0 +1,37 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-sass-guidelines"],
+  "plugins": ["stylelint-selector-bem-pattern", "stylelint-scss"],
+  "rules": {
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignore": "custom-elements"
+      }
+    ],
+    "at-rule-no-unknown": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "scss/at-rule-no-unknown": null,
+    "max-nesting-depth": [
+      4,
+      {
+        "ignore": ["pseudo-classes", "blockless-at-rules"]
+      }
+    ],
+    "selector-no-qualifying-type": null,
+    "declaration-block-trailing-semicolon": null,
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    },
+    "scss/selector-no-redundant-nesting-selector": null,
+    "selector-max-compound-selectors": 4,
+    "selector-list-comma-newline-after": null
+  },
+  "ignoreFiles": []
+}

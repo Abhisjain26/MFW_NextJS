@@ -1,0 +1,152 @@
+{
+  "step": {
+    "shipping": "Teslimat",
+    "payment": "Ödeme",
+    "confirmation": "Onay"
+  },
+  "auth": {
+    "title": "Zero'da Yeni misiniz?",
+    "signup": "Üye ol",
+    "guest_checkout": "Misafir Olarak Ödeme",
+    "form": {
+      "login": {
+        "email": {
+          "placeholder": "E-posta adresiniz"
+        },
+        "phone": {
+          "placeholder": "Telefon Numarası"
+        },
+        "agreement": {
+          "label": "Aşağıdakileri okudum ve kabul ediyorum",
+          "terms_conditions": "Şartlar ve koşullar",
+          "privacy_policy": "Gizlilik Politikası"
+        },
+        "button": "Ödemeye Devam Et",
+        "error": {
+          "required": "Bu alan gereklidir.",
+          "email_control": "Lütfen geçerli bir eposta adresi giriniz.",
+          "phone_control": "Telefon numarası geçerli değil"
+        }
+      }
+    }
+  },
+  "summary": {
+    "title": "Sepetim",
+    "items": "Adet(ler)",
+    "quantity": "Miktar",
+    "subtotal": "Ara toplam",
+    "shipping": "Kargo",
+    "discounts_total": "İndirimler Toplamı",
+    "total": "Toplam",
+    "delivery_info": "Teslimat Bilgileri",
+    "change": "değiştir",
+    "info": " <ShippingOption/> ile <ShippingAddress />'e"
+  },
+  "address": {
+    "address": "Adres",
+    "use_for_billing": "Faturalandırma için kullanın",
+    "add_new_address": "YENİ BİR ADRES EKLEYİN",
+    "content": "Lütfen bir <addressType/> adresi seçin.",
+    "delivery": "Teslimat",
+    "billing": "Fatura",
+    "shipping": {
+      "title": "Teslimat Yöntemi",
+      "chosen_address": "Şunun için bir teslimat seçeneği seçin",
+      "select_address_to_continue": "Devam etmek için bir teslimat adresi seçin.",
+      "button": "KAYDET & İLERLE"
+    },
+    "box": {
+      "shipping_to": "Teslimat",
+      "edit": "düzenle",
+      "remove": "kaldır"
+    },
+    "modal": {
+      "edit_address": "Adresi Düzenle"
+    }
+  },
+  "completed": {
+    "not_found": "Sipariş detayı bulunamadı",
+    "title": "Sipariş onayı",
+    "thank_you": "Siparişiniz için teşekkür ederiz",
+    "your_email": "E-POSTA ADRESİNİZ",
+    "order_total": "SİPARİŞ TOPLAMI",
+    "payment_type": "ÖDEME ŞEKLİ",
+    "order_summary": "Sipariş Özeti",
+    "items": "adet(ler)",
+    "purchase_info": "Satın alma bilgilerinizi aşağıda bulabilirsiniz.",
+    "confirmation_message": "<OrderNumber/> numaralı siparişinizi aldık ve paketiniz gönderilir gönderilmez size bir e-posta göndereceğiz.",
+    "side": {
+      "whats_next": "Sırada ne var?",
+      "description_first": "Lütfen gelen kutunuzu kontrol edin, bir onay e-postası yolda",
+      "description_second": "Bu arada, burada bir şeye ihtiyacın olursa, bazı faydalı linklerimiz var.",
+      "help_contact": "Yardım ve İletişim",
+      "my_account": "Hesabım",
+      "faq": "SSS",
+      "discover_new_items": "YENİ ÜRÜNLERİ KEŞFEDİN"
+    }
+  },
+  "payment": {
+    "credit_card": {
+      "title": "Kredi Kartı Bilgileri",
+      "description": "Lütfen kredi kartı bilgilerinizi giriniz.",
+      "form": {
+        "cardholder_name": {
+          "placeholder": "Kart Sahibinin Adı"
+        },
+        "card_number": {
+          "placeholder": "Kart Numarası"
+        },
+        "expiration_date": {
+          "title": "Son Kullanma Tarihi"
+        },
+        "month": {
+          "placeholder": "Ay"
+        },
+        "year": {
+          "placeholder": "Yıl"
+        },
+        "security_code": {
+          "title": "Güvenlik Kodu",
+          "cvc": "CVC nedir?"
+        },
+        "error": {
+          "required": "Bu alan gereklidir.",
+          "cvv_length": "CVV 3 hane uzunluğunda olmalıdır.",
+          "installment": "Lütfen bir taksit seçin.",
+          "card_number_length": "Kart numarası 16 hane uzunluğunda olmalıdır.",
+          "card_holder_matches": "Bu alan için yalnızca harflere izin verilir."
+        },
+        "button": "Sipariş Ver"
+      }
+    },
+    "fund_transfer": {
+      "title": "Para Transfer Bilgileri",
+      "description": "Sipariş ver butonuna tıkladıktan sonra para transferinizi tamamlamak için 24 saatiniz olacak.",
+      "account_title": "Para transferi için kullanabileceğiniz hesaplar",
+      "receiver": "Alıcı",
+      "attention": "DİKKAT",
+      "transfer_amount_title": "Banka havalesi ile ödenecek tutar:",
+      "info_first": "Lütfen açıklama alanına <BoldTitle/> ekleyin.",
+      "bold_title": "sipariş numarasını",
+      "info_second": "24 saat içerisinde havale işlemini tamamlamadığınız takdirde siparişiniz iptal edilecektir.",
+      "button": "Sipariş Ver"
+    },
+    "installment_options": {
+      "title": "Taksit Seçenekleri",
+      "description": "Taksit seçeneklerini görmek için kart bilgilerinizi girmeniz gerekmektedir.",
+      "installment": "Taksit seçenekleri gösterilen kart",
+      "payments": "Ödemeler",
+      "per_month": "Her ay",
+      "total": "Toplam"
+    }
+  },
+  "agreement": {
+    "info_contract": "Ön Bilgilendirme Koşulları",
+    "sales_contract": "Mesafeli Satış Sözleşmesi",
+    "content": "<InfoContract /> ve <SalesContract />'ni okudum ve kabul ediyorum."
+  },
+  "error": {
+    "title": "Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.",
+    "button": "Tekrar deneyin"
+  }
+}

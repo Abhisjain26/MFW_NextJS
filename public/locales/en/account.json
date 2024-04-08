@@ -1,0 +1,487 @@
+{
+  "base": {
+    "menu": {
+      "hello": "Hello",
+      "my_account": "My Account",
+      "my_orders": "My Orders",
+      "my_profile": "My Profile",
+      "address_book": "Address Book",
+      "change_email": "Change Email",
+      "change_password": "Change Password",
+      "my_wishlist": "My Wishlist",
+      "my_vouchers": "My Vouchers",
+      "faq": "FAQ",
+      "contact_us": "Contact Us",
+      "logout": "Log Out"
+    },
+    "widgets": {
+      "address_book": {
+        "title": "ADDRESS BOOK",
+        "content_first": "You don't have a default address",
+        "content_second": "To change or edit an address, <Link/>",
+        "link_title": "click here"
+      },
+      "gift_card": {
+        "title": "GIFT CARD & VOUCHERs",
+        "content": "To check the details of your gift cards and vouchers, <Link/>",
+        "link_title": "click here"
+      },
+      "contact_us": {
+        "title": "CONTACT US",
+        "content": "If you want to share your suggestions or you have any questions, you can send it to us by filling the <Link/>",
+        "link_title": "contact form"
+      },
+      "faq": {
+        "title": "FAQ Top 5",
+        "content": "Here is out Top 5 of our FAQ and our top 3 categories. You can see all questions here, or contact us from here"
+      },
+      "order": {
+        "title": "Where is my order?",
+        "button": "View Order Details"
+      }
+    },
+    "no_image": "No Product Photo"
+  },
+  "change_email": {
+    "header": {
+      "title": "Change email address",
+      "subtitle": "After this action, you'll get a verification email at your new email address."
+    },
+    "email_set_primary": {
+      "success": "Your email address has been changed",
+      "error": "There was a problem, click the link again or change your email address again.",
+      "button": "Continue to Homepage"
+    },
+    "confirm_email": {
+      "success": "Your email address has been confirmed.",
+      "error": "A problem occurred, click the link again.",
+      "button": "Continue to Homepage"
+    },
+    "form": {
+      "current_email": "Your email",
+      "required": "This field is required.",
+      "email": {
+        "placeholder": "New email address",
+        "error": "Please enter a valid e-mail."
+      },
+      "email_confirm": {
+        "placeholder": "Re-enter your new email address",
+        "error": {
+          "not_valid": "Please enter a valid e-mail.",
+          "not_same": "Please enter the same email."
+        }
+      },
+      "password": {
+        "placeholder": "Your password"
+      },
+      "success": {
+        "title": "A confirmation mail has been sent",
+        "description": "Please check the new email address you entered for a mail from us and click the confirmation link inside it.",
+        "button": "Continue to Homepage"
+      },
+      "submit_button": "CHANGE EMAIL ADDRESS"
+    },
+    "info": {
+      "title": "Any questions?",
+      "content": "Please <ContactLink/> or for faster answers, use our <Faq/>",
+      "contact": "contact us",
+      "faq": "FAQ"
+    }
+  },
+  "change_password": {
+    "header": {
+      "title": "Change Password"
+    },
+    "form": {
+      "required": "This field is required.",
+      "current_password": {
+        "placeholder": "Current password"
+      },
+      "new_password": {
+        "placeholder": "New password"
+      },
+      "new_password_repeat": {
+        "placeholder": "Repeat new password",
+        "error": {
+          "not_same": "Please enter the same password."
+        }
+      },
+      "success": {
+        "title": "Success",
+        "description": "Your password has been changed successfully",
+        "button": "Continue to Homepage"
+      },
+      "submit_button": "CHANGE PASSWORD",
+      "error": {
+        "password_max": "Password must be less than 50 characters long.",
+        "password_rule": "Enter your password in accordance with the specified rules."
+      }
+    },
+    "info": {
+      "title": "Any questions?",
+      "content": "Please <ContactLink/> or for faster answers, use our <Faq/>",
+      "contact": "contact us",
+      "faq": "FAQ"
+    }
+  },
+  "my_profile": {
+    "header": {
+      "title": "My Profile",
+      "subtitle": "Update your profile and help us keep your information up-to-date"
+    },
+    "form": {
+      "required": "This field is required.",
+      "name": {
+        "placeholder": "Name"
+      },
+      "surname": {
+        "placeholder": "Surname"
+      },
+      "email": {
+        "placeholder": "Email Address"
+      },
+      "phone": {
+        "placeholder": "Phone Number",
+        "error": {
+          "not_valid": "Phone number must be 11 digits long."
+        }
+      },
+      "birth_date": {
+        "title": "Birth Date",
+        "error": {
+          "not_valid": "Please enter a valid date."
+        }
+      },
+      "gender": {
+        "title": "Gender",
+        "female": "Female",
+        "male": "Male",
+        "other": "Prefer not to say"
+      },
+      "success": {
+        "title": "Success",
+        "description": "Your changes have been saved."
+      },
+      "error": {
+        "title": "Error",
+        "description": "An unexpected error has occured. Please try again later.",
+        "name_match": "Only alphabets are allowed for name.",
+        "surname_match": "Only alphabets are allowed for surname."
+      },
+      "communication_channel": {
+        "title": "Communication Channel",
+        "sms": "SMS",
+        "email": "Email"
+      },
+      "months": {
+        "january": "Jan",
+        "february": "Feb",
+        "march": "Mar",
+        "april": "Apr",
+        "may": "May",
+        "june": "Jun",
+        "july": "Jul",
+        "august": "Aug",
+        "september": "Sep",
+        "october": "Oct",
+        "november": "Nov",
+        "december": "Dec"
+      },
+      "submit_button": "SAVE",
+      "close_button": "Close"
+    },
+    "info": {
+      "title": "Any questions?",
+      "content": "Please <ContactLink/> or for faster answers, use our <Faq/>",
+      "contact": "contact us",
+      "faq": "FAQ"
+    }
+  },
+  "my_orders": {
+    "status": {
+      "cancel_requested": "Cancel / Return Requested",
+      "cancelled": "Cancelled",
+      "order_waiting": "Order Waiting",
+      "payment_waiting": "Payment Waiting",
+      "confirmation_waiting": "Confirmation Waiting",
+      "approved": "Approved",
+      "preparing": "Preparing",
+      "shipped": "Shipped",
+      "shipped_and_informed": "Shipped and Informed",
+      "ready_for_pickup": "Ready for Pickup",
+      "attempted_delivery": "Attempted Delivery",
+      "delivered": "Delivered",
+      "returned": "Returned"
+    },
+    "order": {
+      "order_placed": "ORDER PLACED",
+      "total": "TOTAL",
+      "order": "ORDER",
+      "orders": "ORDERS",
+      "order_detail": "Order Details",
+      "track_shipment": "Track Shipment",
+      "items": "item(s)",
+      "order_not_found": "You do not have an order yet.",
+      "count": "<Orders/> PLACED IN",
+      "choose_date": "Choose Date"
+    },
+    "detail": {
+      "title": "Order Details",
+      "order_number": "Order Number",
+      "order_date": "Order Date",
+      "order_status": "Order Status",
+      "track_shipment": "Track Shipment",
+      "delivery_address": "Delivery Address",
+      "products": "Products",
+      "color": "Color",
+      "size": "Size",
+      "code": "Code",
+      "return_this_item": "Return This Item",
+      "contract": "Contract",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "items": "items",
+      "packages": "Packages",
+      "package_no": "Package no"
+    },
+    "return": {
+      "title": "Return Items",
+      "return_code": "Return Code",
+      "contract": "Contract",
+      "contract_process_cancel": "Cancel return process",
+      "agreement_label": "I accept that I read and understand the Return Policy",
+      "return_selected_items": "Return Selected Items",
+      "cancelled": "Cancelled",
+      "cancellation_request_recieved": "Cancellation Request Recieved",
+      "close_button": "Close",
+      "success": {
+        "title": "Success",
+        "description": "Your request have been recieved and will be evaluated as soon as possible."
+      },
+      "error": {
+        "title": "Error",
+        "description": "An unexpected error has occured. Please try again later."
+      }
+    }
+  },
+  "my_wishlist": {
+    "header": {
+      "title": "My Wishlist",
+      "subtitle": "Here is a list of your saved items"
+    },
+    "empty": "Your wishlist is empty!",
+    "submit_button": "MOVE TO BAG"
+  },
+  "my_vouchers": {
+    "header": {
+      "title": "My Vouchers",
+      "subtitle": "You can reach the details of your vouchers below. Once you're ready to buy, head over to your Shopping Cart and use your voucher listed below (if available)."
+    },
+    "card": {
+      "campaign_name": "Campaign Name",
+      "starting_date": "Starting Date",
+      "expiration_date": "Expiration Date",
+      "amount": "Amount",
+      "empty_campaign": "You don't have any campaigns",
+      "empty_coupon": "You don't have any coupons"
+    },
+    "title": {
+      "campaings": {
+        "active": "Active Campaigns",
+        "to_be_active": "Campaings to be Active",
+        "expired": "Expired Campaings",
+        "used": "Used Campaings"
+      },
+      "coupons": {
+        "active": "Active Coupons",
+        "to_be_active": "Coupons to be Active",
+        "expired": "Expired Coupons",
+        "used": "Used Coupons"
+      }
+    }
+  },
+  "faq": {
+    "header": {
+      "title": "FAQ",
+      "button": {
+        "placeholder": "How may we help you?"
+      }
+    },
+    "footer": {
+      "info": "If these do not answer your question please <ContactLink/>"
+    }
+  },
+  "contact": {
+    "header": {
+      "title": "Contact Us",
+      "subtitle": "Fill in the form below - We'll aim to respond to your query within 24 hours."
+    },
+    "form": {
+      "full_name": {
+        "placeholder": "Name Surname"
+      },
+      "email": {
+        "placeholder": "Email Address"
+      },
+      "phone": {
+        "placeholder": "Phone Number"
+      },
+      "subject": {
+        "title": "Subject",
+        "placeholder": "Please Choose"
+      },
+      "order": {
+        "title": "Order",
+        "placeholder": "Please Choose"
+      },
+      "message": {
+        "title": "Your Message"
+      },
+      "file": {
+        "title": "Add a File"
+      },
+      "submit_button": "SEND",
+      "error": {
+        "required": "This field is required.",
+        "email_valid": "Please enter a valid e-mail.",
+        "phone_length": "Phone number must be 11 digits long.",
+        "message_length": "Please enter 10 characters at least."
+      },
+      "success": {
+        "title": "Your message has been sent",
+        "description": "Your message has been sent and our customer support will contact you as soon as possible.",
+        "button": "Continue to Homepage"
+      }
+    },
+    "address_title": "Our Offices"
+  },
+  "address_book": {
+    "header": {
+      "title": "Address Book",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidun"
+    },
+    "card": {
+      "edit": "edit",
+      "remove": "remove",
+      "default_address": "Default address"
+    },
+    "form": {
+      "type": {
+        "personal": "Personal",
+        "corporate": "Corporate"
+      },
+      "error": {
+        "required": "This field is required.",
+        "postcode_min": "This field must be at least 5 characters",
+        "postcode_max": "This field must be max 5 characters",
+        "line_min": "This field must be at least 10 characters",
+        "line_max": "Ensure this field has no more than 255 characters.",
+        "phone_length": "Please enter a valid phone number."
+      },
+      "address_title": {
+        "placeholder": "Title for Address"
+      },
+      "name": {
+        "placeholder": "Name"
+      },
+      "surname": {
+        "placeholder": "Surname"
+      },
+      "phone": {
+        "placeholder": "Phone Number"
+      },
+      "country": {
+        "placeholder": "Please Choose",
+        "title": "Country"
+      },
+      "province": {
+        "placeholder": "Please Choose",
+        "title": "Province"
+      },
+      "township": {
+        "placeholder": "Please Choose",
+        "title": "Township"
+      },
+      "district": {
+        "placeholder": "Please Choose",
+        "title": "District"
+      },
+      "address": {
+        "title": "Address"
+      },
+      "post_code": {
+        "placeholder": "Post Code"
+      },
+      "company_name": {
+        "placeholder": "Company Name"
+      },
+      "tax_no": {
+        "placeholder": "Tax No"
+      },
+      "tax_office": {
+        "placeholder": "Tax Office"
+      },
+      "taxpayer": {
+        "title": "taxpayer"
+      },
+      "submit_button": "SAVE CONTINUE"
+    },
+    "modal": {
+      "add_new_address": "Add New Address",
+      "edit_address": "Edit Address"
+    },
+    "add_button": "ADD NEW ADDRESS"
+  },
+  "sales_contract": {
+    "title_modal": "Agreement One",
+    "customer_details": "Customer Details",
+    "name_surname_title": "Name/Surname/Title:",
+    "address": "Address:",
+    "phone": "Phone:",
+    "email": "Email:",
+    "shipping_details": "Shipping Details",
+    "billing_details": "Billing Details",
+    "tax_no": "Tax No:",
+    "tax_office": "Tax Office:",
+    "agreement_details": "Agreement Details",
+    "agreement_date": "Agreement Date:",
+    "product": "Product",
+    "quantity": "Quantity",
+    "product_price": "Product Price",
+    "total_price": "Total Price",
+    "products_total": "Products Total",
+    "shipping_price": "Shipping Price",
+    "payment_type": "Payment Type",
+    "order_total": "Order Total (Tax Incl.)"
+  },
+  "password_reset": {
+    "password_reset": "Password Reset",
+    "sign_in": "Sign In",
+    "success_message": "Your password has been reset. You may continue to sign in.",
+    "expired_link_message": "This link has expired. Please restart the password reset process.",
+    "password_reset_message": "Please enter your new password",
+    "reset_password": "RESET PASSWORD",
+    "continue_password_reset": "Continue to Password Reset",
+    "required_field": "This field is required.",
+    "new_password": "New password",
+    "repeat_new_password": "Repeat new password",
+    "not_same": "Please enter the same password."
+  },
+  "anonymous_order": {
+    "form": {
+      "title": "Track Order",
+      "order_id": "Order ID",
+      "email": "E-mail",
+      "submit_button": "TRACK ORDER"
+    },
+    "not_found": {
+      "title": "Order Not Found",
+      "description": "Please make sure you entered the order ID and e-mail correctly.",
+      "button": "Go Back"
+    },
+    "error": {
+      "required": "This field is required.",
+      "email_valid": "Please enter a valid e-mail."
+    }
+  }
+}

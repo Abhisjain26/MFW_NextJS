@@ -1,0 +1,65 @@
+{
+  "header": {
+    "login": "GİRİŞ YAP",
+    "signup": "ÜYE OL"
+  },
+  "newsletter_signup": {
+    "submit": "GÖNDER",
+    "close": "Kapat",
+    "accept": "Okuyup anladığımı kabul ediyorum",
+    "privacy_policy": "Gizlilik Politikası",
+    "subscription_contract": "E-Bülten",
+    "subscription_contract_content": "E-Bültenlerimize başarıyla kayıt oldunuz.",
+    "required_email": "Lütfen geçerli eposta adresini giriniz.",
+    "required": "Bu alan zorunludur.",
+    "email_address": "E-posta adresi*"
+  },
+  "navbar": {
+    "search": "ARA"
+  },
+  "mobile_menu": {
+    "back": "Geri"
+  },
+  "search": {
+    "placeholder": "Ara",
+    "results_for": "Arama Sonuçları",
+    "products_for": "ÜRÜNLER",
+    "clean": "temizle",
+    "categories": "KATEGORİLER",
+    "view_all": "HEPSİNİ GÖSTER",
+    "not_found": "Arama Sonuçları Bulunamadı"
+  },
+  "page_404": {
+    "title": "Sayfa bulunamadı.",
+    "link_text": "Ana sayfaya dön"
+  },
+  "page_500": {
+    "title": "Beklenmeyen bir hata oluştu.",
+    "description": "Lütfen daha sonra tekrar deneyiniz.",
+    "link_text": "Ana sayfaya dön"
+  },
+  "breadcrumb": {
+    "homepage": "Anasayfa"
+  },
+  "email_verification": {
+    "success": "E-POSTA ADRESİNİZİ DOĞRULANDI.",
+    "error": "E-POSTA ADRESİNİZİ DOĞRULANAMAMIŞTIR."
+  },
+  "common_product_attributes": {
+    "color": "Renk",
+    "size": "Beden"
+  },
+  "stores": {
+    "title": "Mağazalar",
+    "back": "Listeye Geri Dön",
+    "select_country": "Lütfen Ülke Seçiniz",
+    "select_city": "Lütfen Şehir Seçiniz",
+    "directions": "Yol tarifi al"
+  },
+  "currency_modal": {
+    "title": "Para Birimi Değişimi",
+    "description": "Döviz kuru değiştiği için sepetinizdeki ürünler silinecektir.",
+    "close": "Kapat",
+    "continue": "Devam Et"
+  }
+}

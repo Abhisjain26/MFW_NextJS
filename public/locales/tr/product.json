@@ -1,0 +1,39 @@
+{
+  "add_to_cart": "SEPETE EKLE",
+  "add_stock_alert": "STOK UYARISI EKLE",
+  "add_to_favorites": "Favorilere ekle",
+  "share": "Paylaş",
+  "details_care": "DETAYLAR & BAKIM",
+  "delivery_collections": "TESLİMAT, KOLEKSİYON VE İADE",
+  "installment_options": "TAKSİT SEÇENEKLERİ",
+  "product_code": "Ürün Kodu",
+  "number_of_installments": "Taksit Sayısı",
+  "monthly_amount": "Aylık tutar",
+  "total_amount": "Toplam tutar",
+  "off": "indirim",
+  "selected": "Seçilen",
+  "find_in_store": {
+    "title": "Mağazada Bul",
+    "directions": "Yol Tarifi",
+    "store_not_found": "Mağaza bulunamadı",
+    "working_hours": "Çalışma Saatleri",
+    "submit": "GÖNDER",
+    "description": "Stok süper hızlı hareket ediyor. Bu arama, stokun nerede bulunabileceğinin bir göstergesidir ancak uzun süre orada olacağını garanti edemeyiz.",
+    "available": "Mevcut",
+    "out_of_stock": "Stoklar Tükendi",
+    "limited_stock": "Sınırlı Stok",
+    "select_an_option": "Bir seçenek seçin",
+    "required": "Bu alan gereklidir.",
+    "unknown": "Bilinmiyor"
+  },
+  "please_select_variant": "Lütfen <VariantName/> seçin",
+  "installment_not_available": "Taksit seçenekleri mevcut değil",
+  "cash": "Peşin",
+  "installment": "Taksit",
+  "stock_alert": {
+    "title": "Stok Uyarısı",
+    "success_description": "Bedeniniz stoklara tekrar girdiğinde şu adrese bir e-posta göndereceğiz: <Email/>",
+    "error_description": "Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.",
+    "close_button": "KAPAT"
+  }
+}

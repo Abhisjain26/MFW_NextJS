@@ -1,0 +1,65 @@
+{
+  "header": {
+    "login": "LOGIN",
+    "signup": "SIGNUP"
+  },
+  "newsletter_signup": {
+    "submit": "SUBMIT",
+    "close": "Close",
+    "accept": "I accept and understand the",
+    "privacy_policy": "Privacy Policy",
+    "subscription_contract": "E-Newsletter",
+    "subscription_contract_content": "You have successfully registered for our e-newsletters.",
+    "required_email": "Please enter a valid e-mail.",
+    "required": "This field is required.",
+    "email_address": "Email address*"
+  },
+  "navbar": {
+    "search": "SEARCH"
+  },
+  "mobile_menu": {
+    "back": "Back"
+  },
+  "search": {
+    "placeholder": "Search",
+    "results_for": "Search Results for",
+    "products_for": "PRODUCTS FOR",
+    "clean": "clean",
+    "categories": "CATEGORIES",
+    "view_all": "VIEW ALL",
+    "not_found": "Search Results Not Found"
+  },
+  "page_404": {
+    "title": "Page not found.",
+    "link_text": "Return to home page"
+  },
+  "page_500": {
+    "title": "An unexpected error has occurred.",
+    "description": "Please try again later.",
+    "link_text": "Return to home page"
+  },
+  "breadcrumb": {
+    "homepage": "Homepage"
+  },
+  "email_verification": {
+    "success": "YOUR EMAIL ADDRESS HAS BEEN CONFIRMED.",
+    "error": "YOUR E-MAIL ADDRESS CANNOT BE CONFIRMED."
+  },
+  "common_product_attributes": {
+    "color": "Color",
+    "size": "Size"
+  },
+  "stores": {
+    "title": "Stores",
+    "back": "Back to the List",
+    "select_country": "Please Select Country",
+    "select_city": "Please Select City",
+    "directions": "Get Directions"
+  },
+  "currency_modal": {
+    "title": "Currency Change",
+    "description": "The products in your cart will be deleted because the exchange rate has changed.",
+    "close": "Close",
+    "continue": "Continue"
+  }
+}

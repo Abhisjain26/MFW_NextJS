@@ -1,0 +1,26 @@
+{
+  "header": {
+    "view": "Görünüm",
+    "results": "Sonuçlar"
+  },
+  "filters": {
+    "title": "Filtreler",
+    "results": "Sonuçlar",
+    "ready_to_wear": "HAZIR GİYİM",
+    "48_products": "48 Ürün",
+    "96_products": "96 Ürün",
+    "clear_all": "Tüm Filtreleri Temizle"
+  },
+  "search": {
+    "not_found": "Aradığınız Sonuç bulunamadı",
+    "link": "Ana Sayfa"
+  },
+  "pagination": {
+    "shown_items": "Tüm öğeler gösterildi.",
+    "loading_error": "Öğeler yüklenirken bir hata oluştu.",
+    "more": "Daha fazla göster",
+    "next": "Sonraki",
+    "previous": "Önceki",
+    "load_previous_page": "Önceki Sayfayı Yükle"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "next-zero",
+  "description": "nextzero",
+  "scripts": {
+    "release": "echo \"DONE\"",
+    "build": "sh build.sh"
+  },
+  "env": {},
+  "formation": {
+    "web": {
+      "min": 1,
+      "max": "auto",
+      "healthcheck": "/healthz"
+    }
+  },
+  "runtime": "node:lts-alpine",
+  "addons": [
+    {
+      "plan": "redis"
+    },
+    {
+      "plan": "sentry"
+    },
+    {
+      "plan": "postgresql"
+    }
+  ]
+}

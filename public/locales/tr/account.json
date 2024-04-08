@@ -1,0 +1,487 @@
+{
+  "base": {
+    "menu": {
+      "hello": "Merhaba",
+      "my_account": "Hesabım",
+      "my_orders": "Siparişlerim",
+      "my_profile": "Profilim",
+      "address_book": "Adres Defteri",
+      "change_email": "Email Değiştir",
+      "change_password": "Şifre Değiştir",
+      "my_wishlist": "Favorilerim",
+      "my_vouchers": "Kuponlarım",
+      "faq": "SSS",
+      "contact_us": "İletişim",
+      "logout": "Çıkış Yap"
+    },
+    "widgets": {
+      "address_book": {
+        "title": "ADRES DEFTERİ",
+        "content_first": "Varsayılan bir adresiniz yok",
+        "content_second": "Bir adresi değiştirmek veya düzenlemek için, <Link/>",
+        "link_title": "buraya tıklayın"
+      },
+      "gift_card": {
+        "title": "HEDİYE KARTI ve KUPONLAR",
+        "content": "Hediye kartlarınızın ve kuponlarınızın ayrıntılarını kontrol etmek için, <Link/>",
+        "link_title": "buraya tıklayın"
+      },
+      "contact_us": {
+        "title": "İLETİŞİM",
+        "content": "Önerilerinizi paylaşmak isterseniz veya herhangi bir sorunuz varsa, doldurarak bize iletebilirsiniz, <Link/>",
+        "link_title": "iletişim formu"
+      },
+      "faq": {
+        "title": "SSS İlk 5",
+        "content": "İşte SSS'mizin İlk 5'i ve ilk 3 kategorimiz. Tüm soruları buradan görebilir veya buradan bize ulaşabilirsiniz."
+      },
+      "order": {
+        "title": "Siparişim nerede?",
+        "button": "Sipariş detaylarını incele"
+      }
+    },
+    "no_image": "Ürün Fotoğrafı Yok"
+  },
+  "change_email": {
+    "header": {
+      "title": "E-posta adresini değiştir",
+      "subtitle": "Bu işlemden sonra, yeni e-posta adresinize bir doğrulama e-postası alacaksınız."
+    },
+    "email_set_primary": {
+      "success": "E-posta adresiniz değiştirildi",
+      "error": "Bir sorun oluştu, bağlantıya tekrar tıklayın veya e-posta adresinizi tekrar değiştirin.",
+      "button": "Ana Sayfaya Devam Et"
+    },
+    "confirm_email": {
+      "success": "E-posta adresiniz onaylandı.",
+      "error": "Bir sorun oluştu, bağlantıya tekrar tıklayın.",
+      "button": "Ana Sayfaya Devam Et"
+    },
+    "form": {
+      "current_email": "E-posta adresiniz",
+      "required": "Bu alan gereklidir.",
+      "email": {
+        "placeholder": "Yeni email adresi",
+        "error": "Lütfen geçerli eposta adresi giriniz."
+      },
+      "email_confirm": {
+        "placeholder": "Yeni e-posta adresinizi tekrar girin",
+        "error": {
+          "not_valid": "Lütfen geçerli eposta adresi giriniz.",
+          "not_same": "Lütfen aynı e-postayı girin."
+        }
+      },
+      "password": {
+        "placeholder": "Şifreniz"
+      },
+      "success": {
+        "title": "Onay e-postası gönderildi",
+        "description": "Lütfen girdiğiniz yeni e-posta adresini bizden bir e-posta için kontrol edin ve içindeki onay bağlantısını tıklayın.",
+        "button": "Ana Sayfaya Devam Et"
+      },
+      "submit_button": "E-POSTA ADRESİNİ DEĞİŞTİR"
+    },
+    "info": {
+      "title": "Sorusu olan?",
+      "content": "Lütfen <ContactLink/> veya daha hızlı yanıtlar için <Faq/> sayfamızı kullanın.",
+      "contact": "iletişim",
+      "faq": "sss"
+    }
+  },
+  "change_password": {
+    "header": {
+      "title": "Şifre Değiştir"
+    },
+    "form": {
+      "required": "Bu alan gereklidir.",
+      "current_password": {
+        "placeholder": "Mevcut şifre"
+      },
+      "new_password": {
+        "placeholder": "Yeni şifre"
+      },
+      "new_password_repeat": {
+        "placeholder": "Yeni şifre tekrar",
+        "error": {
+          "not_same": "Lütfen aynı şifreyi girin."
+        }
+      },
+      "success": {
+        "title": "Başarılı",
+        "description": "Şifreniz başarıyla değiştirildi",
+        "button": "Ana Sayfaya Devam Et"
+      },
+      "submit_button": "ŞİFRE DEĞİŞTİR",
+      "error": {
+        "password_max": "Parola 50 karakterden kısa olmalıdır.",
+        "password_rule": "Belirlenen kurallara uygun olarak şifrenizi giriniz."
+      }
+    },
+    "info": {
+      "title": "Sorusu olan?",
+      "content": "Lütfen <ContactLink/> veya daha hızlı yanıtlar için <Faq/> sayfamızı kullanın.",
+      "contact": "iletişim",
+      "faq": "sss"
+    }
+  },
+  "my_profile": {
+    "header": {
+      "title": "Profilim",
+      "subtitle": "Profilinizi güncelleyin ve bilgilerinizi güncel tutmamıza yardımcı olun"
+    },
+    "form": {
+      "required": "Bu alan gereklidir.",
+      "name": {
+        "placeholder": "Ad*"
+      },
+      "surname": {
+        "placeholder": "Soyad*"
+      },
+      "email": {
+        "placeholder": "Email adresi*"
+      },
+      "phone": {
+        "placeholder": "Telefon numarası*",
+        "error": {
+          "not_valid": "Telefon numarası 11 basamak uzunluğunda olmalıdır."
+        }
+      },
+      "birth_date": {
+        "title": "Doğum tarihi",
+        "error": {
+          "not_valid": "Lütfen geçerli bir tarih giriniz."
+        }
+      },
+      "gender": {
+        "title": "Cinsiyet",
+        "female": "Kadın",
+        "male": "Erkek",
+        "other": "Belirtmeyi tercih etmiyorum"
+      },
+      "success": {
+        "title": "Başarılı",
+        "description": "Değişiklikleriniz kaydedildi."
+      },
+      "error": {
+        "title": "Hata",
+        "description": "Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.",
+        "name_match": "İsim için sadece alfabeye izin verilir.",
+        "surname_match": "Soyad için sadece alfabelere izin verilir."
+      },
+      "communication_channel": {
+        "title": "İletişim kanalı",
+        "sms": "SMS",
+        "email": "Email"
+      },
+      "months": {
+        "january": "Ocak",
+        "february": "Şubat",
+        "march": "Mart",
+        "april": "Nisan",
+        "may": "Mayıs",
+        "june": "Haziran",
+        "july": "Temmuz",
+        "august": "Ağustos",
+        "september": "Eylül",
+        "october": "Ekim",
+        "november": "Kasım",
+        "december": "Aralık"
+      },
+      "submit_button": "KAYDET",
+      "close_button": "Kapat"
+    },
+    "info": {
+      "title": "Sorusu olan?",
+      "content": "Lütfen <ContactLink/> veya daha hızlı yanıtlar için <Faq/> sayfamızı kullanın.",
+      "contact": "iletişim",
+      "faq": "sss"
+    }
+  },
+  "my_orders": {
+    "status": {
+      "cancel_requested": "İptal / İade Talep Edildi",
+      "cancelled": "İptal edildi",
+      "order_waiting": "Sipariş Bekliyor",
+      "payment_waiting": "Ödeme Bekliyor",
+      "confirmation_waiting": "Onay Bekleniyor",
+      "approved": "Onaylandı",
+      "preparing": "Hazırlanıyor",
+      "shipped": "Gönderildi",
+      "shipped_and_informed": "Sevk Edildi ve Bilgilendirildi",
+      "ready_for_pickup": "Teslim Almaya Hazır",
+      "attempted_delivery": "Teslimat Denemesi",
+      "delivered": "Teslim edildi",
+      "returned": "İade edildi"
+    },
+    "order": {
+      "order_placed": "SİPARİŞ VERİLDİ",
+      "total": "TOPLAM",
+      "order": "SİPARİŞ",
+      "orders": "SİPARİŞ",
+      "order_detail": "Sipariş detayları",
+      "track_shipment": "Gönderiyi takip et",
+      "items": "adet(ler)",
+      "order_not_found": "Henüz bir siparişiniz yok.",
+      "count": "<Orders/> VERİLDİ",
+      "choose_date": "Tarih Seçiniz"
+    },
+    "detail": {
+      "title": "Sipariş Detayları",
+      "order_number": "Sipariş Numarası",
+      "order_date": "Sipariş Tarihi",
+      "order_status": "Sipariş Durumu",
+      "track_shipment": "Gönderiyi takip et",
+      "delivery_address": "Teslimat Adresi",
+      "products": "Ürünler",
+      "color": "Renk",
+      "size": "Beden",
+      "code": "Kod",
+      "return_this_item": "Bu ürünü geri gönder",
+      "contract": "Sözleşme",
+      "subtotal": "Ara toplam",
+      "total": "Toplam",
+      "items": "adet",
+      "packages": "paket",
+      "package_no": "Paket no"
+    },
+    "return": {
+      "title": "İade Ürünleri",
+      "return_code": "İade Kodu",
+      "contract": "Sözleşme",
+      "contract_process_cancel": "İade işlemini iptal et",
+      "agreement_label": "İade Politikasını okuyup anladığımı kabul ediyorum",
+      "return_selected_items": "Seçili ürümleri iade et",
+      "cancelled": "İptal edildi",
+      "cancellation_request_recieved": "İptal talebi alındı",
+      "close_button": "Kapat",
+      "success": {
+        "title": "Başarılı",
+        "description": "Talebiniz alınmış olup en kısa sürede değerlendirilecektir."
+      },
+      "error": {
+        "title": "Hata",
+        "description": "Beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyiniz."
+      }
+    }
+  },
+  "my_wishlist": {
+    "header": {
+      "title": "Favoriler",
+      "subtitle": "Kaydedilmiş öğelerinizin listesi burada"
+    },
+    "empty": "Favori listeniz boş!",
+    "submit_button": "SEPETE EKLE"
+  },
+  "my_vouchers": {
+    "header": {
+      "title": "Kuponlarım",
+      "subtitle": "Kuponlarınızın detaylarına aşağıdan ulaşabilirsiniz. Satın almaya hazır olduğunuzda, Alışveriş Sepetinize gidin ve aşağıda listelenen (varsa) kuponunuzu kullanın."
+    },
+    "card": {
+      "campaign_name": "Kampanya Adı",
+      "starting_date": "Başlangıç ​​Tarihi",
+      "expiration_date": "Son Kullanma Tarihi",
+      "amount": "Tutar",
+      "empty_campaign": "Herhangi bir kampanyanız yok",
+      "empty_coupon": "Herhangi bir kuponunuz yok"
+    },
+    "title": {
+      "campaings": {
+        "active": "Aktif Kampanyalar",
+        "to_be_active": "Aktif Olacak Kampanyalar",
+        "expired": "Süresi Dolmuş Kampanyalar",
+        "used": "Kullanılan Kampanyalar"
+      },
+      "coupons": {
+        "active": "Aktif Kuponlar",
+        "to_be_active": "Aktif Olacak Kuponlar",
+        "expired": "Süresi Dolmuş Kuponlar",
+        "used": "Kullanılan Kuponlar"
+      }
+    }
+  },
+  "faq": {
+    "header": {
+      "title": "SSS",
+      "button": {
+        "placeholder": "Size nasıl yardımcı olabiliriz?"
+      }
+    },
+    "footer": {
+      "info": "Bunlar sorunuzu yanıtlamıyorsa, lütfen <ContactLink/>"
+    }
+  },
+  "contact": {
+    "header": {
+      "title": "İletişim",
+      "subtitle": "Aşağıdaki formu doldurun - Mesajınıza 24 saat içinde yanıt vermeye çalışacağız."
+    },
+    "form": {
+      "full_name": {
+        "placeholder": "Ad Soyad"
+      },
+      "email": {
+        "placeholder": "E-posta Adresi"
+      },
+      "phone": {
+        "placeholder": "Telefon Numarası"
+      },
+      "subject": {
+        "title": "Konu",
+        "placeholder": "Lütfen Seçiniz"
+      },
+      "order": {
+        "title": "Sipariş",
+        "placeholder": "Lütfen Seçiniz"
+      },
+      "message": {
+        "title": "Mesajınız"
+      },
+      "file": {
+        "title": "Dosya Ekle"
+      },
+      "submit_button": "GÖNDER",
+      "error": {
+        "required": "Bu alan gereklidir.",
+        "email_valid": "Lütfen geçerli eposta adresini giriniz.",
+        "phone_length": "Telefon numarası 11 hane uzunluğunda olmalıdır.",
+        "message_length": "Lütfen en az 10 karakter girin."
+      },
+      "success": {
+        "title": "Mesajınız Gönderildi",
+        "description": "Mesajınız gönderildi ve müşteri desteğimiz en kısa sürede sizinle iletişime geçecektir.",
+        "button": "Ana Sayfaya Devam Et"
+      }
+    },
+    "address_title": "Ofislerimiz"
+  },
+  "address_book": {
+    "header": {
+      "title": "Adres Defteri",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidun"
+    },
+    "card": {
+      "edit": "düzenle",
+      "remove": "kaldır",
+      "default_address": "Varsayılan adres"
+    },
+    "form": {
+      "type": {
+        "personal": "Kişisel",
+        "corporate": "Kurumsal"
+      },
+      "error": {
+        "required": "Bu alan gereklidir.",
+        "postcode_min": "Bu alan en az 5 karakter olmalıdır",
+        "postcode_max": "Bu alan en fazla 5 karakter olmalıdır",
+        "line_min": "Bu alan en az 10 karakter olmalıdır",
+        "line_max": "Bu alanın 255 karakterden fazla olmadığından emin olun.",
+        "phone_length": "Geçerli bir telefon numarası giriniz."
+      },
+      "address_title": {
+        "placeholder": "Adres Başlığı"
+      },
+      "name": {
+        "placeholder": "Ad"
+      },
+      "surname": {
+        "placeholder": "Soyad"
+      },
+      "phone": {
+        "placeholder": "Telefon Numarası"
+      },
+      "country": {
+        "placeholder": "Lütfen seçiniz",
+        "title": "Ülke"
+      },
+      "province": {
+        "placeholder": "Lütfen seçiniz",
+        "title": "Şehir"
+      },
+      "township": {
+        "placeholder": "Lütfen seçiniz",
+        "title": "İlçe"
+      },
+      "district": {
+        "placeholder": "Lütfen seçiniz",
+        "title": "Semt"
+      },
+      "address": {
+        "title": "Adres"
+      },
+      "post_code": {
+        "placeholder": "Posta Kodu"
+      },
+      "company_name": {
+        "placeholder": "Firma Adı"
+      },
+      "tax_no": {
+        "placeholder": "Vergi No"
+      },
+      "tax_office": {
+        "placeholder": "Vergi Dairesi"
+      },
+      "taxpayer": {
+        "title": "vergi mükellefi"
+      },
+      "submit_button": "KAYDET VE DEVAM ET"
+    },
+    "modal": {
+      "add_new_address": "Yeni Adres Ekle",
+      "edit_address": "Adresi Düzelt"
+    },
+    "add_button": "YENİ ADRES EKLE"
+  },
+  "sales_contract": {
+    "title_modal": "Birinci Sözleşme",
+    "customer_details": "Müşteri Detayları",
+    "name_surname_title": "Ad/Soyad/Unvan:",
+    "address": "Adres:",
+    "phone": "Telefon:",
+    "email": "E-posta:",
+    "shipping_details": "Kargo Detayları",
+    "billing_details": "Fatura Detayları",
+    "tax_no": "Vergi no:",
+    "tax_office": "Vergi Dairesi:",
+    "agreement_details": "Sözleşme Detayları",
+    "agreement_date": "Sözleşme Tarihi:",
+    "product": "Ürün",
+    "quantity": "Miktar",
+    "product_price": "Ürün Fiyatı",
+    "total_price": "Toplam Fiyatı",
+    "products_total": "Ürünler Toplamı",
+    "shipping_price": "Kargo Ücreti",
+    "payment_type": "Ödeme Tipi",
+    "order_total": "Sipariş Toplamı (Vergi Dahil)"
+  },
+  "password_reset": {
+    "password_reset": "Parola Sıfırla",
+    "sign_in": "Giriş Yap",
+    "success_message": "Şifreniz sıfırlandı. Oturum açmaya devam edebilirsiniz.",
+    "expired_link_message": "Bu bağlantının süresi doldu. Lütfen parola sıfırlama işlemini yeniden başlatın.",
+    "password_reset_message": "Lütfen yeni şifrenizi girin",
+    "reset_password": "ŞİFREYİ YENİLE",
+    "continue_password_reset": "Parola Sıfırlamaya Devam Et",
+    "required_field": "Bu alan gereklidir.",
+    "new_password": "Yeni parola",
+    "repeat_new_password": "Yeni şifreyi tekrar girin",
+    "not_same": "Lütfen aynı şifreyi girin."
+  },
+  "anonymous_order": {
+    "form": {
+      "title": "Siparişi Takip Et",
+      "order_id": "Sipariş Numarası",
+      "email": "E-mail",
+      "submit_button": "SİPARİŞİ TAKİP ET"
+    },
+    "not_found": {
+      "title": "Sipariş Bulunamadı",
+      "description": "Lütfen sipariş numaranızı ve e-posta adresinizi doğru girdiğinizden emin olun.",
+      "button": "Geri Git"
+    },
+    "error": {
+      "required": "Bu alan gereklidir.",
+      "email_valid": "Lütfen geçerli eposta adresini giriniz."
+    }
+  }
+}

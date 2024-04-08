@@ -1,0 +1,18 @@
+*.js    text eol=lf
+*.jsx   text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.json  text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.md    text eol=lf
+*.sh    text eol=lf
+
+.eslintignore text eol=lf
+.eslintrc text eol=lf
+.gitignore text eol=lf
+.prettierrc text eol=lf
+.yarnrc text eol=lf
+
+* text=auto
+

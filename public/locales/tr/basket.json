@@ -1,0 +1,50 @@
+{
+  "my_cart": "Sepetim",
+  "back_to_shopping": "ALIŞVERİŞE GERİ DÖN",
+  "empty": {
+    "title": "Alışveriş Sepetiniz Boş!",
+    "content_first": "Sepetiniz şu anda boş",
+    "content_second": "Alışverişe devam etmek için ürünleri sepetinize ekleyebilirsiniz.",
+    "button": "ALIŞVERİŞE BAŞLA"
+  },
+  "card": {
+    "color": "Renk",
+    "size": "Beden",
+    "qty": "Adet",
+    "modal": {
+      "title": "Sil ve favorilere ekle",
+      "question": "Ürünü silmek istediğinizden emin misiniz?",
+      "delete": "Sil",
+      "add_to_favorites": "Sil ve Favorilere Ekle",
+      "cancel": "Vazgeç"
+    }
+  },
+  "summary": {
+    "title": "Özet",
+    "subtotal": "Ara toplam",
+    "items": "adetler",
+    "discounts_total": "İndirimler Toplamı",
+    "remove": "Kaldır",
+    "submit": "Gönder",
+    "total": "Toplam",
+    "proceed_to_checkout": "ÖDEMEYE DEVAM ET",
+    "form": {
+      "title": "İndirim veya Hediye Çeki",
+      "placeholder": "Kod",
+      "error": {
+        "required": "Bu alan gereklidir."
+      }
+    }
+  },
+  "mini_basket": {
+    "color": "Renk",
+    "size": "Beden",
+    "remove": "kaldır",
+    "my_bag": "Sepetim",
+    "items": "adet(ler)",
+    "subtotal": "Ara toplam",
+    "view_bag": "SEPETİ GÖRÜNTÜLE",
+    "continue_shopping": "alışverişe devam et",
+    "in_the_bag": "sepete eklendi"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "step": {
+    "shipping": "Shipping",
+    "payment": "Payment",
+    "confirmation": "Confirmation"
+  },
+  "auth": {
+    "title": "New To Zero?",
+    "signup": "Sign Up",
+    "guest_checkout": "Guest Checkout",
+    "form": {
+      "login": {
+        "email": {
+          "placeholder": "Email Address"
+        },
+        "phone": {
+          "placeholder": "Phone Number"
+        },
+        "agreement": {
+          "label": "I have read and accept the following",
+          "terms_conditions": "Terms and Conditions",
+          "privacy_policy": "Privacy Policy"
+        },
+        "button": "Continue to Checkout",
+        "error": {
+          "required": "This field is required.",
+          "email_control": "Please enter a valid e-mail.",
+          "phone_control": "Phone number is not valid"
+        }
+      }
+    }
+  },
+  "summary": {
+    "title": "My Cart",
+    "items": "ITEM(S)",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "discounts_total": "Discounts Total",
+    "total": "Total",
+    "delivery_info": "Delivery Info",
+    "change": "change",
+    "info": "to <ShippingAddress /> with <ShippingOption/>"
+  },
+  "address": {
+    "address": "Address",
+    "use_for_billing": "Use for Billing",
+    "add_new_address": "ADD A NEW ADDRESS",
+    "content": "Please choose a <addressType/> address.",
+    "delivery": "Delivery",
+    "billing": "Billing",
+    "shipping": {
+      "title": "Delivery Method",
+      "chosen_address": "Choose a delivery option for",
+      "select_address_to_continue": "Select a delivery address to continue.",
+      "button": "SAVE & CONTINUE"
+    },
+    "box": {
+      "shipping_to": "Shipping to",
+      "edit": "edit",
+      "remove": "remove"
+    },
+    "modal": {
+      "edit_address": "Edit Address"
+    }
+  },
+  "completed": {
+    "not_found": "Order detail was not found",
+    "title": "Order Confirmation",
+    "thank_you": "Thank you for your order",
+    "your_email": "YOUR EMAIL ADDRESS",
+    "order_total": "ORDER TOTAL",
+    "payment_type": "PAYMENT TYPE",
+    "order_summary": "Order Summary",
+    "items": "item(s)",
+    "purchase_info": "You can find your purchase information below.",
+    "confirmation_message": "We’ve received your order no <OrderNumber/> and will send you and email you as soon as your package is shipped.",
+    "side": {
+      "whats_next": "What’s Next?",
+      "description_first": "Please check your inbox, a confirmation email is on the way",
+      "description_second": "Meanwhile, if you need anything here we have some useful links",
+      "help_contact": "Help & Contact",
+      "my_account": "My Account",
+      "faq": "FAQ",
+      "discover_new_items": "DISCOVER NEW ITEMS"
+    }
+  },
+  "payment": {
+    "credit_card": {
+      "title": "Credit Card Info",
+      "description": "Please enter your credit card details.",
+      "form": {
+        "cardholder_name": {
+          "placeholder": "Cardholder Name"
+        },
+        "card_number": {
+          "placeholder": "Card Number"
+        },
+        "expiration_date": {
+          "title": "Expiration Date"
+        },
+        "month": {
+          "placeholder": "Month"
+        },
+        "year": {
+          "placeholder": "Year"
+        },
+        "security_code": {
+          "title": "Security Code",
+          "cvc": "What’s CVC?"
+        },
+        "error": {
+          "required": "This field is required.",
+          "cvv_length": "CVV must be 3 digits long.",
+          "installment": "Please select an installment.",
+          "card_number_length": "Card number must be 16 digits long.",
+          "card_holder_matches": "Only letters are allowed for this field"
+        },
+        "button": "Place Order"
+      }
+    },
+    "fund_transfer": {
+      "title": "Funds Transfer Info",
+      "description": "You will have 24 hours to complete your money transfer after you click place order button.",
+      "account_title": "Accounts you can use for funds transfer",
+      "receiver": "Receiver",
+      "attention": "ATTENTION",
+      "transfer_amount_title": "Amount to be paid by wire transfer:",
+      "info_first": "Please add <BoldTitle/> in the description field.",
+      "bold_title": "the order number",
+      "info_second": "Your order will be cancelled if you do not complete the transfer in 24 hours.",
+      "button": "Place Order"
+    },
+    "installment_options": {
+      "title": "Installment Options",
+      "description": "To see the installment options, you need to enter your card information.",
+      "installment": "Showing installment options for",
+      "payments": "Payments",
+      "per_month": "Per Month",
+      "total": "Total"
+    }
+  },
+  "agreement": {
+    "info_contract": "Info Contract",
+    "sales_contract": "Sales Contract",
+    "content": "Check here to indicate that you have read and agree to the terms of the <InfoContract /> and <SalesContract />."
+  },
+  "error": {
+    "title": "An unexpected error has occurred. Please try again later.",
+    "button": "Try Again"
+  }
+}
