@@ -87,16 +87,16 @@ export default async function FooterMenu() {
             <ul className="mr-8">
               {data?.attributes?.second_column_items?.map((item, i) => (
                 <li className="mb-2 text-base" key={i}>
-                  <Link
-                    href={item?.value?.redirect_url || '#'}
-                    target={
-                      item?.value?.is_target_blank === 'true'
-                        ? '_blank'
-                        : '_self'
-                    }
+                  <div
+                    // href={item?.value?.redirect_url || '#'}
+                    // target={
+                    //   item?.value?.is_target_blank === 'true'
+                    //     ? '_blank'
+                    //     : '_self'
+                    // }
                   >
-                    <p dangerouslySetInnerHTML={{ __html: item?.value?.name }}></p>
-                  </Link>
+                    <em dangerouslySetInnerHTML={{ __html: item?.value?.name || '' }} />
+                  </div>
                 </li>
               ))}
             </ul>
@@ -116,16 +116,16 @@ export default async function FooterMenu() {
             <ul className="lg:mr-8 xl:mr-16">
               {data?.attributes?.third_column_items?.map((item, i) => (
                 <li className="mb-2 text-base" key={i}>
-                  <Link
-                    href={item?.value?.redirect_url || '#'}
-                    target={
-                      item?.value?.is_target_blank === 'true'
-                        ? '_blank'
-                        : '_self'
-                    }
+                  <div
+                    // href={item?.value?.redirect_url || '#'}
+                    // target={
+                    //   item?.value?.is_target_blank === 'true'
+                    //     ? '_blank'
+                    //     : '_self'
+                    // }
                   >
-                    <p dangerouslySetInnerHTML={{ __html: item?.value?.name }}></p>
-                  </Link>
+                    <em dangerouslySetInnerHTML={{ __html: item?.value?.name || '' }} />
+                  </div>
                 </li>
               ))}
             </ul>

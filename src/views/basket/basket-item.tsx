@@ -79,8 +79,9 @@ export const BasketItem = (props: Props) => {
     <>
       <li
         key={basketItem.id}
-        className="flex border-b border-gray-200 py-3 relative"
+        className="flex border-b border-gray-200 py-3 relative my-2 "
       >
+        
         <div className="w-20 lg:w-24 mr-4 shrink-0">
           <Link href={basketItem.product.absolute_url} passHref>
             <Image
@@ -100,17 +101,27 @@ export const BasketItem = (props: Props) => {
             />
           </Link>
         </div>
-        <div className="w-full flex flex-col justify-between">
+        <div className="w-full flex flex-col justify-between" >
           <div className="flex h-full">
-            <div className="flex flex-1 flex-col gap-3 sm:flex-row sm:gap-1">
+            <div className="flex flex-1 flex-col gap-3 ">
               <div className="flex-1">
-                <Link
-                  href={basketItem.product.absolute_url}
-                  data-testid="basket-product-name"
-                  passHref
-                >
-                  <span className="text-xs">{basketItem.product.name}</span>
-                </Link>
+                <div className='flex items-center justify-between w-full'>
+                  <Link
+                    href={basketItem.product.absolute_url}
+                    data-testid="basket-product-name"
+                    passHref
+
+                  >
+                    <span className="text-xm color_blue">{basketItem.product.name}</span>
+                  </Link>
+                  <Icon
+                    name="close"
+                    size={8}
+                    className="self-center cursor-pointer close_cart_icon" // TODO: Add hover color. Fill not working
+                    onClick={() => setRemoveBasketModalOpen(true)}
+                    data-testid="basket-product-remove"
+                  />
+                </div>
                 <div className="flex flex-col gap-1">
                   {commonProductAttributes.map((attribute, index) => (
                     <span className="text-xs" key={index}>
@@ -124,33 +135,34 @@ export const BasketItem = (props: Props) => {
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col justify-center md:flex-row md:items-center lg:w-52">
-                <Select
-                  className="px-2"
-                  defaultValue={basketItem.quantity}
-                  onChange={(event) => {
-                    updateQuantity(
-                      basketItem.product.pk,
-                      Number(event.currentTarget.value)
-                    );
-                  }}
-                  options={[
-                    ...Array.from({ length: 10 }, (_, i) => i + 1),
-                    basketItem.quantity > 10 && basketItem.quantity
-                  ]
-                    .filter((i) => i)
-                    .map((i) => ({
-                      label: `${t('basket.card.qty')} ${i}`,
-                      value: `${i}`
-                    }))}
-                  data-testid="basket-product-quantity"
-                ></Select>
+              <div className="flex flex-col md:flex-row md:items-center gap-3 lg:w-52">
+                <div className="px-2 cart_button_add py-2 px-3"  >
+                  <button
+                    onClick={() => {
+                      updateQuantity(basketItem.product.pk, Math.max(1, basketItem.quantity - 1));
+                    }}
+                    disabled={basketItem.quantity <= 1}
+                    className="btn btn-secondary"
+                  >
+                    <Icon size={10} name='minus' className='cart_add_minus p-1' />
+                  </button>
+                  <span className="mx-4 color_cart_add_button">{basketItem.quantity}</span>
+                  <button
+                    onClick={() => {
+                      updateQuantity(basketItem.product.pk, basketItem.quantity + 1);
+                    }}
+                    className="btn btn-secondary "
+                  >
+                    <Icon size={10} name='plus' className='cart_minus_add p-1' />
+                    
+                  </button>
+                </div>
               </div>
               <div className="flex flex-col shrink-0 text-sm gap-2 items-start justify-center w-48 lg:flex-row lg:mr-6 lg:gap-6 sm:items-center lg:justify-start">
                 {parseFloat(basketItem.product.retail_price) >
                   parseFloat(basketItem.product.price) && (
                     <Price
-                      className="line-through"
+                      className="line-through color_blue"
                       value={basketItem.product.retail_price}
                     />
                   )}
@@ -158,21 +170,16 @@ export const BasketItem = (props: Props) => {
                   className={clsx(
                     parseFloat(basketItem.product.retail_price) >
                       parseFloat(basketItem.product.price)
-                      ? 'text-secondary-500'
-                      : 'text-primary'
+                      ? 'text-secondary-500 color_blue'
+                      : 'text-primary color_blue'
                   )}
-                  value={basketItem.product.price}
+                  value={'$' + basketItem.product.price}
+
                   data-testid="basket-product-price"
                 />
               </div>
             </div>
-            <Icon
-              name="close"
-              size={16}
-              className="self-center cursor-pointer hover:fill-secondary-500" // TODO: Add hover color. Fill not working
-              onClick={() => setRemoveBasketModalOpen(true)}
-              data-testid="basket-product-remove"
-            />
+
           </div>
 
           <PluginModule

@@ -46,7 +46,7 @@ export default function HomeHeroSliderContent({ data }) {
 const Wrapper = Styled.section`
   .home_hero_slider{
     position:relative;
-    margin-top:20px !important;
+    margin-top:20px;
   }
   .home_slider_content{
     position:absolute;
@@ -54,4 +54,9 @@ const Wrapper = Styled.section`
     left:10px;
     transform:translateY(-50%);
   }
+  @media screen and (max-width:767px) {
+    .home_hero_slider{
+      margin-top:0px;
+    }
+  } 
 `

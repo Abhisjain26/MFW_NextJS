@@ -63,12 +63,13 @@ export const Filters = (props: Props) => {
   return (
     <div
       className={clsx(
-        'w-9/10 fixed left-0 top-0 bottom-0 bg-white z-20 p-6 transition-all ease-in duration-300 lg:static lg:block lg:mr-16 lg:text-sm lg:p-0 lg:pt-4',
+        'w-9/10 fixed left-0 top-0 bottom-0 bg-white z-20 p-6 transition-all ease-in duration-300 lg:static lg:block lg:mr-16 lg:text-sm lg:p-0 ',
         isMenuOpen
           ? 'flex flex-col opacity-100 overflow-auto'
           : 'opacity-0 invisible absolute -translate-x-full lg:opacity-100 lg:visible lg:translate-x-0'
       )}
     >
+      <h2 className='uppercase text-lg font-semibold filter_header_list '>filters</h2>
       <div className="flex justify-between mb-6 lg:hidden">
         <h3 className="text-2xl">{t('category.filters.title')}</h3>
         <Icon name="close" size={22} onClick={() => setIsMenuOpen(false)} />
@@ -79,6 +80,7 @@ export const Filters = (props: Props) => {
       </div>
       {facets.map((facet) => {
         let Component = null;
+        
         const choices = [...facet.data.choices];
 
         if (facet.key === 'integration_SizeId') {
@@ -112,6 +114,7 @@ export const Filters = (props: Props) => {
               )}
             >
               {choices.map((choice, index) => (
+                
                 <Component // TODO: This dynamic component can be a hook or higher order component so it props can be standardized
                   key={choice.label}
                   data={choice}

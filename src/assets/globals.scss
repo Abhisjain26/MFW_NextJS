@@ -78,7 +78,7 @@
   }
 
   .max-container {
-    max-width: 1100px;
+    max-width: 1170px;
     margin: 0 auto;
   }
 
@@ -134,6 +134,121 @@
   font-weight: 600;
 }
 
+.mobile_content_middle,
+.mobile_header_logo {
+  display: none !important;
+}
+
+.icon_header,.header_login_mobile a{
+  color: #EB89B5 !important;
+}
+.explore_content{
+  color: #EB89B5 !important;
+font-weight: 600 !important;
+text-align: center !important;
+font-size: 18px !important;
+white-space: nowrap !important;
+}
+.mobile_user_profile_image {
+  width: 50px !important;
+  height: auto !important;
+}
+
+.mobile_user_profile_text {
+  font-size: 18px !important;
+  color: #003744 !important;
+  font-weight: 600 !important;
+}
+
+.mobile_menu_items:hover {
+  background-color: #EB89B5 !important;
+  color: #fff !important;
+}
+.category_card{
+  border: 1px solid #C475AB !important;
+  padding: 15px !important;
+  border-radius: 5px !important;
+}
+.navbar_content_card{
+  border-right:1px solid #CCCCCC !important;
+}
+.navbar_dummy_image{
+  width: 60px !important;
+  height: auto !important;
+}
+.filter_header_list{
+  border-top:1.5px solid #E987B4 !important;
+  border-bottom:1.5px solid #E987B4 !important;
+  padding: 8px 0 !important;
+  margin-bottom: 30px !important;
+}
+.cart_empty_title{
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  color: #003744 !important;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
+.cart_empty_subtitle{
+  font-size: 14px !important;
+  margin: 10px 0 !important;
+  color: #003744 !important;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
+
+
+
+// --------------------  Cart  -------------------------
+
+.color_blue{
+  color: #003744 !important;
+  font-weight: 600 !important;
+}
+.close_cart_icon{
+  background-color: #C475AB !important;
+  color: #fff !important;
+  border-radius: 50% !important;
+  padding: 5px !important;
+}
+.cart_button_add{
+  border: 1px solid #b9b9b9 !important;
+}
+.color_cart_add_button{
+  color: #343434 !important;
+}
+.border_cart_add{
+  border: 1px solid #343434 !important;
+  padding: 3px 0 !important;
+}
+.cart_add_minus{
+  border: 1px solid #b9b9b9 !important;
+  transform: skewY(-10deg);
+}
+.cart_minus_add{
+  border: 1px solid #b9b9b9 !important;
+  transform: skewY(-170deg);
+}
+.summary_cart_button{
+  position: absolute !important;
+  top: 50% !important;
+  right: 10px !important;
+  transform: translateY(-50%) !important;
+  background-color: #999999 !important;
+  color: #fff !important;
+  border: 1px solid #999999 !important;
+}
+.summary_icon{
+  color: #C475AB !important;
+  margin-right: 10px !important;
+}
+.loaction_text_color{
+  color: #0076CB !important;
+}
+.add_address_button{
+  font-size: 12px !important;
+  padding: 0px 16px !important;
+}
+
+
 @media screen and (max-width:767px) {
   .max-container {
     margin: 0 10px;
@@ -154,6 +269,7 @@
 
   .home_advertisment_container {
     padding: 20px !important;
+
   }
 
   .home_advertisment_content,
@@ -203,5 +319,21 @@
 
   .home_thankyou_text h2 {
     font-size: 28px !important;
+  }
+
+  .mobile_content_middle,
+  .mobile_header_logo {
+    display: block !important;
+  }
+
+  .header_logo {
+    display: none !important;
+  }
+  .home_slider_content h2{
+    text-align: center !important;
+  }
+  .navbar_dummy_image{
+    width: 90px !important;
+    height: auto !important;
   }
 }

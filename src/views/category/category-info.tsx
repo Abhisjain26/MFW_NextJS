@@ -16,6 +16,7 @@ import { Link, LoaderSpinner } from '@akinon/next/components';
 import { ROUTES } from '@theme/routes';
 import { useRouter } from '@akinon/next/hooks';
 import { ProductItemSingle } from '../product-item-single/product-item-single';
+import Breadcrumb from '../breadcrumb';
 
 interface ListPageProps {
   data: GetCategoryResponse;
@@ -23,8 +24,9 @@ interface ListPageProps {
 
 export default function ListPage(props: ListPageProps) {
   const { data } = props;
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false); // TODO: Move to redux
-
+  const [paginationData, setPaginationData] = useState([...data.products]);
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -33,18 +35,30 @@ export default function ListPage(props: ListPageProps) {
     [searchParams]
   );
 
-  const page = useMemo(
-    () => Number(searchParams.get('page') ?? 1),
-    [searchParams]
-  );
+  const [page, setPage] = useState(Number(searchParams.get('page') ?? 1));
+
+
+  // const page = useMemo(
+  //   () => Number(searchParams.get('page') ?? 1),
+  //   [searchParams]
+  // );
+
+  useEffect(() => {
+    if (page == 1) {
+      setPaginationData([...data.products])
+    } else {
+      setPaginationData([]);
+    }
+  }, [searchParams, data.products, page]);
+
 
   useEffect(() => {
     if (page > 1 && data.products?.length === 0) {
       const newUrl = new URL(window.location.href);
-
       newUrl.searchParams.delete('page');
       router.push(newUrl.pathname + newUrl.search, undefined);
     }
+
   }, [searchParams, data.products, page]);
 
   const dispatch = useAppDispatch();
@@ -52,12 +66,22 @@ export default function ListPage(props: ListPageProps) {
 
   useEffect(() => {
     dispatch(setFacets(data.facets));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.facets]);
-
+  const handlePageChange = (newPage: number) => {
+    setPage(newPage);
+    setPaginationData((prev) => [...prev, ...data.products]);
+  };
+  
+  
   return (
     <>
       <div className="container px-4 mx-auto lg:px-0 lg:my-4">
+        <div className="grid grid-cols-[19rem_1fr]">
+          <div className='w-9/10 fixed left-0 top-0 bottom-0 bg-white z-20 p-6 transition-all ease-in duration-300 lg:static lg:block lg:mr-16 lg:text-sm lg:p-0 '></div>
+          <div className='flex flex-col items-center lg:items-stretch col-span-2 lg:col-span-1'>
+            {/* <Breadcrumb /> */}
+          </div>
+        </div>
         <div className="grid grid-cols-[19rem_1fr]">
           <Filters isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
           <div
@@ -88,7 +112,8 @@ export default function ListPage(props: ListPageProps) {
               </div>
             )}
 
-            {data.products.length === 0 && page > 1 && <LoaderSpinner />}
+            {/* {data.products.length === 0 && page > 1 && <LoaderSpinner />} */}
+            {paginationData.length === 0 && page > 1 && <LoaderSpinner />}
 
             <div
               className={clsx('grid gap-x-4 gap-y-12 grid-cols-1', {
@@ -97,7 +122,8 @@ export default function ListPage(props: ListPageProps) {
                 'lg:grid-cols-3': Number(layoutSize) === 3
               })}
             >
-              {data.products.map((product, index) => (
+              {/* {data.products.map((product, index) => ( */}
+              {paginationData.map((product, index) => (
                 <>
                   {
                     Number(layoutSize) === 3 ?
@@ -109,24 +135,28 @@ export default function ListPage(props: ListPageProps) {
                         index={index}
                       />
                       :
-                    <ProductItemSingle
-                      key={product.pk}
-                      product={product}
-                      width={100}
-                      height={100}
-                      index={index}
-                    />
+                      <ProductItemSingle
+                        key={product.pk}
+                        product={product}
+                        width={100}
+                        height={100}
+                        index={index}
+                      />
                   }
                 </>
               ))}
             </div>
             {data.products.length > 0 && (
               <Pagination
+                type='infinite'
                 total={data.pagination.total_count}
-                limit={data.pagination.page_size}
+                // limit={data.pagination.page_size}
                 currentPage={data.pagination.current_page}
-                numberOfPages={data.pagination.num_pages}
-              />
+                onPageChange={handlePageChange}
+                // numberOfPages={data.pagination.num_pages}
+                
+                // onClick={onPageChang}
+                />
             )}
           </div>
         </div>

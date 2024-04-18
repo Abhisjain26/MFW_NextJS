@@ -113,7 +113,7 @@ export default async function HomeStoriesEng() {
 
               <Link
                 href={story?.value?.url}
-                className="block text-center underline text-sm font-medium"
+                className="block text-centern explore_content text-sm font-medium"
                 aria-label={story?.value?.alt}
               >
                 {story?.value?.alt}

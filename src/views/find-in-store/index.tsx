@@ -163,9 +163,9 @@ export const FindInStore = ({ productPk, productName, variants }) => {
                   <Link
                     href={`https://maps.google.com/?q=${store.latitude},${store.longitude}`}
                   >
-                    <a target="_blank">
-                      <Button>{t('product.find_in_store.directions')}</Button>
-                    </a>
+                    {/* <a target="_blank"> */}
+                    <Button>{t('product.find_in_store.directions')}</Button>
+                    {/* </a> */}
                   </Link>
                 </div>
               </Accordion>

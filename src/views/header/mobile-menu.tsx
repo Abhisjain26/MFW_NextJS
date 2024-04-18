@@ -1,10 +1,11 @@
 'use client';
-
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MenuItemType } from '@akinon/next/types';
 import { useAppDispatch, useAppSelector } from '@akinon/next/redux/hooks';
 import { closeMobileMenu } from '@akinon/next/redux/reducers/header';
 import clsx from 'clsx';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 import { UserMenu } from './user-menu';
 import {
@@ -15,6 +16,7 @@ import {
   Link
 } from '@theme/components';
 import { useLocalization } from '@akinon/next/hooks';
+import { Image } from '@akinon/next/components';
 
 interface MobileMenuProps {
   menu: MenuItemType[];
@@ -27,10 +29,16 @@ export default function MobileMenu(props: MobileMenuProps) {
     null
   );
   const { t } = useLocalization();
+  const [activeTab, setActiveTab] = useState(0); // State to manage active tab index
 
   const isMobileMenuOpen = useAppSelector(
     (state) => state.header.isMobileMenuOpen
   );
+
+  const handleTabClick = (index: number) => {
+    setActiveTab(index);
+    setSelectedSubMenu(null);
+  };
 
   return (
     <>
@@ -59,82 +67,47 @@ export default function MobileMenu(props: MobileMenuProps) {
       >
         <UserMenu isMobile />
         <div className="relative flex-1 overflow-x-hidden">
-          <ul
-            className={clsx('pt-4 transition duration-500 transform', {
-              '-translate-x-full': selectedSubMenu
-            })}
-          >
-            {menu.map(
-              (item, index) =>
-                item.label != null && (
-                  <li key={index} className="py-4 text-sm px-8">
-                    <Link
-                      href={item.url}
-                      onClick={(e) => {
-                        if (item.children.length > 0) {
-                          e.preventDefault();
-                          setSelectedSubMenu(item);
-                        }
-                      }}
-                      className="flex items-center justify-between"
-                    >
-                      <span>{item.label}</span>
-                      <Icon name="chevron-end" size={14} />
-                    </Link>
-                  </li>
-                )
-            )}
-          </ul>
-          <div
-            className={clsx(
-              'absolute top-0 left-0 right-0 px-8 bg-white invisible opacity-0 transition duration-500 transform translate-x-full',
-              {
-                '!visible !opacity-100 !translate-x-0': selectedSubMenu
-              }
-            )}
-          >
-            <header className="flex items-center justify-between border-b h-[61px] py-4 mb-4">
-              <Button
-                appearance="ghost"
-                onClick={() => setSelectedSubMenu(null)}
-                className="underline text-xs font-semibold flex items-center gap-2 !p-0"
-              >
-                <Icon name="chevron-start" size={12} className="shrink-0" />
-                {t('common.mobile_menu.back')}
-              </Button>
-              <span className="text-sm">{selectedSubMenu?.label}</span>
-            </header>
-            <div className="flex flex-col">
-              {selectedSubMenu?.children.map((child, index) => (
-                <div key={index} className="flex flex-col">
+          <Tabs selectedIndex={activeTab} onSelect={handleTabClick}>
+            <TabList>
+              {menu.map((item, index) => (
+                <Tab key={index} className="py-4 text-sm px-4 mobile_menu_items">
                   <Link
-                    onClick={() => dispatch(closeMobileMenu())}
-                    href={child.url}
-                    className="text-xs font-bold py-4"
+                    href={item.url}
+                    onClick={(e) => {
+                      if (item.children.length > 0) {
+                        e.preventDefault();
+                        setSelectedSubMenu(item);
+                      }
+                    }}
+                    className="flex items-center justify-between"
                   >
-                    {child.label}
+                    <span>{item.label}</span>
+                    <Icon name="chevron-end" size={14} />
                   </Link>
-
-                  <ul>
-                    {child.children.map((subChild, index) => (
-                      <li key={index} className="">
-                        <Link
-                          onClick={() => dispatch(closeMobileMenu())}
-                          href={subChild.url}
-                          className="text-sm flex items-center justify-between py-4"
-                        >
-                          <span>{subChild.label}</span>
-                          <Icon name="chevron-end" size={14} />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                </Tab>
               ))}
-            </div>
-          </div>
+            </TabList>
+            {menu.map((item, index) => (
+              <TabPanel key={index}>
+                <ul className='flex flex-wrap items-center justify-center gap-10'>
+                  {item.children.map((child, childIndex) => (
+                    <li key={childIndex} className="grid place-items-center">
+                      <Image className='navbar_dummy_image' alt='' width={100} height={100} src={'images/navbar/dummy-navbar.svg'} />
+                      <Link
+                        onClick={() => dispatch(closeMobileMenu())}
+                        href={child.url}
+                        className="text-sm flex items-center justify-between py-4"
+                      >
+                        <span>{child.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </TabPanel>
+            ))}
+          </Tabs>
         </div>
-        <div className="flex gap-x-4 px-8 py-4">
+        <div className="flex gap-x-4 px-4 py-4">
           <LanguageSelect className="bg-transparent w-11 px-0 text-sm" />
           <CurrencySelect className="bg-transparent w-12 px-0 text-sm" />
         </div>

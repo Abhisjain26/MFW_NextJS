@@ -107,15 +107,18 @@ export const Pagination = (props: PaginationProps) => {
 
   const handlePageChange = () => {
     let changingPage;
-
+  
     if (direction === 'prev') {
       changingPage = Number(type !== 'list' ? prevPage : page) - 1;
       setPrevPage(changingPage);
     } else {
       changingPage = Number(type !== 'list' ? nextPage : page) + 1;
+      
+      if (changingPage > numberOfPages) {
+        changingPage = 1;
+      }
       setNextPage(changingPage);
     }
-
     onPageChange(changingPage);
   };
 

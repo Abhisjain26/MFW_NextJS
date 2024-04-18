@@ -5,7 +5,6 @@ import CategoryLayout from '@theme/views/category/layout';
 
 async function Page({ searchParams }: PageProps) {
   const data = await getListData({ searchParams });
-
   return (
     <>
       <CategoryLayout data={data} />

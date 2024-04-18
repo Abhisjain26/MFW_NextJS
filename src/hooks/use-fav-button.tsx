@@ -74,7 +74,7 @@ const useFavButton = (productPk: number) => {
     const View = (props: FavButtonProps) => (
       <button
         className={clsx(
-          'flex items-center hover:text-secondary-hover hover:cursor-pointer',
+          'flex items-center hover:text-secondary-hover hover:cursor-pointer bg-white rounded-full px-2 py-1',
           props.className
         )}
         onClick={handleClick}

@@ -17,7 +17,7 @@ export const pushPageView = (url: string) => {
 
 export const pushAddToCart = (product) => {
   pushEventGA4('add_to_cart', {
-    currency: product?.currency_type,
+    currency: product?.currency_type, 
     items: [
       {
         item_id: product?.base_code?.toString(),

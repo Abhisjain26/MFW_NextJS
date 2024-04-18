@@ -43,7 +43,7 @@ export const ProductItem = (props: Props) => {
   return (
     <Wrapper>
       <div
-        className="text-sm text-left flex border_pink flex-col h-full"
+        className="text-sm text-left flex  flex-col h-full"
         data-testid="product-box"
         ref={ref}
       >
@@ -94,7 +94,7 @@ export const ProductItem = (props: Props) => {
             )}
             <Price value={price} data-testid="product-price" className='listing_text' />
             <button className='pinkbtn w-full font-normal uppercase py-5 rounded-none'>Buy Now</button>
-            <button className='bluebtn mt-1 font-normal w-full uppercase rounded-none'><Image width={20} className='add_to_cart_image mr-1' height={20} src={'images/listing/add-to-cart.svg'} alt='' />Add to cart</button>
+            <button className='bluebtn mt-1 font-normal flex justify-center items-center w-full uppercase rounded-none'><Image width={20} className='add_to_cart_image mr-1' height={20} src={'images/listing/add-to-cart.svg'} alt='' />Add to cart</button>
           </div>
         </div>
       </div>

@@ -51,9 +51,9 @@ async function RootLayout({
         <PzRoot translations={translations} {...params}>
           <ClientRoot>
             <div className="overflow-x-hidden">
-              <MobileAppToggler>
-                <Header />
-              </MobileAppToggler>
+            <MobileAppToggler>
+              <Header />
+            </MobileAppToggler>
               <main>
                 {children}
                 <RootModal />

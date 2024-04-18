@@ -7,20 +7,18 @@ import FeatureComponent from '@theme/views/widgets/home/feature-product-content'
 
 
 
-export default function HomeFeatureIntimateContent({ datas }) {
+export default function HomeFeatureIntimateContent() {
 
     return (
         <Wrapper className='max-container'>
-            {datas?.attributes?.home_feature_intimate?.map((item, i) => (
-                <div
-                    key={i}
-                >
+            {/* {datas?.attributes?.home_feature_intimate?.map((item, i) => ( */}
+                <div>
                     <div className='home_slider_content'>
-                        <h2>{item.value.text}</h2>
+                        <h2>Feature Shoes</h2>
                     </div>
                     <FeatureComponent />
                 </div>
-            ))}
+            {/* ))} */}
         </Wrapper>
     );
 }

@@ -1,7 +1,8 @@
 enum GENERAL_ROUTES {
   HOME = '/',
   BASKET = '/baskets/basket',
-  LIST = '/list'
+  LIST = '/list',
+  Fintech = '/Fintech',
 }
 
 enum AUTH_ROUTES {

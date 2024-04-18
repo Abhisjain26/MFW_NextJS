@@ -119,19 +119,22 @@ export const CategoryHeader = (props: Props) => {
               className="absolute right-1 top-1/2 transform -translate-y-1/2"
             />
           </Button>
-          <Select
-            options={sortOptions}
-            value={sortOptions.find(({ is_selected }) => is_selected).value}
-            data-testid="list-sorter"
-            className='dropdown_list_grid'
-            onChange={(e) => {
-              handleSelectFilter({
-                key: 'sorter',
-                value: e.currentTarget.value
-              });
-            }}
-            borderless={false}
-          />
+          <div className='flex items-center'>
+            <h3 className='uppercase text-base font-medium'>Sort by :</h3>
+            <Select
+              options={sortOptions}
+              value={sortOptions.find(({ is_selected }) => is_selected).value}
+              data-testid="list-sorter"
+              className='dropdown_list_grid'
+              onChange={(e) => {
+                handleSelectFilter({
+                  key: 'sorter',
+                  value: e.currentTarget.value
+                });
+              }}
+              borderless={false}
+            />
+          </div>
         </div>
         {totalCount === 0 && (
           <div className="h-40 flex items-center justify-center  flex-col bg-gray-200 p-4">

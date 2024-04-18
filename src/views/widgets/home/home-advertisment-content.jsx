@@ -1,11 +1,31 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
 import { Image } from '@akinon/next/components/image';
 
 export default function HomeAdvertismentContent({ data }) {
+    const [showFullText, setShowFullText] = useState(false);
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileView(window.innerWidth <= 767);
+        };
+
+        // Call the handleResize function initially and add event listener
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        // Remove event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const toggleText = () => {
+        setShowFullText(!showFullText);
+    };
+
     return (
         <Wrapper>
             <div className='max-container home_advertisment_container p-10'>
@@ -26,17 +46,27 @@ export default function HomeAdvertismentContent({ data }) {
                         key={i}
                     >
                         <div className='home_advertisment_content'>
-                            <div dangerouslySetInnerHTML={{ __html: item.value.text }} />
-                            <button className='btn pinkbtn'>{item.value.link}SHOP NOW</button>
+                            <div dangerouslySetInnerHTML={{ __html: showFullText || !isMobileView ? item.value.text : `${item.value.text.substring(0, 140)}...` }} />
+                            <div className='flex items-center gap-3'>
+                                {isMobileView &&
+                                    <>
+                                        {item.value.text.length > 150 &&
+                                            <button className='btn read_more_btn pinkbtn' onClick={toggleText}>
+                                                {showFullText ? 'Read Less' : 'Read More'}
+                                            </button>
+                                        }
+                                    </>
+                                }
+                                <button className='btn pinkbtn'>{item.value.link}SHOP NOW</button>
+                            </div>
                         </div>
                         <div className='home_advertisment_image'>
                             <Image
                                 src={item.kwargs.value.image.url}
                                 width={500}
                                 height={500}
-                                alt={""}
+                                alt=""
                             />
-
                         </div>
                     </div>
                 ))}
@@ -82,4 +112,17 @@ const Wrapper = Styled.section`
         left:-60px;
         z-index:-1px
     }
-`
+    .read_more_btn{
+        display:none;
+    }
+    
+    @media screen and (max-width:767px){
+        .home_advertisment_content .read_more_btn{
+            display:block;
+        }
+        .home_advertisment_content h1{
+            font-size:36px !important;
+        }
+    }
+`;
+

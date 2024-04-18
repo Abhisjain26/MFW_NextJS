@@ -1,11 +1,31 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
 import { Image } from '@akinon/next/components/image';
 
 export default function HomeValentineContent({ data }) {
+    const [showFullText, setShowFullText] = useState(false);
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileView(window.innerWidth <= 767);
+        };
+
+        // Call the handleResize function initially and add event listener
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        // Remove event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const toggleText = () => {
+        setShowFullText(!showFullText);
+    };
+
 
     return (
         <Wrapper>
@@ -16,8 +36,19 @@ export default function HomeValentineContent({ data }) {
                         key={i}
                     >
                         <div className='home_advertisment_content'>
-                            <div dangerouslySetInnerHTML={{ __html: item.value.text }} />
-                            <button className='btn pinkbtn'>{item.value.link}SHOP NOW</button>
+                            <div dangerouslySetInnerHTML={{ __html: showFullText || !isMobileView ? item.value.text : `${item.value.text.substring(0, 135)}...` }} />
+                            <div className='flex items-center gap-3'>
+                                {isMobileView &&
+                                    <>
+                                        {item.value.text.length > 150 &&
+                                            <button className='btn read_more_btn pinkbtn' onClick={toggleText}>
+                                                {showFullText ? 'Read Less' : 'Read More'}
+                                            </button>
+                                        }
+                                    </>
+                                }
+                                <button className='btn pinkbtn'>{item.value.link}SHOP NOW</button>
+                            </div>
                         </div>
                         <div className='home_advertisment_image'>
                             <Image
@@ -66,5 +97,17 @@ const Wrapper = Styled.section`
     }
     .home_advertisment_content p{
         margin-top:10px;
+    }
+    .read_more_btn{
+        display:none;
+    }
+    
+    @media screen and (max-width:767px){
+        .home_advertisment_content .read_more_btn{
+            display:block;
+        }
+        .home_advertisment_content h1{
+            font-size:36px !important;
+        }
     }
 `

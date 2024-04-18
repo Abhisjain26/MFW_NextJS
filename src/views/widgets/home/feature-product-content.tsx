@@ -10,13 +10,64 @@ import { Image } from '@akinon/next/components/image';
 
 export default function FeatureComponent() {
 
+  const data = [
+    {
+      image: '/images/home/girl.svg',
+      title: 'Satin Nightgown Spaghetti Straps',
+      price: '1502.12 INR',
+      price_old: '1502.12 INR',
+      buy: 'Buy Now',
+      cart: 'Add to Cart'
+    },
+    {
+      image: '/images/home/girl.svg',
+      title: 'Satin Nightgown Spaghetti Straps',
+      price: '1502.12 INR',
+      price_old: '1502.12 INR',
+      buy: 'Buy Now',
+      cart: 'Add to Cart'
+    },
+    {
+      image: '/images/home/girl.svg',
+      title: 'Satin Nightgown Spaghetti Straps',
+      price: '1502.12 INR',
+      price_old: '1502.12 INR',
+      buy: 'Buy Now',
+      cart: 'Add to Cart'
+    },
+    {
+      image: '/images/home/girl.svg',
+      title: 'Satin Nightgown Spaghetti Straps',
+      price: '1502.12 INR',
+      price_old: '1502.12 INR',
+      buy: 'Buy Now',
+      cart: 'Add to Cart'
+    },
+    {
+      image: '/images/home/girl.svg',
+      title: 'Satin Nightgown Spaghetti Straps',
+      price: '1502.12 INR',
+      price_old: '1502.12 INR',
+      buy: 'Buy Now',
+      cart: 'Add to Cart'
+    },
+  ]
+
   return (
     <Wrapper>
       <CarouselCore
         responsive={{
           all: {
-            breakpoint: { max: 5000, min: 0 },
-            items: 1
+            breakpoint: { max: 4000, min: 0 },
+            items: 4
+          },
+          table:{
+            breakpoint: { max: 4000, min: 0 },
+            items: 4
+          },
+          mobile:{
+            breakpoint: { max: 767, min: 0 },
+            items: 2
           }
         }}
         className='max-container rounded-1'
@@ -24,64 +75,26 @@ export default function FeatureComponent() {
         swipeable={true}
       >
         {/* {data?.attributes?.hero_slider?.map((item, i) => ( */}
-        <div className='home_feature_container flex gap-3'>
-          <div className='home_feature_card'>
-            <div className="home_feature_image">
-              <Image src={'images/home/girl.svg'} className='home_feature_image_1' width={100} height={100} alt="" />
-            </div>
-            <div className="home_feature_text">
-              <h2>Satin Nightgown Spaghetti Straps</h2>
-              <div className="home_feature_price flex gap-4">
-                <h3>1502.12 INR</h3>
-                <h4>1502.12 INR</h4>
+
+        {data.map((item,index) => {
+          return (<div className='home_feature_container flex gap-1' key={index}>
+            <div className='home_feature_card'>
+              <div className="home_feature_image">
+                <Image src={item.image} className='home_feature_image_1' width={100} height={100} alt="" />
               </div>
-              <button className='pinkbtn'>Buy Now</button>
-              <button className='addCart'>Add to Cart</button>
+              <div className="home_feature_text">
+                <h2>{item.title}</h2>
+                <div className="home_feature_price flex gap-4">
+                  <h3>{item.price}</h3>
+                  <h4>{item.price_old}</h4>
+                </div>
+                <button className='pinkbtn'>{item.buy}</button>
+                <button className='addCart'>{item.cart}</button>
+              </div>
             </div>
           </div>
-          <div className='home_feature_card'>
-            <div className="home_feature_image">
-              <Image src={'images/home/girl.svg'} className='home_feature_image_1' width={100} height={100} alt="" />
-            </div>
-            <div className="home_feature_text">
-              <h2>Satin Nightgown Spaghetti Straps</h2>
-              <div className="home_feature_price flex gap-4">
-                <h3>1502.12 INR</h3>
-                <h4>1502.12 INR</h4>
-              </div>
-              <button className='pinkbtn'>Buy Now</button>
-              <button className='addCart'>Add to Cart</button>
-            </div>
-          </div>
-          <div className='home_feature_card'>
-            <div className="home_feature_image">
-              <Image src={'images/home/girl.svg'} className='home_feature_image_1' width={100} height={100} alt="" />
-            </div>
-            <div className="home_feature_text">
-              <h2>Satin Nightgown Spaghetti Straps</h2>
-              <div className="home_feature_price flex gap-4">
-                <h3>1502.12 INR</h3>
-                <h4>1502.12 INR</h4>
-              </div>
-              <button className='pinkbtn'>Buy Now</button>
-              <button className='addCart'>Add to Cart</button>
-            </div>
-          </div>
-          <div className='home_feature_card'>
-            <div className="home_feature_image">
-              <Image src={'images/home/girl.svg'} className='home_feature_image_1' width={100} height={100} alt="" />
-            </div>
-            <div className="home_feature_text">
-              <h2>Satin Nightgown Spaghetti Straps</h2>
-              <div className="home_feature_price flex gap-4">
-                <h3>1502.12 INR</h3>
-                <h4>1502.12 INR</h4>
-              </div>
-              <button className='pinkbtn'>Buy Now</button>
-              <button className='addCart'>Add to Cart</button>
-            </div>
-          </div>
-        </div>
+          )
+        })}
         {/* ))} */}
       </CarouselCore>
     </Wrapper>
@@ -91,10 +104,10 @@ export default function FeatureComponent() {
 const Wrapper = Styled.section`
 .home_feature_container{
   /* margin-top:10px; */
-  padding:10px 20px;
+  padding:10px;
 }
   .home_feature_card{
-    width:24%
+    width:100%;
   }
   .home_feature_image_1{
     width:100%;
@@ -133,4 +146,13 @@ const Wrapper = Styled.section`
     text-align:center;
     padding:8px 10px;
   }
+  @media screen and (max-width:767px){
+    .home_feature_container{
+      padding:0;
+      flex-wrap:wrap;
+    }
+    .home_feature_card{
+      width:98%;
+    }
+}
 `

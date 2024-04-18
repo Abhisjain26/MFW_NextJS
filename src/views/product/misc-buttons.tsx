@@ -29,8 +29,8 @@ export default function MiscButtons({
         label={t('product.add_to_favorites')}
         className="px-1 py-2 text-base hidden sm:flex"
       />
-      <div className="h-5 border border-black hidden sm:block" />
-      <Button
+      {/* <div className="h-5 border border-black hidden sm:block" /> */}
+      {/* <Button
         appearance="outlined"
         className="group px-12 py-2 text-xs place-self-start sm:text-base sm:border-none sm:px-4"
         data-testid="product-find-in-store"
@@ -44,7 +44,7 @@ export default function MiscButtons({
             className={clsx('hidden sm:block group-hover:fill-[white]')}
           />
         </div>
-      </Button>
+      </Button> */}
       <Modal
         portalId="find-in-store-modal"
         title={t('product.find_in_store.title')}

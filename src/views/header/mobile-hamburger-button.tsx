@@ -17,8 +17,8 @@ export default function MobileHamburgerButton() {
         className={clsx([
           'w-12',
           'h-12',
-          'bg-secondary',
-          'text-white',
+          'bg-white',
+          'text-dark',
           'flex',
           'items-center',
           'justify-center',

@@ -1,12 +1,26 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Style from './home-news.module.css';
 import { Link } from '@theme/components';
 import { Image } from '@akinon/next/components/image';
 
 export default function HomeNewsContent({ data }) {
+    const [showFullText, setShowFullText] = useState(false);
+    const [isMobileView, setIsMobileView] = useState(false);
 
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobileView(window.innerWidth <= 767);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const toggleText = () => {
+        setShowFullText(!showFullText);
+    };
     return (
         <div>
             <div className={`max-container ${Style.news}`}>
@@ -49,12 +63,26 @@ export default function HomeNewsContent({ data }) {
                                 />
                                 <div className={`${Style.home_news_title}`} dangerouslySetInnerHTML={{ __html: item.value.text }} />
                             </div>
-                            <div className={`${Style.home_news_para}`} dangerouslySetInnerHTML={{ __html: item.value.subtext }}></div>
+                            {/* <div className={`${Style.home_news_para}`} dangerouslySetInnerHTML={{ __html: item.value.subtext }}></div> */}
+                            <div className={`${Style.home_news_para}`} dangerouslySetInnerHTML={{ __html: showFullText || !isMobileView ? item.value.subtext : `${item.value.subtext.substring(0, 135)}...` }} />
 
-                            <hr className={`${Style.home_top}`} />
-                            <hr className={`${Style.home_bottom}`} />
-                            <div className={`${Style.news_btn}`}>
-                                <button className='pinkbtn '><a href={item.value.link}>MORE ARTICLES</a></button></div>
+                            {isMobileView &&
+                                <div>
+                                    {item.value.text.length > 300 &&
+                                        <button className={`btn pinkbtn ${Style.read_more_btn}`} onClick={toggleText}>
+                                            {showFullText ? 'LESS ARTICLES' : 'MORE ARTICLES'}
+                                        </button>
+                                    }
+                                </div>
+                            }
+
+                            <div className={` news_hidden ${Style.news_hidden}`}>
+                                <hr className={`${Style.home_top}`} />
+                                <hr className={`${Style.home_bottom}`} />
+                                <div className={`${Style.news_btn}`}>
+                                    <button className='pinkbtn '><a href={item.value.link}>MORE ARTICLES</a></button>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

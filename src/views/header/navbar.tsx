@@ -9,6 +9,8 @@ import { Icon, Link } from '@theme/components';
 import Search from './search';
 import { useLocalization } from '@akinon/next/hooks';
 import { Image } from '@akinon/next/components/image';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 interface NavbarProps {
   menu: MenuItemType[];
@@ -19,36 +21,26 @@ export default function Navbar(props: NavbarProps) {
 
   const dispatch = useAppDispatch();
   const { isSearchOpen, openedMenu } = useAppSelector((state) => state.header);
-  const [openedClass, setopenedClass] = useState(null);
-  const { t } = useLocalization();
+  const [currentUrl, setCurrentUrl] = useState("");
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
-  const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
-  // console.log(currentUrl);
-
-
-  // const toggleMenu = (itemPk) => {
-  //   if (openedClass === itemPk) {
-  //     setopenedClass(null);
-  //   } else {
-  //     setopenedClass(itemPk);
-  //   }
-  // };
-  const isActive = (url) => {
-    // console.log("url", url);
-    // console.log("active", currentUrl);
-
+  const handleTabClick = (index) => {
+    setSelectedTabIndex(index);
+    dispatch(setOpenedMenu(null));
+  };
+  const isActive = (url: string) => {
     return url === currentUrl ? 'active_header' : '';
   };
 
   useEffect(() => {
+    setCurrentUrl(window.location.pathname);
+
     const handleUrlChange = () => {
       setCurrentUrl(window.location.pathname);
     };
 
-    // Subscribe to URL changes when component mounts
     window.addEventListener('popstate', handleUrlChange);
 
-    // Unsubscribe from URL changes when component unmounts
     return () => {
       window.removeEventListener('popstate', handleUrlChange);
     };
@@ -58,160 +50,134 @@ export default function Navbar(props: NavbarProps) {
     <>
       <nav className="relative flex-wrap items-center justify-center hidden header-grid-area-nav sm:flex justify-items-center">
         <ul className="flex flex-wrap items-center justify-center header_content mt-8 justify-items-center">
-          {menu.map(
-            (item, index) =>
+          {menu.map((item, index) =>
+            item.label != null && (
+              <li
+                key={index}
+                className={`flex items-center h-full group ${openedMenu === item.pk ? 'active_header' : ''} ${isActive(item.url)}`}
+                onMouseEnter={() => {
+                  dispatch(setOpenedMenu(item.pk));
+                }}
+                onMouseLeave={() => {
+                  dispatch(setOpenedMenu(null));
+                }}
+              >
+                {item.extra_context?.attributes?.menu_image?.kwargs?.url && (
+                  <Image src={item.extra_context.attributes.menu_image.kwargs.url} width={10} height={10} alt="" />
+                )}
 
-              item.label != null && (
-                <li
-                  key={index}
-                  className={`flex items-center h-full group ${openedMenu === item.pk ? 'active_header' : ''} ${isActive(item.url)}`}
-                  onMouseEnter={() => {
-                    dispatch(setOpenedMenu(item.pk));
-                  }}
-                  onMouseLeave={() => {
-                    dispatch(setOpenedMenu(null));
-                  }}
-                // onClick={() => toggleMenu(item.pk)}
+                <Link
+                  href={item.url}
+                  className={`flex items-center ms-1 text-xs capitalize`}
+                  data-testid="navbar-category"
                 >
-                  {
-                    item.extra_context.attributes.menu_image?.kwargs?.url &&
-                    <Image src={item.extra_context.attributes.menu_image?.kwargs?.url} width={10} height={10} alt='' />
-                  }
+                  {item.label}
+                </Link>
 
-                  <Link
-                    href={item.url}
-                    className={` flex items-center ms-1 text-sm captialize`}
-                    data-testid="navbar-category"
+                {openedMenu === item.pk && item.children.length > 0 && (
+                  <div
+                    className={clsx(
+                      [
+                        'container',
+                        'absolute',
+                        'bottom-0',
+                        'left-0',
+                        'z-30',
+                        'flex',
+                        'justify-between',
+                        'invisible',
+                        'opacity-0',
+                        'bg-white',
+                        'text-dark',
+                        'border-x-2',
+                        'border-gray',
+                        'pt-22',
+                        'rounded-xl',
+                        'shadow-slate-100',
+                        'pb-16',
+                        'transform',
+                        'translate-y-full',
+                        'transition',
+                      ],
+                      [
+                        'before:left-0',
+                        'before:-translate-x-full',
+                        'before:content-[""]',
+                        'before:w-1/2',
+                        'before:h-full',
+                        'before:block',
+                        'before:absolute',
+                        'before:top-0',
+                        'before:transform',
+                        'before:bgwhitey',
+                        'text-dark',
+                      ],
+                      [
+                        'after:right-0',
+                        'after:translate-x-full',
+                        'after:content-[""]',
+                        'after:w-1/2',
+                        'after:h-full',
+                        'after:block',
+                        'after:absolute',
+                        'after:top-0',
+                        'after:transform',
+                        'after:bgwhitey',
+                        'text-dark',
+                      ],
+                      {
+                        '!visible !opacity-100 delay-500': openedMenu === item.pk,
+                      }
+                    )}
                   >
-                    {item.label}
-                  </Link>
-
-                  {/*
-                     Performance Note:
-                     The submenu content in this Navbar component is rendered based on hover-triggered state changes.
-                     This approach is adopted for performance optimization reasons. It ensures that:
-                     1. Submenu data is only loaded and rendered when necessary, reducing initial load times and resource usage.
-                     2. Unnecessary renders are avoided, enhancing the responsiveness and efficiency of the navigation bar.
-                     Please be cautious about altering this logic, as changes could negatively impact the performance and user experience of the Navbar.
-                    */}
-
-                  {openedMenu === item.pk && item.children.length > 0 && (
-                    <div
-                      className={clsx(
-                        [
-                          'container',
-                          'absolute',
-                          'bottom-0',
-                          'left-0',
-                          'z-30',
-                          'flex',
-                          'justify-between',
-                          'invisible',
-                          'opacity-0',
-                          'bg-gray',
-                          'border-x-2',
-                          'border-gray',
-                          'pt-20',
-                          'pb-16',
-                          'transform',
-                          'translate-y-full',
-                          'transition'
-                        ],
-                        [
-                          'before:left-0',
-                          'before:-translate-x-full',
-                          'before:content-[""]',
-                          'before:w-1/2',
-                          'before:h-full',
-                          'before:block',
-                          'before:absolute',
-                          'before:top-0',
-                          'before:transform',
-                          'before:bg-gray'
-                        ],
-                        [
-                          'after:right-0',
-                          'after:translate-x-full',
-                          'after:content-[""]',
-                          'after:w-1/2',
-                          'after:h-full',
-                          'after:block',
-                          'after:absolute',
-                          'after:top-0',
-                          'after:transform',
-                          'after:bg-gray'
-                        ],
-                        {
-                          '!visible !opacity-100 delay-500':
-                            openedMenu === item.pk
-                        }
-                      )}
-                    >
-                      <div className="flex space-x-8 lg:space-x-0">
-                        {item.children.map((child, index) => (
-                          <div key={index}>
-                            <Link
-                              onClick={() => {
-                                dispatch(setOpenedMenu(null));
-                              }}
-                              href={child.url}
-                              className="block mb-4 text-sm transition-colors w-max lg:w-44 hover:text-secondary"
-                            >
-                              {child.label}
-                            </Link>
-                            {child.children && (
-                              <ul>
-                                {child.children.map((grandChild, index) => (
-                                  <li key={index}>
-                                    <Link
-                                      onClick={() => {
-                                        dispatch(setOpenedMenu(null));
-                                      }}
-                                      href={grandChild.url}
-                                      className="block mb-4 text-sm transition-colors w-max lg:w-44 hover:text-secondary"
-                                    >
-                                      {grandChild.label}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </div>
+                    <Tabs className='flex pt-5'>
+                      <TabList className=" space-x-8 lg:space-x-0 navbar_content_card">
+                        {item.children.map((childItem, childIndex) => (
+                          <Tab key={childIndex} className="flex">
+                            <div className='flex items-center'>
+                              <Link
+                                // onClick={() => {
+                                //   dispatch(setOpenedMenu(null));
+                                // }}
+                                href={childItem.url}
+                                className="block mb-4 flex text-xs items-center justify-between text-black transition-colors w-max lg:w-44 hover:text-secondary"
+                              >
+                                {childItem.label}
+                                <Icon name='chevron-end' size={12} />
+                              </Link>
+                            </div>
+                          </Tab>
                         ))}
-                      </div>
-                      {/* {item.extra_context.attributes.images && (
+                      </TabList>
 
-                        <div className="flex">
+                      {item.children.map((childItem, childIndex) => (
+                        <TabPanel key={childIndex}>
+                          {childItem.children && (
+                            <ul className='flex flex-wrap ps-5'>
+                              {childItem.children.map((grandChildItem, grandChildIndex) => (
+                                <li key={grandChildIndex} className='grid place-items-center'>
+                                  <Image alt='' className='navbar_dummy_image' width={100} height={100} src={'images/navbar/dummy-navbar.svg'} />
 
-                          {item.extra_context.attributes.images.map(
-                            (image, index) =>
-                              image.kwargs.value.image && (
-                                <Link href={image.value.url} key={index}>
-                             
-
-
-                                  <Image
-                                    src={image.kwargs.value.image?.url}
-                                    alt={image.value.title}
-                                    title={image.value.title}
-                                    width={265}
-                                    height={323}
-                                  />
-                                  <span className="block mt-4">
-                                    {image.value.title}
-                                  </span>
-                                  <span className="inline-block mt-2 text-xs uppercase border-gray-500">
-                                    {image.value.link_text}
-                                  </span>
-                                </Link>
-                              )
+                                  <Link
+                                    onClick={() => {
+                                      dispatch(setOpenedMenu(null));
+                                    }}
+                                    href={grandChildItem.url}
+                                    className="block mb-4 text-black text-center justify-center whitespace-nowrap flex text-ms font-medium transition-colors w-max lg:w-44 hover:text-secondary"
+                                  >
+                                    {grandChildItem.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
                           )}
-                        </div>
-                      )} */}
-                    </div>
-                  )}
-                </li>
-              )
+                        </TabPanel>
+                      ))}
+                    </Tabs>
+                  </div>
+                )}
+              </li>
+            )
           )}
           <li>
             <button
@@ -222,11 +188,13 @@ export default function Navbar(props: NavbarProps) {
               <Icon name="search" size={16} />
             </button>
           </li>
-          <li className='hover:text-secondary'>
-            <Icon name='user' size={16} />
+          <li className="hover:text-secondary">
+            <Icon name="user" size={16} />
           </li>
-          <li className='hover:text-secondary'>
-            <Icon name='cart' size={16} />
+          <li className="hover:text-secondary">
+            <Link href='/baskets/basket'>
+              <Icon name="cart" size={16} />
+            </Link>
           </li>
         </ul>
       </nav>

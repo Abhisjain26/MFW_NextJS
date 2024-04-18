@@ -16,6 +16,7 @@ import { Trans } from '@akinon/next/components/trans';
 import { useSession } from 'next-auth/react';
 
 export default function ProductInfo({ data }: ProductPageProps) {
+  
   const { t } = useLocalization();
   const { data: session } = useSession();
   const [currentUrl, setCurrentUrl] = useState(null);

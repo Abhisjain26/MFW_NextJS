@@ -21,7 +21,7 @@ export const Accordion = ({
   isCollapse = false,
   title,
   subTitle,
-  icons = ['chevron-up', 'chevron-down'],
+  icons = ['minus', 'plus'],
   iconSize = 16,
   iconColor = 'fill-[#000000]',
   children,
@@ -34,7 +34,7 @@ export const Accordion = ({
   return (
     <div
       className={twMerge(
-        'flex flex-col justify-center border-b pb-4 mb-4 last:border-none',
+        'flex flex-col justify-center border-b border_list_bottom pb-4 mb-4 last:border-none',
         className
       )}
     >

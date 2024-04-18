@@ -1,11 +1,12 @@
 {
-  "my_cart": "My Cart",
+  "my_cart": "Cart Items",
   "back_to_shopping": "BACK TO SHOPPING",
   "empty": {
-    "title": "Your Shopping Cart is Empty!",
+    "title": "Your Cart is Empty!",
     "content_first": "Your cart is currently empty",
     "content_second": "You can add the products to your cart to continue shopping.",
-    "button": "START SHOPPING"
+    "content_third": "Search or Browse through Departments",
+    "button": "CONTINUE SHOPPING"
   },
   "card": {
     "color": "Color",
@@ -20,17 +21,17 @@
     }
   },
   "summary": {
-    "title": "Summary",
-    "subtotal": "Subtotal",
+    "title": "Order Summary",
+    "subtotal": "Quantity",
     "items": "items",
     "discounts_total": "Discounts Total",
     "remove": "REMOVE",
     "submit": "SUBMIT",
-    "total": "Total",
+    "total": "Sub Total",
     "proceed_to_checkout": "PROCEED TO CHECKOUT",
     "form": {
       "title": "Discount or Gift Voucher",
-      "placeholder": "Code",
+      "placeholder": "Discount Code or Gift Card",
       "error": {
         "required": "This field is required."
       }

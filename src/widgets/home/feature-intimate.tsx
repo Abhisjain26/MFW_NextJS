@@ -24,10 +24,10 @@ type HomeLeapType = {
 
 export default async function HomeHeroSlider() {
 
-    const datas = await getWidgetData<HomeLeapType>({
-        slug: 'feature-intimate'
-    });
+    // const datas = await getWidgetData<HomeLeapType>({
+    //     slug: 'feature-intimate'
+    // });
 
-    return <HomeFeatureIntimateContent datas={datas} />;
+    return <HomeFeatureIntimateContent  />;
     
 }
