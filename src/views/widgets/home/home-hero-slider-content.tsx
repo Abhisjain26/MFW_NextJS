@@ -27,14 +27,16 @@ export default function HomeHeroSliderContent({ data }) {
               backgroundImage: `url(${item.kwargs.value.image.url})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              height: '540px',
+              height: '450px',
               borderRadius: '20px'
             }}
             className='home_hero_slider'
           >
+            <div className="home_slider_title">
+              <h2><i>Designer</i></h2>
+            </div>
             <div className='home_slider_content'>
-              <h2>{item.value.text}</h2>
-
+              <button><Link href="/list">Shop Now</Link></button>
             </div>
           </div>
         ))}
@@ -44,19 +46,8 @@ export default function HomeHeroSliderContent({ data }) {
 }
 
 const Wrapper = Styled.section`
-  .home_hero_slider{
-    position:relative;
-    margin-top:20px;
-  }
-  .home_slider_content{
-    position:absolute;
-    top:50%;
-    left:10px;
-    transform:translateY(-50%);
-  }
+  
   @media screen and (max-width:767px) {
-    .home_hero_slider{
-      margin-top:0px;
-    }
+    
   } 
 `

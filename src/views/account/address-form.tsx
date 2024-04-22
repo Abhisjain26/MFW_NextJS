@@ -20,6 +20,7 @@ import {
 } from '@akinon/next/data/client/address';
 import { useAppSelector } from '@akinon/next/redux/hooks';
 import { useLocalization } from '@akinon/next/hooks';
+import { Image, Link } from '@akinon/next/components';
 
 type SelectOptionType = {
   label: string;
@@ -34,6 +35,9 @@ interface Props {
 const makeAddressFormSchema = (t, { phoneNumberLength }) =>
   yup.object().shape({
     title: yup.string().required(t('account.address_book.form.error.required')),
+    email: yup
+      .string()
+      .required(t('account.address_book.form.error.required')),
     first_name: yup
       .string()
       .required(t('account.address_book.form.error.required')),
@@ -93,6 +97,8 @@ export const AddressForm = (props: Props) => {
     resolver: yupResolver(addressFormSchema),
     defaultValues: { is_corporate: AddressType.individual, type: 'customer' }
   });
+
+
 
   const selectedFormType = watch('is_corporate');
   const selectedCountry = watch('country');
@@ -188,11 +194,12 @@ export const AddressForm = (props: Props) => {
   }, [data, country, reset]);
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col py-4 px-6 gap-6"
-    >
-      <div className="flex gap-8">
+    <>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-6"
+      >
+        {/* <div className="flex gap-8">
         <Radio
           {...register('is_corporate')}
           value="false"
@@ -211,64 +218,147 @@ export const AddressForm = (props: Props) => {
             {t('account.address_book.form.type.corporate')}
           </span>
         </Radio>
-      </div>
-      <Input
+      </div> */}
+        {/* <Input
         label={t('account.address_book.form.address_title.placeholder')}
         {...register('title')}
         error={errors.title}
         data-testid="address-form-title"
         required
-      />
-      <Input
-        label={t('account.address_book.form.name.placeholder')}
-        {...register('first_name')}
-        error={errors.first_name}
-        data-testid="address-form-first-name"
-        required
-      />
-      <Input
-        label={t('account.address_book.form.surname.placeholder')}
-        {...register('last_name')}
-        error={errors.last_name}
-        data-testid="address-form-last-name"
-        required
-      />
-      <Input
-        label={t('account.address_book.form.phone.placeholder')}
-        format={config.user_phone_format.replaceAll(/\9/g, '#')}
-        mask="_"
-        allowEmptyFormatting={true}
-        control={control}
-        {...register('phone_number')}
-        error={errors.phone_number}
-        data-testid="address-form-phone"
-        required
-      />
-      {/* TODO: Fix select and textarea components */}
+      /> */}
+        <div>
+          <Input
+            label={t('account.address_book.form.email.placeholder')}
+            {...register('email')}
+            error={errors.email}
+            data-testid="address-form-email"
+            required
+          />
+          <label className='flex items-center gap-2 mt-2' >
+            <input
+              type="checkbox"
+              data-testid="email-news-and-offers-checkbox"
+            />
+            <p className='text-xs text-gray-800'>Email me with news and offers</p>
+          </label>
+        </div>
 
-      <Select
-        className="w-full border-gray-500 text-sm mt-2"
-        options={countryOptions}
-        {...register('country')}
-        error={errors.country}
-        data-testid="address-form-country"
-        label={t('account.address_book.form.country.title')}
-        required
-      />
+        <h3 className='color_blue border-b pb-3'>Delivery</h3>
 
-      {city && (
         <Select
           className="w-full border-gray-500 text-sm mt-2"
-          options={cityOptions}
-          {...register('city')}
-          error={errors.city}
-          data-testid="address-form-city"
-          label={t('account.address_book.form.province.title')}
+          options={countryOptions}
+          {...register('country')}
+          error={errors.country}
+          data-testid="address-form-country"
+          label={t('account.address_book.form.country.title')}
           required
         />
-      )}
-      {township && (
+        <div className='flex items-center gap-5'>
+          <div className='w-2/3'>
+            <Input
+              label={t('account.address_book.form.name.placeholder')}
+              {...register('first_name')}
+              error={errors.first_name}
+              data-testid="address-form-first-name"
+              required
+            />
+          </div>
+          <div className='w-2/3'>
+            <Input
+              label={t('account.address_book.form.surname.placeholder')}
+              {...register('last_name')}
+              error={errors.last_name}
+              data-testid="address-form-last-name"
+              required
+            />
+          </div>
+        </div>
+
+        <label className="text-xs text-gray-800 relative">
+          <>
+            <span>{t('account.address_book.form.address.title')}</span>
+            <span className="text-secondary"> *</span>
+          </>
+          <div className="relative mt-2">
+            <Input
+              {...register('line')}
+              className={clsx(
+                'block w-full border p-2',
+                errors.line
+                  ? 'border-error focus:border-error'
+                  : 'border-gray-500 hover:border-black focus:border-black'
+              )}
+              data-testid="address-form-address-field"
+            />
+            <div className="absolute inset-y-0 right-0 top-0 flex items-center pr-2 pointer-events-none">
+              <Icon name='search' size={12} />
+            </div>
+          </div>
+          {errors.line && (
+            <span
+              className="absolute -bottom-5 left-0 text-sm text-error"
+              data-testid="address-form-address-field-error"
+            >
+              {errors.line.message}
+            </span>
+          )}
+        </label>
+
+        {/* <label className="text-xs text-gray-800 relative">
+        <>
+          <span >{t('account.address_book.form.address.title')}</span>
+          <span className="text-secondary"> *</span>
+        </>
+
+        <div className="relative mt-2">
+          <Input
+            className={clsx(
+              'block w-full border p-2 pr-8', // added pr-8 for padding-right to accommodate the icon
+              errors.line
+                ? 'border-error focus:border-error'
+                : 'border-gray-500 hover:border-black focus:border-black'
+            )}
+            data-testid="address-form-address-field"
+          />
+          <div className="absolute inset-y-0 right-0 top-0 flex items-center pr-2 pointer-events-none">
+            <Icon name='search' size={12} />
+          </div>
+        </div>
+
+        {errors.line && (
+          <span
+            className="absolute -bottom-5 left-0 text-sm text-error"
+            data-testid="address-form-address-field-error"
+          >
+            {errors.line.message}
+          </span>
+        )}
+      <p className='add_address_form text-xs'>+ Add apartments, suit, etc.</p>
+      </label> */}
+
+
+        {/* TODO: Fix select and textarea components */}
+
+        {/* {city && */}
+        {/* ( */}
+
+        {/* ) */}
+        {/* } */}
+        {/* {township && ( */}
+
         <div className="flex gap-4">
+          <div className="flex-1">
+            <Select
+              className="w-full border-gray-500 text-sm mt-2"
+              options={cityOptions}
+              {...register('city')}
+              error={errors.city}
+              data-testid="address-form-city"
+              label={t('account.address_book.form.province.title')}
+              required
+            />
+          </div>
           <div className="flex-1">
             <Select
               className="w-full border-gray-500 text-sm mt-2"
@@ -280,56 +370,78 @@ export const AddressForm = (props: Props) => {
               required
             />
           </div>
-          {district && (
-            <div className="flex-1">
-              <Select
-                className="w-full border-gray-500 text-sm mt-2"
-                options={districtOptions}
-                {...register('district')}
-                error={errors.district}
-                data-testid="address-form-district"
-                label={t('account.address_book.form.district.title')}
-                required
-              />
-            </div>
-          )}
+          <Input
+            type="number"
+            label={t('account.address_book.form.post_code.placeholder')}
+            {...register('postcode')}
+            error={errors.postcode}
+            data-testid="address-form-post-code"
+            required
+          />
+          {/* {district && ( */}
+          {/* <div className="flex-1">
+          <Select
+            className="w-full border-gray-500 text-sm mt-2"
+            options={districtOptions}
+            {...register('district')}
+            error={errors.district}
+            data-testid="address-form-district"
+            label={t('account.address_book.form.district.title')}
+            required
+          />
+        </div> */}
+          {/* )} */}
         </div>
-      )}
-      <label className="text-xs text-gray-800 relative">
-        <>
-          <span>{t('account.address_book.form.address.title')}</span>
-          <span className="text-secondary"> *</span>
-        </>
+        {/* )} */}
 
-        <textarea
-          {...register('line')}
-          rows={6}
-          className={clsx(
-            'block w-full mt-2 border p-2',
-            errors.line
-              ? 'border-error focus:border-error'
-              : 'border-gray-500 hover:border-black focus:border-black'
-          )}
-          data-testid="address-form-address-field"
-        />
-        {errors.line && (
-          <span
-            className="absolute -bottom-5 left-0 text-sm text-error"
-            data-testid="address-form-address-field-error"
-          >
-            {errors.line.message}
-          </span>
-        )}
-      </label>
-      <Input
-        type="number"
-        label={t('account.address_book.form.post_code.placeholder')}
-        {...register('postcode')}
-        error={errors.postcode}
-        data-testid="address-form-post-code"
-        required
-      />
-      {selectedFormType === AddressType.company && (
+        <div>
+          <Input
+            label={t('account.address_book.form.phone.placeholder')}
+            format={config.user_phone_format.replaceAll(/\9/g, '#')}
+            mask="_"
+            allowEmptyFormatting={true}
+            control={control}
+            {...register('phone_number')}
+            error={errors.phone_number}
+            data-testid="address-form-phone"
+            required
+          />
+          <label className='flex items-center gap-2 mt-2'>
+            <input
+              type="checkbox"
+              data-testid="email-news-and-offers-checkbox"
+            />
+            <p className='text-xs text-gray-800'>Save this information for next time</p>
+          </label>
+        </div>
+
+        <div>
+          <h3 className='color_blue'>Shipping Method</h3>
+          <Input
+            className='shipping_method mt-2'
+            placeholder='Enter your shipping address to view available shipping methods.'
+          />
+        </div>
+
+        <div>
+          <h3 className='color_blue border-b pb-2'>Payment</h3>
+          <p className='text-xs mt-1'>All transactions are secure and encrypted.</p>
+          <div className='relative mt-2'>
+            <Input
+              className='paypal_method '
+              placeholder='PayPal'
+            />
+            <div className="absolute inset-y-0 right-0 top-0 flex items-center pr-2 pointer-events-none">
+              <Image src='/images/local/paypal_down.svg' width={10} height={10} alt="PayPal" />
+            </div>
+          </div>
+          <p className='px-14 py-3 shipping_method text-center text-xs'>After clicking &quot;Pay with PayPal&quot;, you will be redirected to PayPal to complete your purchase securely.</p>
+
+        </div>
+
+
+
+        {/* {selectedFormType === AddressType.company && (
         <>
           <Input
             type="text"
@@ -360,15 +472,34 @@ export const AddressForm = (props: Props) => {
             {t('account.address_book.form.taxpayer.title')}
           </Checkbox>
         </>
-      )}
-      <Button
-        type="submit"
-        className="flex items-center justify-center font-semibold gap-2"
-        data-testid="address-form-submit"
-      >
-        <span>{t('account.address_book.form.submit_button')}</span>
-        <Icon name="chevron-end" size={12} className="fill-white" />
-      </Button>
-    </form>
+      )} */}
+        <Button
+          type="submit"
+          className="flex items-center justify-center font-semibold gap-2 paypal_button"
+          data-testid="address-form-submit"
+        >
+          <span>{t('account.address_book.form.submit_button')}</span><span className='text-base '><i>PayPal</i></span>
+          {/* <Icon name="chevron-end" size={12} className="fill-white" /> */}
+        </Button>
+      </form>
+
+      <div className='mt-10 flex items-center justify-between'>
+        <div>
+          <Link className='addres_form_policy' href="#">Refund Policy</Link>
+        </div>
+        <div>
+          <Link className='addres_form_policy' href="#">Shipping Policy</Link>
+        </div>
+        <div>
+          <Link className='addres_form_policy' href="#">Privacy Policy</Link>
+        </div>
+        <div>
+          <Link className='addres_form_policy' href="#">terms of Service</Link>
+        </div>
+        <div>
+          <Link className='addres_form_policy' href="#">Contact Information</Link>
+        </div>
+      </div>
+    </>
   );
 };

@@ -35,7 +35,7 @@ export default function Page() {
           >
             {t('account.address_book.add_button')}
           </Button>
-          <Modal
+          {/* <Modal
             portalId="account-address-new-address-modal"
             title={t('account.address_book.modal.add_new_address')}
             open={isNewAddressModalOpen}
@@ -43,7 +43,7 @@ export default function Page() {
             className="w-full sm:w-[28rem] max-h-[90vh] overflow-y-auto"
           >
             <AddressForm onSubmit={onSubmit} />
-          </Modal>
+          </Modal> */}
         </div>
         <p className="text-center max-w-xs mx-auto lg:max-w-none">
           {t('account.address_book.header.description')}

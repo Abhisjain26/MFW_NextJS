@@ -2,7 +2,6 @@ enum GENERAL_ROUTES {
   HOME = '/',
   BASKET = '/baskets/basket',
   LIST = '/list',
-  Fintech = '/Fintech',
 }
 
 enum AUTH_ROUTES {
@@ -35,7 +34,9 @@ enum FLATPAGE_ROUTES {
   CONTACT_US = '/contact-us'
 }
 
-enum PRODUCT_ROUTES {}
+enum PRODUCT_ROUTES {
+  FINTECH = '/fintech'
+}
 
 export const ROUTES = {
   ...GENERAL_ROUTES,

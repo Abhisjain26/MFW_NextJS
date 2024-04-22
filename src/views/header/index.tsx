@@ -39,8 +39,8 @@ export default async function Header() {
           // 'before:z-[-1]',
           // 'before:content-[""]',
           // 'sm:grid-cols-3',  
-          'sm:container',
-          'sm:before:block'
+          // 'sm:container',
+          // 'sm:before:block'
         ])}
       >
         {/* <HeaderBand /> */}

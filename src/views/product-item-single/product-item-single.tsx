@@ -11,6 +11,7 @@ import { Product } from '@akinon/next/types';
 import { Image } from '@akinon/next/components/image';
 import { Price, Link } from '@theme/components';
 import Styled from 'styled-components'
+import { Icon } from '@akinon/next/components';
 
 interface Props {
     product: Product;
@@ -43,11 +44,11 @@ export const ProductItemSingle = (props: Props) => {
     return (
         <Wrapper>
             <div
-                className="text-sm text-left border_pink list_single_content flex"
+                className="text-sm text-left border_pink list_single_content flex h-full"
                 data-testid="product-box"
                 ref={ref}
             >
-                <div className="relative border-pink-400  list_single_image w-100 h-full">
+                <div className="relative border-pink-400  list_single_image h-full">
                     <Link href={absolute_url} onClick={() => pushProductClicked(product)}>
                         {image_url ? (
                             <Image
@@ -56,6 +57,7 @@ export const ProductItemSingle = (props: Props) => {
                                 src={image_url}
                                 alt={product_name}
                                 aspectRatio={1}
+                                className='product_item_single_image'
                                 sizes="
                   (max-width: 768px) 50vw,
                   (max-width: 1024px) 30vw,
@@ -76,7 +78,7 @@ export const ProductItemSingle = (props: Props) => {
                     </Link>
                     {/* <FavButton className="absolute top-4 right-4" /> */}
                 </div>
-                <div className='flex justify-between flex-col'>
+                <div className='flex justify-between w-full flex-col'>
                     <Link
                         href={absolute_url}
                         className='listing_text text-base'
@@ -95,14 +97,14 @@ export const ProductItemSingle = (props: Props) => {
                         <Price value={price} data-testid="product-price" className='listing_text' />
                         <div className='flex gap-5 mt-5'>
                             <button className='pinkbtn listbtn  font-normal uppercase rounded-none'>Buy Now</button>
-                            <button className='pinkbtn listbtn font-normal uppercase rounded-none'>Whislist</button>
+                            <button className='pinkbtn listbtn font-normal uppercase flex justify-center items-center rounded-none'><FavButton/>Whislist</button>
                             {/* <FavButton>
                                 <div className=''>Whislist</div>
                             </FavButton> */}
 
                         </div>
                         <div className='w-full'>
-                            <button className='bluebtn listbtn mt-1 font-normal  uppercase rounded-none'><Image width={20} className='add_to_cart_image mr-1' height={20} src={'images/listing/add-to-cart.svg'} alt='' />Add to cart</button>
+                            <button className='bluebtn listbtn mt-1 font-normal text-center flex justify-center uppercase rounded-none'><Icon name="cart" className='add_to_cart_image mr-1' />Add to cart</button>
                         </div>
                     </div>
                 </div>
@@ -120,7 +122,7 @@ height:100%;
     margin-bottom:5px;
   }
   .list_single_image{
-    width:200px;
+    width:200px !important;
   }
   .list_single_content{
     width:100%;

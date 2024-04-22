@@ -382,25 +382,28 @@
         "placeholder": "Title for Address"
       },
       "name": {
-        "placeholder": "Name"
+        "placeholder": "First Name"
+      },
+      "email":{
+        "placeholder":"Email Address"
       },
       "surname": {
-        "placeholder": "Surname"
+        "placeholder": "Last name"
       },
       "phone": {
-        "placeholder": "Phone Number"
+        "placeholder": "Phone"
       },
       "country": {
         "placeholder": "Please Choose",
-        "title": "Country"
+        "title": "Country/Region"
       },
       "province": {
         "placeholder": "Please Choose",
-        "title": "Province"
+        "title": "City"
       },
       "township": {
         "placeholder": "Please Choose",
-        "title": "Township"
+        "title": "State"
       },
       "district": {
         "placeholder": "Please Choose",
@@ -410,7 +413,7 @@
         "title": "Address"
       },
       "post_code": {
-        "placeholder": "Post Code"
+        "placeholder": "Pin Code"
       },
       "company_name": {
         "placeholder": "Company Name"
@@ -424,7 +427,7 @@
       "taxpayer": {
         "title": "taxpayer"
       },
-      "submit_button": "SAVE CONTINUE"
+      "submit_button": "Pay with"
     },
     "modal": {
       "add_new_address": "Add New Address",

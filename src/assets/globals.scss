@@ -139,16 +139,19 @@
   display: none !important;
 }
 
-.icon_header,.header_login_mobile a{
+.icon_header,
+.header_login_mobile a {
   color: #EB89B5 !important;
 }
-.explore_content{
+
+.explore_content {
   color: #EB89B5 !important;
-font-weight: 600 !important;
-text-align: center !important;
-font-size: 18px !important;
-white-space: nowrap !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  font-size: 18px !important;
+  white-space: nowrap !important;
 }
+
 .mobile_user_profile_image {
   width: 50px !important;
   height: auto !important;
@@ -164,70 +167,112 @@ white-space: nowrap !important;
   background-color: #EB89B5 !important;
   color: #fff !important;
 }
-.category_card{
+
+.category_card {
   border: 1px solid #C475AB !important;
   padding: 15px !important;
   border-radius: 5px !important;
 }
-.navbar_content_card{
-  border-right:1px solid #CCCCCC !important;
+
+.navbar_content_card {
+  border-right: 1px solid #CCCCCC !important;
 }
-.navbar_dummy_image{
+
+.navbar_dummy_image {
   width: 60px !important;
   height: auto !important;
 }
-.filter_header_list{
-  border-top:1.5px solid #E987B4 !important;
-  border-bottom:1.5px solid #E987B4 !important;
+
+.filter_header_list {
+  border-top: 1.5px solid #E987B4 !important;
+  border-bottom: 1.5px solid #E987B4 !important;
   padding: 8px 0 !important;
   margin-bottom: 30px !important;
 }
-.cart_empty_title{
+
+.cart_empty_title {
   font-size: 26px !important;
   font-weight: 600 !important;
   color: #003744 !important;
   font-family: Georgia, 'Times New Roman', Times, serif !important;
 }
-.cart_empty_subtitle{
+
+.cart_empty_subtitle {
   font-size: 14px !important;
   margin: 10px 0 !important;
   color: #003744 !important;
   font-family: Georgia, 'Times New Roman', Times, serif !important;
 }
 
+.product_item_single_image {
+  height: 100% !important;
+  width: 100% !important;
+}
 
+// ------------------  Home Banner  --------------------
+.home_hero_slider {
+  position: relative !important;
+  margin-top: 20px !important;
+}
+
+.home_slider_title {
+  position: absolute !important;
+  top: 32% !important;
+  font-size: 70px !important;
+  color: #FFFAF1 !important;
+  font-family: Georgia !important;
+  left: 180px !important;
+  transform: translateY(-50%) !important;
+}
+
+.home_slider_content {
+  position: absolute !important;
+  top: 50% !important;
+  border: 1px solid #FFFAF1 !important;
+  padding: 10px 30px !important;
+  color: #FFFAF1 !important;
+  left: 250px !important;
+  transform: translateY(-50%) !important;
+}
 
 // --------------------  Cart  -------------------------
 
-.color_blue{
+.color_blue {
   color: #003744 !important;
   font-weight: 600 !important;
 }
-.close_cart_icon{
+
+.close_cart_icon {
   background-color: #C475AB !important;
   color: #fff !important;
   border-radius: 50% !important;
   padding: 5px !important;
 }
-.cart_button_add{
+
+.cart_button_add {
   border: 1px solid #b9b9b9 !important;
 }
-.color_cart_add_button{
+
+.color_cart_add_button {
   color: #343434 !important;
 }
-.border_cart_add{
+
+.border_cart_add {
   border: 1px solid #343434 !important;
   padding: 3px 0 !important;
 }
-.cart_add_minus{
+
+.cart_add_minus {
   border: 1px solid #b9b9b9 !important;
   transform: skewY(-10deg);
 }
-.cart_minus_add{
+
+.cart_minus_add {
   border: 1px solid #b9b9b9 !important;
   transform: skewY(-170deg);
 }
-.summary_cart_button{
+
+.summary_cart_button {
   position: absolute !important;
   top: 50% !important;
   right: 10px !important;
@@ -236,18 +281,203 @@ white-space: nowrap !important;
   color: #fff !important;
   border: 1px solid #999999 !important;
 }
-.summary_icon{
+
+.summary_icon {
   color: #C475AB !important;
   margin-right: 10px !important;
 }
-.loaction_text_color{
+
+.loaction_text_color {
   color: #0076CB !important;
 }
-.add_address_button{
+
+.add_address_button {
   font-size: 12px !important;
   padding: 0px 16px !important;
 }
 
+// -----------------   end of cart  ------------------- 
+
+// ----------------- Checkout  -------------------
+
+.checkout_paypal_button {
+  background-color: #FFC439 !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.checkout_paypal_image {
+  padding: 10px 0 !important;
+  width: 100px !important;
+  height: auto !important;
+}
+
+.color_lightblue {
+  color: #0047FF !important;
+}
+
+.or_checkout {
+  position: absolute !important;
+  top: -16px !important;
+  font-size: 20px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background-color: #fff !important;
+  padding: 0 20px !important;
+}
+
+.add_address_form {
+  color: #0047FF !important;
+}
+
+.shipping_method {
+  background-color: #F3F3F3 !important;
+}
+
+.paypal_method {
+  background-color: #F5F8FF !important;
+  border: 1px solid #0047FF !important;
+}
+
+.paypal_button {
+  background-color: #0070BA !important;
+  color: #fff !important;
+}
+
+.addres_form_policy {
+  color: #0047FF !important;
+  text-decoration: underline !important;
+  font-size: 12px !important;
+}
+
+// ------------------   End of checkout  ---------------------
+
+// ------------------   Detail Page  -------------------------
+.button-group {
+  display: flex;
+}
+
+.greenbtn {
+  background-color: #003744;
+  margin-right: 10px;
+  border: none;
+}
+
+.greenbtn:hover {
+  border: 1px solid #003744;
+}
+
+.pinkbtn:hover {
+  border: 1px solid #C475AB;
+}
+
+.product-name {
+
+  font-weight: 700;
+  font-family: Georgia;
+  color: #003744;
+
+
+}
+
+.products-features ul li {
+  list-style: initial;
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.products-features .product-name {
+  border-bottom: 1px solid;
+  border-color: #E987B4;
+}
+
+.products-features ul {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: Georgia;
+}
+
+.selectgroup {
+  display: flex;
+  gap: 10px;
+}
+
+.selectgroup h3 {
+  font-family: Georgia;
+  font-weight: 700;
+  text-align: left;
+  color: #343434;
+
+}
+
+.quantity-main .quantity-button {
+  border: 0.5px solid #343434;
+  border-color: #afafaf;
+  padding-left: 10px;
+  font-family: Georgia;
+  padding: 6px 6px 6px 12px;
+  width: 20%;
+
+}
+
+.quantity-main h3 {
+  font-family: Georgia;
+  font-weight: 700;
+  text-align: left;
+  color: #343434;
+
+}
+
+.selectgroup .selectgroupinner select {
+  border: 0.5px solid #343434;
+  border-color: #afafaf;
+  padding-left: 10px;
+  font-family: Georgia;
+}
+
+.price-class {
+  color: #003744;
+  font-weight: 500;
+}
+
+.quantity-main {
+  margin-bottom: 10px;
+}
+
+.heading-main {
+  font-family: Playfair Display;
+  font-size: 45px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 60px;
+  text-align: left;
+
+}
+
+.border-pink {
+  padding: inherit;
+  border-radius: 30px 0px 0px 0px;
+  border: 1px solid #E987B4;
+}
+
+.fintech-desc {
+  font-family: Playfair Display;
+  font-weight: 500;
+  text-align: left;
+  color: #003744;
+}
+
+.button-inner {
+  border: 1px solid #C475AB;
+  padding: 5px;
+  margin-right: 10px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+//---------------   End of detail page  ----------------------- 
 
 @media screen and (max-width:767px) {
   .max-container {
@@ -259,6 +489,19 @@ white-space: nowrap !important;
   }
 
   //--------------- Home --------------- //
+  .home_hero_slider {
+    margin-top: 0px;
+  }
+
+  .home_slider_title {
+    left: 10px !important;
+    font-size: 46px !important;
+    top: 35% !important;
+  }
+
+  .home_slider_content {
+    left: 10px !important;
+  }
 
   .home_advertisment_content_mobile,
   .home_advertisment_container {
@@ -329,11 +572,40 @@ white-space: nowrap !important;
   .header_logo {
     display: none !important;
   }
-  .home_slider_content h2{
+
+  .home_slider_content h2 {
     text-align: center !important;
   }
-  .navbar_dummy_image{
+
+  .navbar_dummy_image {
     width: 90px !important;
     height: auto !important;
+  }
+  .selectgroup {
+    display: block;
+
+  }
+
+  .selectgroup .selectgroupinner {
+    margin-bottom: 10px;
+  }
+
+  .selectgroup .selectgroupinner select {
+
+    width: 100%;
+  }
+
+  .button-group {
+    display: block;
+  }
+
+  .button-group button {
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .quantity-main .quantity-button {
+
+    width: 35%;
   }
 }

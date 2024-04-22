@@ -8,7 +8,7 @@ import { Button, LoaderSpinner, Link, Icon } from '@theme/components';
 import { BasketItem, Summary } from '@theme/views/basket';
 import { useLocalization } from '@akinon/next/hooks';
 import { Image } from '@akinon/next/components';
-import FeatureComponent from '@theme/views/widgets/home/feature-product-content';
+import FeatureComponent from '@theme/views/widgets/feature/feature-product-content';
 import styled from 'styled-components';
 import { pushBeginCheckout } from '@theme/utils/gtm';
 
@@ -101,10 +101,7 @@ export default function Page() {
         </div>
         <div className='feature_outer_container' style={{ background: '#FDF0F6' }}>
           <div className='pb-2'>
-            <FeatureComponent />
-          </div>
-          <div>
-            <FeatureComponent />
+            {/* <FeatureComponent data={data} /> */}
           </div>
         </div>
       </div>

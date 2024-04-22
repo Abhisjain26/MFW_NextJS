@@ -3,8 +3,9 @@
 import React from 'react';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
-import FeatureComponent from '@theme/views/widgets/home/feature-product-content';
-
+import FeatureComponent from '@theme/views/widgets/feature/feature-product-content';
+import FeaturePage from '@theme/app/[commerce]/[locale]/[currency]/feature/page'
+import { GetCategoryResponse } from '@akinon/next/types';
 
 
 export default function HomeFeatureIntimateContent() {
@@ -12,12 +13,13 @@ export default function HomeFeatureIntimateContent() {
     return (
         <Wrapper className='max-container'>
             {/* {datas?.attributes?.home_feature_intimate?.map((item, i) => ( */}
-                <div>
-                    <div className='home_slider_content'>
-                        <h2>Feature Shoes</h2>
-                    </div>
-                    <FeatureComponent />
+            <div>
+                <div className='home_slider_feature'>
+                    <h2>Feature Shoes</h2>
                 </div>
+                {/* <FeaturePage /> */}
+                <FeatureComponent  />
+            </div>
             {/* ))} */}
         </Wrapper>
     );
@@ -29,7 +31,7 @@ const Wrapper = Styled.section`
     padding:10px;
     margin-bottom:20px;
 
-  .home_slider_content{
+  .home_slider_feature{
     font-size:30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;

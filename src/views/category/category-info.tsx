@@ -55,7 +55,7 @@ export default function ListPage(props: ListPageProps) {
   useEffect(() => {
     if (page > 1 && data.products?.length === 0) {
       const newUrl = new URL(window.location.href);
-      newUrl.searchParams.delete('page');
+      // newUrl.searchParams.delete('page');
       router.push(newUrl.pathname + newUrl.search, undefined);
     }
 
@@ -67,12 +67,14 @@ export default function ListPage(props: ListPageProps) {
   useEffect(() => {
     dispatch(setFacets(data.facets));
   }, [data.facets]);
+
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
     setPaginationData((prev) => [...prev, ...data.products]);
+    
   };
   
-  
+ 
   return (
     <>
       <div className="container px-4 mx-auto lg:px-0 lg:my-4">

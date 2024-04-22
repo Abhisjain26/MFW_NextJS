@@ -1,12 +1,12 @@
 'use client';
 
 import clsx from 'clsx';
-import { Button, Icon, Modal } from '@theme/components';
+import { Button, Icon,Modal} from '@theme/components';
 import { useAddProductToBasket } from '../../hooks';
 import React, { useEffect, useState } from 'react';
 import { useAddStockAlertMutation } from '@akinon/next/data/client/wishlist';
 import { pushAddToCart, pushProductViewed } from '@theme/utils/gtm';
-import { PriceWrapper, Variant } from '@theme/views/product';
+import { PriceWrapper, Variant} from '@theme/views/product';
 import Share from '@theme/views/share';
 import { ProductPageProps } from './layout';
 import MiscButtons from './misc-buttons';
@@ -14,9 +14,9 @@ import { useLocalization } from '@akinon/next/hooks';
 import PluginModule, { Component } from '@akinon/next/components/plugin-module';
 import { Trans } from '@akinon/next/components/trans';
 import { useSession } from 'next-auth/react';
+import { Image } from '@akinon/next/components/image';
 
 export default function ProductInfo({ data }: ProductPageProps) {
-  
   const { t } = useLocalization();
   const { data: session } = useSession();
   const [currentUrl, setCurrentUrl] = useState(null);
@@ -55,9 +55,9 @@ export default function ProductInfo({ data }: ProductPageProps) {
     } catch (error) {
       setProductError(
         error?.data?.non_field_errors ||
-        Object.keys(error?.data).map(
-          (key) => `${key}: ${error?.data[key].join(', ')}`
-        )
+          Object.keys(error?.data).map(
+            (key) => `${key}: ${error?.data[key].join(', ')}`
+          )
       );
     }
   };
@@ -124,11 +124,34 @@ export default function ProductInfo({ data }: ProductPageProps) {
     }
   };
 
+
+
+
+    const [quantity, setQuantity] = useState(1);
+
+    const handleQuantityChange = (e) => {
+      const newQuantity = parseInt(e.target.value);
+      // Ensure quantity is a positive integer
+      if (!isNaN(newQuantity) && newQuantity > 0) {
+        setQuantity(newQuantity);
+      }
+    };
+
+    const handleIncrement = () => {
+      setQuantity(quantity + 1);
+    };
+
+    const handleDecrement = () => {
+      if (quantity > 1) {
+        setQuantity(quantity - 1);
+      }
+    };
+
   return (
     <>
       <div
         className={clsx(
-          'fixed bottom-0 left-0 w-1/2 h-14 z-[20] bg-white mt-0 border-t border-gray-500 items-center justify-center',
+          'bottom-0 left-0 w-1/2 h-14 z-[20] bg-white mt-0 border-gray-500 items-center justify-left',
           'sm:relative sm:flex sm:items-center sm:mt-5 sm:border-none'
         )}
       >
@@ -148,17 +171,56 @@ export default function ProductInfo({ data }: ProductPageProps) {
         ))}
       </div>
 
+      <div className="quantity-main">
+      <h3>Quantity:</h3>
+      <div className="bottom-0 right-0 w-25 h-10 z-[20] justify-center sm:relative sm:mt-2 sm:font-regular quantity-button">
+      <button onClick={handleDecrement}>-</button>
+      <input
+        type="text"
+        value={quantity}
+        onChange={handleQuantityChange}
+        style={{ width: '50px', textAlign: 'center' }}
+      />
+      <button onClick={handleIncrement}>+</button>
+      </div>
+    </div>
+
+
+
+
+      <div className="selectgroup">
+      <div className="selectgroupinner color bottom-0 right-0 justify-center fill-primary-foreground hover:fill-primary sm:relative sm:w-full sm:mt-2 sm:font-regular">
+        <h3>Color*</h3>
+      <select className="bottom-0 right-0 w-1/2 h-10 z-[20] justify-center sm:relative sm:w-full sm:mt-2 sm:font-regular">
+  <option value="someOption">Blue</option>
+  <option value="otherOption">Red</option>
+</select>
+</div>
+<div className="selectgroupinner size bottom-0 right-0 justify-center fill-primary-foreground hover:fill-primary sm:relative sm:w-full sm:mt-2 sm:font-regular">
+<h3>Size*</h3>
+      <select className='bottom-0 right-0 w-1/2 h-10 z-[20] justify-center sm:relative sm:w-full sm:mt-2 sm:font-regular'>
+  <option value="someOption">S</option>
+  <option value="otherOption">M</option>
+  <option value="otherOption">L</option>
+</select>
+</div>
+
+
+
+</div>
+
+
       {productError && (
         <div className="mt-4 text-xs text-center text-error">
           {productError}
         </div>
       )}
-
+ <div className="button-group">
       <Button
         disabled={isAddToCartLoading || isAddToStockAlertLoading}
         className={clsx(
-          'fixed bottom-0 right-0 w-1/2 h-14 z-[20] flex items-center justify-center fill-primary-foreground',
-          'hover:fill-primary sm:relative sm:w-full sm:mt-3 sm:font-semibold pinkbtn'
+          'bottom-0 right-0 w-1/2 h-10 z-[20] flex items-center justify-center fill-primary-foreground',
+          'hover:fill-primary sm:relative sm:w-full sm:mt-3 sm:font-regular greenbtn'
         )}
         onClick={() => {
           setProductError(null);
@@ -181,7 +243,54 @@ export default function ProductInfo({ data }: ProductPageProps) {
         )}
       </Button>
 
-      <PluginModule
+      <Button
+        disabled={isAddToCartLoading || isAddToStockAlertLoading}
+        className={clsx(
+          'bottom-0 right-0 w-1/2 h-10 z-[20] flex items-center justify-center fill-primary-foreground',
+          'hover:fill-primary sm:relative sm:w-full sm:mt-3 sm:font-regular pinkbtn'
+        )}
+        onClick={() => {
+          setProductError(null);
+
+          if (inStock) {
+            addProductToCart();
+          } else {
+            addProductToStockAlertList();
+          }
+        }}
+        data-testid="favourites-icon"
+      >
+        {inStock ? (
+          <span>ADD TO WHISHLIST</span>
+        ) : (
+          <>
+            <Icon name="bell" size={20} className="mr-4" />
+            <span>{t('product.add_stock_alert')}</span>
+          </>
+        )}
+      </Button>
+
+
+
+
+
+
+      </div>
+
+      <div className="flex items-center my-2 sm:my-4">
+
+      <Image
+            src="/payments.png"
+            alt="payment"
+            width={285}
+            height={27}
+            className="block w-full"
+            style={{ height: 'auto', width: '100%' }}
+            // unoptimized
+          />
+
+    </div>
+      {/* <PluginModule
         component={Component.OneClickCheckoutButtons}
         props={{
           product: data.product,
@@ -195,9 +304,9 @@ export default function ProductInfo({ data }: ProductPageProps) {
         productName={data.product.name}
         productPk={data.product.pk}
         variants={data.variants}
-      />
+      /> */}
 
-      <Share
+      {/* <Share
         className="my-2 sm:my-4"
         buttonText={t('product.share')}
         items={[
@@ -216,13 +325,14 @@ export default function ProductInfo({ data }: ProductPageProps) {
             iconSize: 22
           },
           {
-            href: `https://api.whatsapp.com/send?text=${data.product.name
-              }%20${encodeURIComponent(currentUrl)}`,
+            href: `https://api.whatsapp.com/send?text=${
+              data.product.name
+            }%20${encodeURIComponent(currentUrl)}`,
             iconName: 'whatsapp',
             iconSize: 22
           }
         ]}
-      />
+      /> */}
 
       <Modal
         portalId="stock-alert-modal"

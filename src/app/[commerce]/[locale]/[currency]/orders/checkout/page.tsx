@@ -18,6 +18,7 @@ import { CheckoutStep } from '@akinon/next/types';
 import { useRouter, useLocalization } from '@akinon/next/hooks';
 import dynamic from 'next/dynamic';
 import PluginModule, { Component } from '@akinon/next/components/plugin-module';
+import { Image } from '@akinon/next/components';
 
 const Checkout = () => {
   const { t } = useLocalization();
@@ -119,18 +120,26 @@ const Checkout = () => {
       <PluginModule component={Component.MasterpassOtpModal} />
       <PluginModule component={Component.MasterpassLinkModal} />
 
-      <div className="container flex flex-col flex-wrap w-full px-4 md:px-0">
-        <CheckoutStepList />
+      <div className="container py-5">
+        <div className='w-3/5 px-24 border border-b-0  mx-auto text-center pt-5 pb-12'>
+          <h2 className='color_blue mt-3'>Express Checkout</h2>
+          <button className='checkout_paypal_button'><Image className='checkout_paypal_image' src="/images/local/paypal.svg" alt='Paypal' width={100} height={100} /></button>
+        </div>
 
-        <div className="w-full flex flex-wrap">
-          <div className="w-full h-fit-content lg:w-2/3">
+        {/* <CheckoutStepList /> */}
+        <div className='border relative w-3/5 mx-auto '>
+          <div className='color_blue or_checkout'>OR</div>          
+        </div>
+
+        <div className=" flex flex-wrap justify-center">
+          <div className='w-3/5 px-24 border border-t-0 pt-9 pb-5'>
             {steps.current === CheckoutStep.Shipping && <ShippingStep />}
             {steps.current === CheckoutStep.Payment && <PaymentStep />}
           </div>
 
-          <div className="w-full h-fit-content mt-6 lg:w-1/3 lg:pl-8 lg:mt-0">
-            <Summary />
-          </div>
+          {/* <div className="w-full h-fit-content mt-6 lg:w-1/3 lg:pl-8 lg:mt-0"> */}
+          {/* <Summary /> */}
+          {/* </div> */}
         </div>
       </div>
     </PluginModule>

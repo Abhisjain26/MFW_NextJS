@@ -36,4 +36,8 @@ const Wrapper = Styled.section`
     width:100% !important;
     height:100% !important;
   }
+  .home_advertisment_image img{
+    border-radius: 10px;
+  }
+
 `

@@ -107,14 +107,14 @@ const Wrapper = Styled.section`
     }
     .home_dress{
         position:absolute;
-        bottom:-32px;
+        bottom:-20px;
         left:50%;
         transform:translateY(-50%);
     }
     .home_flower{
         position:absolute;
-        top:-44px;
-        right:-50px;
+        top:-30px;
+        right:-30px;
     }
     .read_more_btn{
         display:none;

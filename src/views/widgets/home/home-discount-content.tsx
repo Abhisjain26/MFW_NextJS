@@ -45,6 +45,7 @@ const Wrapper = Styled.section`
   .home_advertisment_image{
     width:100% !important;
     height:100% !important;
+    border-radius: 30px !important;
   }
   .home_discount{
     width:50%;

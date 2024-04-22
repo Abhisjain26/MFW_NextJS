@@ -48,8 +48,8 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <>
-      <nav className="relative flex-wrap items-center justify-center hidden header-grid-area-nav sm:flex justify-items-center">
-        <ul className="flex flex-wrap items-center justify-center header_content mt-8 justify-items-center">
+      <nav className="relative w-full flex-wrap items-center justify-center hidden header-grid-area-nav sm:flex justify-between">
+        <ul className="flex flex-wrap w-full items-center justify-center header_content mt-8 justify-between">
           {menu.map((item, index) =>
             item.label != null && (
               <li

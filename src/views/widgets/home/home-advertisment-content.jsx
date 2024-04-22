@@ -102,7 +102,7 @@ const Wrapper = Styled.section`
     }
     .home_dress{
         position:absolute;
-        bottom:-32px;
+        bottom:-20px;
         left:50%;
         transform:translateY(-50%);
     }

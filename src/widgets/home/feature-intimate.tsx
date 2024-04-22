@@ -28,6 +28,6 @@ export default async function HomeHeroSlider() {
     //     slug: 'feature-intimate'
     // });
 
-    return <HomeFeatureIntimateContent  />;
+    return <HomeFeatureIntimateContent   />;
     
 }

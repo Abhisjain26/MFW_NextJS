@@ -170,7 +170,7 @@ const AddressBox = ({
         >
           {t('checkout.address.box.edit')}
         </Button>
-        <Modal
+        {/* <Modal
           portalId={`checkout-shipping-edit-address-modal-${address.pk}`}
           title={t('checkout.address.modal.edit_address')}
           open={isEditAddressModalOpen}
@@ -187,7 +187,7 @@ const AddressBox = ({
             }}
             onSubmit={onSubmit}
           />
-        </Modal>
+        </Modal> */}
         <Button
           appearance="ghost"
           className="italic underline hover:text-secondary-500 hover:!bg-white hover:!border-white p-0 h-auto"

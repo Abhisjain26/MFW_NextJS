@@ -5,12 +5,35 @@ import { CarouselCore } from '@theme/components/carousel-core';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
 import { Image } from '@akinon/next/components/image';
-
-// import { GetCategoryResponse } from '@akinon/next/types';
+import { useSearchParams } from 'next/dist/client/components/navigation';
+import convertFacetSearchParams from '@theme/utils/convert-facet-search-params';
+import { useAppSelector } from '@akinon/next/redux/hooks';
+import { usePathname } from 'next/navigation';
+import { getListData } from '@akinon/next/data/server';
 
 export default function FeatureComponent() {
 
-  const data = [
+  // const { facets, selectedFacets } = useAppSelector((state) => state.category);
+  // const pathname = usePathname();
+  // const searchParams = useSearchParams();
+  // const facetSearchParams =
+
+  //   convertFacetSearchParams(selectedFacets).toString();
+
+  // const urlSearchParams = new URLSearchParams(facetSearchParams);
+  // console.log(urlSearchParams);
+
+  // const searchText = searchParams.get('search_text');
+  // searchText && urlSearchParams.set('search_text', searchText);
+  // pathname + '?' + urlSearchParams.toString();
+
+  // const getFeatureeData = async () => {
+  //   const data1 = await getListData({ searchParams });
+  //   console.log(data1);
+  // }
+
+
+  const data1 = [
     {
       image: '/images/home/girl.svg',
       title: 'Satin Nightgown Spaghetti Straps',
@@ -61,11 +84,11 @@ export default function FeatureComponent() {
             breakpoint: { max: 4000, min: 0 },
             items: 4
           },
-          table:{
+          table: {
             breakpoint: { max: 4000, min: 0 },
             items: 4
           },
-          mobile:{
+          mobile: {
             breakpoint: { max: 767, min: 0 },
             items: 2
           }
@@ -74,9 +97,8 @@ export default function FeatureComponent() {
         arrows={true}
         swipeable={true}
       >
-        {/* {data?.attributes?.hero_slider?.map((item, i) => ( */}
 
-        {data.map((item,index) => {
+        {data1.map((item, index) => {
           return (<div className='home_feature_container flex gap-1' key={index}>
             <div className='home_feature_card'>
               <div className="home_feature_image">
@@ -88,14 +110,15 @@ export default function FeatureComponent() {
                   <h3>{item.price}</h3>
                   <h4>{item.price_old}</h4>
                 </div>
-                <button className='pinkbtn'>{item.buy}</button>
-                <button className='addCart'>{item.cart}</button>
+                <div>
+                  <button className='pinkbtn'>{item.buy}</button>
+                  <button className='addCart'>{item.cart}</button>
+                </div>
               </div>
             </div>
           </div>
           )
         })}
-        {/* ))} */}
       </CarouselCore>
     </Wrapper>
   );
