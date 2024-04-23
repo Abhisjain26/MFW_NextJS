@@ -10,8 +10,9 @@ import convertFacetSearchParams from '@theme/utils/convert-facet-search-params';
 import { useAppSelector } from '@akinon/next/redux/hooks';
 import { usePathname } from 'next/navigation';
 import { getListData } from '@akinon/next/data/server';
+import { Category } from '@akinon/next/types';
 
-export default function FeatureComponent() {
+export default function FeatureComponent({data}) {
 
   // const { facets, selectedFacets } = useAppSelector((state) => state.category);
   // const pathname = usePathname();
@@ -33,48 +34,48 @@ export default function FeatureComponent() {
   // }
 
 
-  const data1 = [
-    {
-      image: '/images/home/girl.svg',
-      title: 'Satin Nightgown Spaghetti Straps',
-      price: '1502.12 INR',
-      price_old: '1502.12 INR',
-      buy: 'Buy Now',
-      cart: 'Add to Cart'
-    },
-    {
-      image: '/images/home/girl.svg',
-      title: 'Satin Nightgown Spaghetti Straps',
-      price: '1502.12 INR',
-      price_old: '1502.12 INR',
-      buy: 'Buy Now',
-      cart: 'Add to Cart'
-    },
-    {
-      image: '/images/home/girl.svg',
-      title: 'Satin Nightgown Spaghetti Straps',
-      price: '1502.12 INR',
-      price_old: '1502.12 INR',
-      buy: 'Buy Now',
-      cart: 'Add to Cart'
-    },
-    {
-      image: '/images/home/girl.svg',
-      title: 'Satin Nightgown Spaghetti Straps',
-      price: '1502.12 INR',
-      price_old: '1502.12 INR',
-      buy: 'Buy Now',
-      cart: 'Add to Cart'
-    },
-    {
-      image: '/images/home/girl.svg',
-      title: 'Satin Nightgown Spaghetti Straps',
-      price: '1502.12 INR',
-      price_old: '1502.12 INR',
-      buy: 'Buy Now',
-      cart: 'Add to Cart'
-    },
-  ]
+  // const data1 = [
+  //   {
+  //     image: '/images/home/girl.svg',
+  //     title: 'Satin Nightgown Spaghetti Straps',
+  //     price: '1502.12 INR',
+  //     price_old: '1502.12 INR',
+  //     buy: 'Buy Now',
+  //     cart: 'Add to Cart'
+  //   },
+  //   {
+  //     image: '/images/home/girl.svg',
+  //     title: 'Satin Nightgown Spaghetti Straps',
+  //     price: '1502.12 INR',
+  //     price_old: '1502.12 INR',
+  //     buy: 'Buy Now',
+  //     cart: 'Add to Cart'
+  //   },
+  //   {
+  //     image: '/images/home/girl.svg',
+  //     title: 'Satin Nightgown Spaghetti Straps',
+  //     price: '1502.12 INR',
+  //     price_old: '1502.12 INR',
+  //     buy: 'Buy Now',
+  //     cart: 'Add to Cart'
+  //   },
+  //   {
+  //     image: '/images/home/girl.svg',
+  //     title: 'Satin Nightgown Spaghetti Straps',
+  //     price: '1502.12 INR',
+  //     price_old: '1502.12 INR',
+  //     buy: 'Buy Now',
+  //     cart: 'Add to Cart'
+  //   },
+  //   {
+  //     image: '/images/home/girl.svg',
+  //     title: 'Satin Nightgown Spaghetti Straps',
+  //     price: '1502.12 INR',
+  //     price_old: '1502.12 INR',
+  //     buy: 'Buy Now',
+  //     cart: 'Add to Cart'
+  //   },
+  // ]
 
   return (
     <Wrapper>
@@ -98,21 +99,22 @@ export default function FeatureComponent() {
         swipeable={true}
       >
 
-        {data1.map((item, index) => {
+        {data.products.map((item, index) => {
+          const image = item.productimage_set[0]; 
           return (<div className='home_feature_container flex gap-1' key={index}>
             <div className='home_feature_card'>
               <div className="home_feature_image">
-                <Image src={item.image} className='home_feature_image_1' width={100} height={100} alt="" />
+                <Image src={image.image} className='home_feature_image_1' width={100} height={100} alt="" />
               </div>
               <div className="home_feature_text">
-                <h2>{item.title}</h2>
+                <h2>{item.name}</h2>
                 <div className="home_feature_price flex gap-4">
                   <h3>{item.price}</h3>
                   <h4>{item.price_old}</h4>
                 </div>
                 <div>
-                  <button className='pinkbtn'>{item.buy}</button>
-                  <button className='addCart'>{item.cart}</button>
+                  <button className='pinkbtn'>Shop Now</button>
+                  <button className='addCart'>Add to cart</button>
                 </div>
               </div>
             </div>

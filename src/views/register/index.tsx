@@ -19,7 +19,6 @@ const registerFormSchema = (t) =>
   yup.object().shape({
     email: yup
       .string()
-      .email(t('auth.register.form.error.email_valid'))
       .required(t('auth.register.form.error.required')),
     first_name: yup
       .string()

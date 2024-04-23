@@ -13,7 +13,7 @@ const ShippingStep = () => {
   return (
     <>
 
-      <div className='w-full flex justify-between items-center border-b py-3 mb-3'>
+      <div className='w-full flex  justify-between items-center border-b py-3 mb-3'>
         <p className='color_blue text-base'>Contact</p>
         <Link className='color_lightblue text-sm' href="/auth">Login</Link>
       </div>

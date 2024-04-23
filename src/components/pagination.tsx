@@ -22,7 +22,7 @@ export const Pagination = (props: PaginationProps) => {
     nextClassName,
     moreButtonClassName,
     threshold = 1,
-    type = 'list',
+    type = 'infinite',
     onPageChange,
     direction,
     render
@@ -129,7 +129,7 @@ export const Pagination = (props: PaginationProps) => {
   }, [inView]);
 
   useEffect(() => {
-    if (type === 'list') {
+    if (type === 'infinite') {
       createListItems();
     }
   }, []);

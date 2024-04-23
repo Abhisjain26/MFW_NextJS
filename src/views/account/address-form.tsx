@@ -254,8 +254,8 @@ export const AddressForm = (props: Props) => {
           label={t('account.address_book.form.country.title')}
           required
         />
-        <div className='flex items-center gap-5'>
-          <div className='w-2/3'>
+        <div className='flex items-center gap-5 address_form_content'>
+          <div className='w-2/3 address_form_content_input'>
             <Input
               label={t('account.address_book.form.name.placeholder')}
               {...register('first_name')}
@@ -264,7 +264,7 @@ export const AddressForm = (props: Props) => {
               required
             />
           </div>
-          <div className='w-2/3'>
+          <div className='w-2/3 address_form_content_input'>
             <Input
               label={t('account.address_book.form.surname.placeholder')}
               {...register('last_name')}
@@ -347,8 +347,8 @@ export const AddressForm = (props: Props) => {
         {/* } */}
         {/* {township && ( */}
 
-        <div className="flex gap-4">
-          <div className="flex-1">
+        <div className="flex gap-4 address_form_content">
+          <div className="flex-1 address_form_content_input">
             <Select
               className="w-full border-gray-500 text-sm mt-2"
               options={cityOptions}
@@ -359,7 +359,7 @@ export const AddressForm = (props: Props) => {
               required
             />
           </div>
-          <div className="flex-1">
+          <div className="flex-1 address_form_content_input">
             <Select
               className="w-full border-gray-500 text-sm mt-2"
               options={townshipOptions}

@@ -69,9 +69,8 @@ export default function ListPage(props: ListPageProps) {
   }, [data.facets]);
 
   const handlePageChange = (newPage: number) => {
-    setPage(newPage);
+    // setPage(newPage);
     setPaginationData((prev) => [...prev, ...data.products]);
-    
   };
   
  

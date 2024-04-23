@@ -581,6 +581,7 @@
     width: 90px !important;
     height: auto !important;
   }
+
   .selectgroup {
     display: block;
 
@@ -607,5 +608,23 @@
   .quantity-main .quantity-button {
 
     width: 35%;
+  }
+
+  .cart_button_add_mobile {
+    width: 110px !important;
+  }
+
+  .checkout_content_mobile {
+    padding: 0 20px !important;
+    width: 100% !important;
+  }
+  .address_form_content{
+    flex-direction: column;
+  }
+  .address_form_content_input{
+    width: 100% !important;
+  }
+  .checkout_or_mobile{
+    margin-top: 30px !important;
   }
 }

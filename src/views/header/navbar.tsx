@@ -189,7 +189,9 @@ export default function Navbar(props: NavbarProps) {
             </button>
           </li>
           <li className="hover:text-secondary">
-            <Icon name="user" size={16} />
+            <Link href="/account">
+              <Icon name="user" size={16} />
+            </Link>
           </li>
           <li className="hover:text-secondary">
             <Link href='/baskets/basket'>

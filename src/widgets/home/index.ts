@@ -34,9 +34,9 @@ export const HOME_WIDGETS: {
   'leap-banner': dynamic(
     async () => import('@theme/widgets/home/home-leap')
   ),
-  'feature-intimate': dynamic(
-    async () => import('@theme/widgets/home/feature-intimate')
-  ),
+  // 'feature-intimate': dynamic(
+  //   async () => import('@theme/widgets/home/feature-intimate')
+  // ),
   // 'feature-product': dynamic(
   //   async () => import('@theme/widgets/home/home-feature-product')
   // ),

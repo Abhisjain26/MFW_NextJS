@@ -135,7 +135,7 @@ export const BasketItem = (props: Props) => {
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row md:items-center gap-3 lg:w-52">
+              <div className="flex flex-col md:flex-row md:items-center gap-3 lg:w-52 cart_button_add_mobile">
                 <div className="px-2 cart_button_add py-2 px-3"  >
                   <button
                     onClick={() => {
@@ -237,3 +237,5 @@ export const BasketItem = (props: Props) => {
     </>
   );
 };
+
+

@@ -31,7 +31,7 @@ const CategoryActiveFilters = () => {
     const page_size = searchParams.get('page_size');
     const sorter = searchParams.get('sorter');
     const layout = searchParams.get('layout');
-
+    
     searchText && urlSearchParams.set('search_text', searchText);
     page && urlSearchParams.set('page', page);
     limit && urlSearchParams.set('limit', limit);

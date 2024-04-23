@@ -30,9 +30,9 @@ export default function Results(props: ResultsProps) {
     () =>
       currentData?.groups.find((group) => group.suggestion_type === 'Category')
         ?.entries ?? [],
-    [currentData]
-  );
-
+        [currentData]
+      );
+  
   const products = useMemo(
     () =>
       currentData?.groups.find((group) => group.suggestion_type === 'Product')

@@ -4,12 +4,12 @@ import React from 'react';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
 import FeatureComponent from '@theme/views/widgets/feature/feature-product-content';
-import FeaturePage from '@theme/app/[commerce]/[locale]/[currency]/feature/page'
+// import FeaturePage from '@theme/app/[commerce]/[locale]/[currency]/feature/page'
 import { GetCategoryResponse } from '@akinon/next/types';
 
 
-export default function HomeFeatureIntimateContent() {
-
+export default function HomeFeatureIntimateContent({data}) {
+    
     return (
         <Wrapper className='max-container'>
             {/* {datas?.attributes?.home_feature_intimate?.map((item, i) => ( */}
@@ -18,7 +18,7 @@ export default function HomeFeatureIntimateContent() {
                     <h2>Feature Shoes</h2>
                 </div>
                 {/* <FeaturePage /> */}
-                <FeatureComponent  />
+                <FeatureComponent data={data}  />
             </div>
             {/* ))} */}
         </Wrapper>
