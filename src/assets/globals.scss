@@ -476,8 +476,39 @@
   margin-top: 25px;
   margin-bottom: 10px;
 }
-
 //---------------   End of detail page  ----------------------- 
+
+// -----------------------   login page  -------------------------- 
+.login_bg {
+  background-image: url('../../public/images/local/login-bg.svg') !important;
+  background-position: top !important;
+  background-size: cover !important;
+  padding: 30px 10px !important;
+  background-repeat: no-repeat !important;
+  padding: 0 10px!important;
+}
+.login_blur{
+  backdrop-filter: blur(10px) !important;
+  padding-left: 0px 4rem 0px 0px !important;
+}
+.login_logo{
+  width: 40% !important;
+  margin: 0 auto !important;
+  padding: 40px 0 !important;
+  border-radius: 0 0 50px 50px !important;
+  box-shadow: 0 6px 4px -3px #C576AC !important; 
+}
+.login_line{
+  width: 150px !important;
+}
+.hidden_password{
+  display: none;
+}
+.log_inwith{
+  color: #E287CE !important;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
+// ----------------------- End of login page  -------------------------- 
 
 @media screen and (max-width:767px) {
   .max-container {

@@ -9,6 +9,7 @@ async function Page({ params, searchParams }: PageProps<{ pk: number }>) {
   return (
     <>
       <CategoryLayout data={data} />
+      
     </>
   );
 }

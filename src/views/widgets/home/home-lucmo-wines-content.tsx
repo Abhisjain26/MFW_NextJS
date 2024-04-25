@@ -47,7 +47,7 @@ export default function HomeValentineContent({ data }) {
                                         }
                                     </>
                                 }
-                                <button className='btn pinkbtn'>{item.value.link}SHOP NOW</button>
+                                <button className='btn pinkbtn rounded-md'>{item.value.link}SHOP NOW</button>
                             </div>
                         </div>
                         <div className='home_advertisment_image'>

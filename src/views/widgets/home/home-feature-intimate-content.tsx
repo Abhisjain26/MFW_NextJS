@@ -8,7 +8,7 @@ import FeatureComponent from '@theme/views/widgets/feature/feature-product-conte
 import { GetCategoryResponse } from '@akinon/next/types';
 
 
-export default function HomeFeatureIntimateContent({data}) {
+export default function HomeFeatureIntimateContent({data }) {
     
     return (
         <Wrapper className='max-container'>
@@ -18,7 +18,7 @@ export default function HomeFeatureIntimateContent({data}) {
                     <h2>Feature Shoes</h2>
                 </div>
                 {/* <FeaturePage /> */}
-                <FeatureComponent data={data}  />
+                <FeatureComponent data={data}/>
             </div>
             {/* ))} */}
         </Wrapper>

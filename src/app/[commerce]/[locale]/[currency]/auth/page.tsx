@@ -36,7 +36,7 @@ export default function Auth() {
   }, [session?.user]);
 
   return (
-    <section className="container px-4 my-7 md:mt-20 lg:px-0 lg:mx-auto">
+    <section className=" px-4 md:mt-10 lg:px-0 lg:mx-auto login_bg">
       <div className="w-full flex justify-center gap-3 md:hidden">
         <Button
           className={tabClass('login')}

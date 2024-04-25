@@ -229,7 +229,7 @@ export const AddressForm = (props: Props) => {
         <div>
           <Input
             label={t('account.address_book.form.email.placeholder')}
-            {...register('email')}
+            // {...register('email')}
             error={errors.email}
             data-testid="address-form-email"
             required

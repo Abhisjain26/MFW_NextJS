@@ -19,7 +19,7 @@ interface Props {
   index: number;
 }
 
-export const ProductItem = (props: Props) => {
+export const ProductItem = (props: Props ) => {
 
   // TODO: Static image will change (TR)
   const { product, width, height, index } = props;

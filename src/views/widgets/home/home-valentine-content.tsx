@@ -68,7 +68,7 @@ export default function HomeValentineContent({ data }) {
                                         }
                                     </>
                                 }
-                                <button className='btn pinkbtn'>{item.value.link}SHOP NOW</button>
+                                <button className='btn pinkbtn rounded-md'>{item.value.link}SHOP NOW</button>
                             </div>
                         </div>
                     </div>
@@ -98,8 +98,8 @@ const Wrapper = Styled.section`
         width:50%;
     }
     .home_advertisment_content h1{
-        font-size:50px;
-        line-height:50px;
+        font-size:30px;
+        line-height:35px;
         color:#000000;
     }
     .home_advertisment_content p{

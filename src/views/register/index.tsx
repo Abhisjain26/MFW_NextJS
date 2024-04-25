@@ -191,7 +191,7 @@ export const Register = () => {
   };
 
   return (
-    <section className="w-full py-10 px-5 md:py-0 md:block md:px-8 md:mx-auto lg:px-16">
+    <section className="w-full py-10 px-5 md:py-0  md:px-8 md:mx-auto lg:px-16 hidden">
       <Modal
         title={contentModal.title}
         portalId="portal-modal-container"

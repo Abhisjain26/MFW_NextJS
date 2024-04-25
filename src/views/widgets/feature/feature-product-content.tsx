@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CarouselCore } from '@theme/components/carousel-core';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
@@ -11,8 +11,10 @@ import { useAppSelector } from '@akinon/next/redux/hooks';
 import { usePathname } from 'next/navigation';
 import { getListData } from '@akinon/next/data/server';
 import { Category } from '@akinon/next/types';
+import { pushProductClicked, pushProductListProductViewed } from '@theme/utils/gtm';
+import { useInView } from 'react-intersection-observer';
 
-export default function FeatureComponent({data}) {
+export default function FeatureComponent({ data }) {
 
   // const { facets, selectedFacets } = useAppSelector((state) => state.category);
   // const pathname = usePathname();
@@ -32,7 +34,15 @@ export default function FeatureComponent({data}) {
   //   const data1 = await getListData({ searchParams });
   //   console.log(data1);
   // }
+  // const [viewed, setViewed] = useState(false);
+  // const { ref, inView } = useInView();
 
+  // useEffect(() => {
+  //   if (!viewed && inView) {
+  //     setViewed(true);
+  //     pushProductListProductViewed(data);
+  //   }
+  // }, [inView]);
 
   // const data1 = [
   //   {
@@ -76,6 +86,7 @@ export default function FeatureComponent({data}) {
   //     cart: 'Add to Cart'
   //   },
   // ]
+  const absolute_url = data.absolute_url || '';
 
   return (
     <Wrapper>
@@ -100,12 +111,15 @@ export default function FeatureComponent({data}) {
       >
 
         {data.products.map((item, index) => {
-          const image = item.productimage_set[0]; 
+          const image = item.productimage_set[0];
           return (<div className='home_feature_container flex gap-1' key={index}>
             <div className='home_feature_card'>
-              <div className="home_feature_image">
-                <Image src={image.image} className='home_feature_image_1' width={100} height={100} alt="" />
-              </div>
+              <Link href={item.absolute_url} onClick={() => pushProductClicked(data)}>
+                <div className="home_feature_image">
+                  <Image src={image.image} className='home_feature_image_1' width={100} height={100} alt="" />
+                </div>
+              </Link>
+
               <div className="home_feature_text">
                 <h2>{item.name}</h2>
                 <div className="home_feature_price flex gap-4">
@@ -122,7 +136,7 @@ export default function FeatureComponent({data}) {
           )
         })}
       </CarouselCore>
-    </Wrapper>
+    </Wrapper >
   );
 }
 

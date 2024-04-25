@@ -63,7 +63,9 @@ export const Login = () => {
 
   const searchParams = useSearchParams();
   const [formError, setFormError] = useState(null);
-
+  const [emailValidated, setEmailValidated] = useState(false);
+  const [username, setUserName] = useState(false);
+  const [emailUser, setEmailUser] = useState('');
   const {
     CaptchaView,
     validated: captchaValidated,
@@ -118,16 +120,37 @@ export const Login = () => {
     }
   };
 
+  const handleEmailValidated = () => {
+    setEmailValidated(true);
+    setUserName(true);    
+    
+  };
+
   return (
     <section
       className={clsx([
-        'w-full py-10 px-5 md:py-0 md:px-8 md:mx-auto lg:px-16'
+        'w-full py-10 px-5 md:py-0  md:px-8 md:mx-auto lg:px-16 login_blur'
       ])}
     >
-      <h2 className="mb-3 text-lg text-start text-black-800 font-light md:mb-9 md:text-2xl">
-        {t('auth.login.title')}
-      </h2>
-
+      <div className='flex justify-center bg-white login_logo'>
+        <Image src='/images/local/login-logo.svg' alt='Mall For Women' width={100} height={100} />
+      </div>
+      <div className='flex justify-center mt-5'>
+        <Image src='/images/local/login-line.svg' className='login_line' alt='Mall For Women' width={150} height={100} />
+      </div>
+      {emailValidated && !errors.email && (
+        <div className='flex justify-center mt-1 mb-7'>
+          <Image src='/images/local/login-line-2.svg' className='login_line' alt='Mall For Women' width={150} height={100} />
+        </div>
+      )}
+      {!emailValidated && (
+        <div>
+          <h1 className='text-base font-semibold'>Login In</h1>
+          <h2 className="mb-3 text-lg text-start text-black-800 font-light md:mb-9 md:text-xs">
+            {t('auth.login.title')}
+          </h2>
+        </div>
+      )}
       <form
         action="/api/auth/signin/credentials"
         method="post"
@@ -136,38 +159,51 @@ export const Login = () => {
         <input type="hidden" value="login" {...register('formType')} />
         <input type="hidden" value={locale} {...register('locale')} />
 
-        <div className={clsx(errors.email ? 'mb-8' : 'mb-4')}>
-          <Input
-            labelStyle="floating"
-            label={t('auth.login.form.email.placeholder')}
-            className="h-14"
-            {...register('email')}
-            error={errors.email}
-            data-testid="login-email"
-            required
-          />
-        </div>
+        {!emailValidated && (
+          <div className={clsx(errors.email ? 'mb-8' : 'mb-1')}>
+            <label className='text-base font-semibold'>Email: </label>
+            <Input
+              labelStyle="floating"
+              className="h-14"
+              {...register('email')}
+              error={errors.email}
+              data-testid="login-email"
+              value={emailUser}
+              // onChange={(e) =>setUserName(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmailUser(e.target.value)}
+              required
+            />
+          </div>
+        )}
+        {/* Render password input only if email is successfully validated */}
+        {emailValidated && errors.email && (  // Ensure email is validated and no errors
+          <div className={clsx(errors.password ? 'mb-1' : 'mb-1')}>
+            <label className='text-base font-semibold'>Enter code </label><br />
+            <label className='text-xs'>Sent to {emailUser}</label>
+            <Input
+              labelStyle="floating"
+              label={t('auth.login.form.password.placeholder')}
+              className="h-14"
+              type="password"
+              {...register('password')}
+              // error={errors.password}
+              data-testid="login-password"
+              required
+            />
+          </div>
+        )}
 
-        <div className={clsx(errors.password ? 'mb-8' : 'mb-4')}>
-          <Input
-            labelStyle="floating"
-            label={t('auth.login.form.password.placeholder')}
-            className="h-14"
-            type="password"
-            {...register('password')}
-            error={errors.password}
-            data-testid="login-password"
-            required
-          />
-        </div>
-
-        <Link
+        {/* <Link
           href={ROUTES.FORGOT_PASSWORD}
           className="block text-sm underline mb-8"
           data-testid="login-forgot-password"
         >
           {t('auth.login.form.forgot_password')}
-        </Link>
+        </Link> */}
+        {emailValidated && errors.email && (
+          <p className='block text-sm underline mb-8 log_inwith'>Log in with a different email</p>
+        )}
+        <p className='block text-sm underline mb-8'>Privacy</p>
 
         {formError && (
           <p
@@ -183,10 +219,11 @@ export const Login = () => {
         </div>
 
         <Button
-          className="w-full h-12 uppercase text-xs font-semibold"
+          className="w-full h-12 uppercase text-xs pinkbtn border-0"
           type="submit"
           disabled={isCaptchaVisible && !captchaValidated}
           data-testid="login-submit"
+          onClick={() => handleEmailValidated()}
         >
           {t('auth.login.form.submit')}
         </Button>
@@ -202,7 +239,7 @@ export const Login = () => {
         </div>
       </form>
 
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 pb-8">
         {oauthProviders.map((provider) => (
           <Button
             key={provider.key}
@@ -214,7 +251,7 @@ export const Login = () => {
               location.href = `/${provider.key}/login/`;
             }}
           >
-            {provider.image && (
+            {/* {provider.image && (
               <Image
                 src={provider.image}
                 alt={provider.label}
@@ -222,7 +259,7 @@ export const Login = () => {
                 height={18}
                 className="flex-shrink-0"
               />
-            )}
+            )} */}
 
             {provider.localeKey ? t(provider.localeKey) : provider.label}
           </Button>
