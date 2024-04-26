@@ -22,7 +22,8 @@ type HomeLeapType = {
     home_feature_intimate: HeroSalesItem;
 };
 
-export default async function z({ searchParams = new URLSearchParams() }: PageProps) {
+export default async function FeatureIntimate() {
+    const searchParams = new URLSearchParams()
      
     const datas = await getWidgetData<HomeLeapType>({
         slug: 'feature-intimate'

@@ -8,7 +8,14 @@ import FeatureComponent from '@theme/views/widgets/feature/feature-product-conte
 import { GetCategoryResponse } from '@akinon/next/types';
 
 
-export default function HomeFeatureIntimateContent({data }) {
+
+export default function HomeFeatureIntimateContent({
+    data,
+    children,
+  }: {
+    data: GetCategoryResponse;
+    children?: React.ReactNode;
+  }) {
     
     return (
         <Wrapper className='max-container'>

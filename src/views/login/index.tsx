@@ -159,7 +159,7 @@ export const Login = () => {
         <input type="hidden" value="login" {...register('formType')} />
         <input type="hidden" value={locale} {...register('locale')} />
 
-        {!emailValidated && (
+        {/* {!emailValidated && ( */}
           <div className={clsx(errors.email ? 'mb-8' : 'mb-1')}>
             <label className='text-base font-semibold'>Email: </label>
             <Input
@@ -168,15 +168,15 @@ export const Login = () => {
               {...register('email')}
               error={errors.email}
               data-testid="login-email"
-              value={emailUser}
+              // value={emailUser}
               // onChange={(e) =>setUserName(e.target.value)}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmailUser(e.target.value)}
+              // onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmailUser(e.target.value)}
               required
             />
           </div>
-        )}
+        {/* )} */}
         {/* Render password input only if email is successfully validated */}
-        {emailValidated && errors.email && (  // Ensure email is validated and no errors
+        {/* {emailValidated && errors.email && (  // Ensure email is validated and no errors */}
           <div className={clsx(errors.password ? 'mb-1' : 'mb-1')}>
             <label className='text-base font-semibold'>Enter code </label><br />
             <label className='text-xs'>Sent to {emailUser}</label>
@@ -191,7 +191,7 @@ export const Login = () => {
               required
             />
           </div>
-        )}
+        {/* )} */}
 
         {/* <Link
           href={ROUTES.FORGOT_PASSWORD}
@@ -223,7 +223,7 @@ export const Login = () => {
           type="submit"
           disabled={isCaptchaVisible && !captchaValidated}
           data-testid="login-submit"
-          onClick={() => handleEmailValidated()}
+          // onClick={() => handleEmailValidated()}
         >
           {t('auth.login.form.submit')}
         </Button>

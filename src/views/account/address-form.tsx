@@ -227,10 +227,10 @@ export const AddressForm = (props: Props) => {
         required
       /> */}
         <div>
-          {/* <Input
+          <Input
             label={t('account.address_book.form.email.placeholder')}
-            // {...register('email')}
-            error={errors.email}
+            {...register('email')}
+            // error={errors.email}
             data-testid="address-form-email"
             required
           />
@@ -240,7 +240,7 @@ export const AddressForm = (props: Props) => {
               data-testid="email-news-and-offers-checkbox"
             />
             <p className='text-xs text-gray-800'>Email me with news and offers</p>
-          </label> */}
+          </label>
         </div>
 
         <h3 className='color_blue border-b pb-3'>Delivery</h3>
