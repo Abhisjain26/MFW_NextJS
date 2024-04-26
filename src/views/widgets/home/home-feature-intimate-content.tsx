@@ -18,7 +18,7 @@ export default function HomeFeatureIntimateContent({
   }) {
     
     return (
-        <Wrapper className='max-container'>
+        <Wrapper className='container'>
             {/* {datas?.attributes?.home_feature_intimate?.map((item, i) => ( */}
             <div>
                 <div className='home_slider_feature'>

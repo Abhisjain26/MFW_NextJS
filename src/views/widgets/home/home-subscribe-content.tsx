@@ -9,7 +9,7 @@ export default function HomeSubscribeContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='max-container home_subscribe'>
+            <div className='container home_subscribe'>
                 <div className="subscribe_top"></div>
                 <div className="subscribe_back"></div>
                 {data?.attributes?.home_subscribe?.map((item, i) => (

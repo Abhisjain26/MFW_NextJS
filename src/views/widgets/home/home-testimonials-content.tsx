@@ -11,7 +11,7 @@ export default function HomeTestimonialsContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='partner_content testimonials_content max-container'>
+            <div className='partner_content testimonials_content container'>
                 <div className="leaf-right">
                     <Image width={50} height={70} src={'images/home/leaf-right.svg'} className='leaf_right_testimonials' alt="Leaf" />
                 </div>

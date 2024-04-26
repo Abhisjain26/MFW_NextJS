@@ -29,7 +29,7 @@ export default function HomeValentineContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='max-container home_advertisment_container p-10'>
+            <div className='container home_advertisment_container p-10'>
 
                 {data?.attributes?.home_advertisment?.map((item, i) => (
                     <div className=' flex items-center gap-10 home_advertisment_container'

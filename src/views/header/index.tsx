@@ -17,7 +17,7 @@ export default async function Header() {
   const menu = menuGenerator(response);
 
   return (
-    <header className="relative max-container">
+    <header className="relative container">
       <div className=' flex justify-center mt-5'>
         <Image width={200} height={150} alt='' className='header_logo' src="/images/logoMall.svg" />
       </div>

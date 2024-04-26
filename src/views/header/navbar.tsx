@@ -47,7 +47,7 @@ export default function Navbar(props: NavbarProps) {
   }, []);
 
   return (
-    <>
+    <div className='relative'>
       <nav className="relative w-full flex-wrap items-center justify-center hidden header-grid-area-nav sm:flex justify-between">
         <ul className="flex flex-wrap w-full items-center justify-center header_content mt-8 justify-between">
           {menu.map((item, index) =>
@@ -200,7 +200,9 @@ export default function Navbar(props: NavbarProps) {
           </li>
         </ul>
       </nav>
-      {isSearchOpen && <Search />}
-    </>
+      <div>
+        {isSearchOpen && <Search />}
+      </div>
+    </div>
   );
 }

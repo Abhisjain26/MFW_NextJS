@@ -23,7 +23,7 @@ export default function HomeNewsContent({ data }) {
     };
     return (
         <div>
-            <div className={`max-container ${Style.news}`}>
+            <div className={`container ${Style.news}`}>
                 <div className={`${Style.news_container}`}>
                     <div className={`${Style.home_dress}`}>
                         <Image src='images/home/dress.png'

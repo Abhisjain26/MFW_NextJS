@@ -9,7 +9,7 @@ export default function HomeLeapContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='max-container'>
+            <div className='container'>
 
                 {data?.attributes?.home_banner?.map((item, i) => (
                     <div

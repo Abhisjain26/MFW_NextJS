@@ -16,7 +16,7 @@ export default function HomeHeroSliderContent({ data }) {
             items: 1
           }
         }}
-        className='max-container rounded-1'
+        className='container rounded-1'
         arrows={true}
         swipeable={true}
       >

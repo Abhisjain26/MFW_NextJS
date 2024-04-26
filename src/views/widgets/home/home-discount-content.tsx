@@ -9,7 +9,7 @@ export default function HomeDiscountContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='max-container relative home_advertisment_container flex gap-5'>
+            <div className='container relative home_advertisment_container flex gap-5'>
                 <div className="branch_leaf">
                     <Image
                         src={'/images/home/branch-leaf.png'}

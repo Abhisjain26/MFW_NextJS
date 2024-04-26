@@ -105,7 +105,7 @@ export default function FeatureComponent({ data }) {
             items: 2
           }
         }}
-        className='max-container rounded-1'
+        className='container rounded-1'
         arrows={true}
         swipeable={true}
       >

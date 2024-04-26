@@ -35,7 +35,7 @@ export default function Page() {
 
   return (
     <Wrapper>
-      <div className='max-container'>
+      <div className='container'>
         <div className='cart_header'>
           <p>Your cart shows the price in your local currency. We process all orders in USD and you will be checked out using the most current exchange rate.</p>
         </div>

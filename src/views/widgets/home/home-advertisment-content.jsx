@@ -28,7 +28,7 @@ export default function HomeAdvertismentContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='max-container home_advertisment_container p-10'>
+            <div className='container home_advertisment_container p-10'>
                 <div className='home_dress'>
                     <Image src='images/home/dress.png'
                         width={20}

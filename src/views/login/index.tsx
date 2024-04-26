@@ -66,6 +66,8 @@ export const Login = () => {
   const [emailValidated, setEmailValidated] = useState(false);
   const [username, setUserName] = useState(false);
   const [emailUser, setEmailUser] = useState('');
+  const [isContinue, setIsContinue] = useState(false);
+
   const {
     CaptchaView,
     validated: captchaValidated,
@@ -122,8 +124,8 @@ export const Login = () => {
 
   const handleEmailValidated = () => {
     setEmailValidated(true);
-    setUserName(true);    
-    
+    setUserName(true);
+    setIsContinue(true);
   };
 
   return (
@@ -159,74 +161,88 @@ export const Login = () => {
         <input type="hidden" value="login" {...register('formType')} />
         <input type="hidden" value={locale} {...register('locale')} />
 
-        {/* {!emailValidated && ( */}
-          <div className={clsx(errors.email ? 'mb-8' : 'mb-1')}>
-            <label className='text-base font-semibold'>Email: </label>
-            <Input
-              labelStyle="floating"
-              className="h-14"
-              {...register('email')}
-              error={errors.email}
-              data-testid="login-email"
-              // value={emailUser}
-              // onChange={(e) =>setUserName(e.target.value)}
-              // onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmailUser(e.target.value)}
-              required
-            />
+        {!isContinue && (
+          <div>
+            <div className={clsx(errors.email ? 'mb-8' : 'mb-1')}>
+              <label className='text-base font-semibold'>Email: </label>
+              <Input
+                labelStyle="floating"
+                className="h-14"
+                {...register('email')}
+                error={errors.email}
+                data-testid="login-email"
+                // value={emailUser}
+                // onChange={(e) =>setUserName(e.target.value)}
+                // onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmailUser(e.target.value)}
+                required
+              />
+            </div>
+
+            <Button
+              className="w-full h-12 uppercase text-xs pinkbtn border-0"
+              // type="submit"
+              // disabled={isCaptchaVisible && !captchaValidated}
+              // data-testid="login-submit"
+              onClick={() => handleEmailValidated()}
+            >
+              {t('auth.login.form.submit')}
+            </Button>
           </div>
-        {/* )} */}
+        )}
         {/* Render password input only if email is successfully validated */}
-        {/* {emailValidated && errors.email && (  // Ensure email is validated and no errors */}
-          <div className={clsx(errors.password ? 'mb-1' : 'mb-1')}>
-            <label className='text-base font-semibold'>Enter code </label><br />
-            <label className='text-xs'>Sent to {emailUser}</label>
-            <Input
-              labelStyle="floating"
-              label={t('auth.login.form.password.placeholder')}
-              className="h-14"
-              type="password"
-              {...register('password')}
-              // error={errors.password}
-              data-testid="login-password"
-              required
-            />
+
+        {isContinue && (
+          <div>
+            <div className={clsx(errors.password ? 'mb-1' : 'mb-1')}>
+              <label className='text-base font-semibold'>Enter code </label><br />
+              <label className='text-xs'>Sent to {emailUser}</label>
+              <Input
+                labelStyle="floating"
+                label={t('auth.login.form.password.placeholder')}
+                className="h-14"
+                type="password"
+                {...register('password')}
+                // error={errors.password}
+                data-testid="login-password"
+                required
+              />
+            </div>
+
+
+            <Link
+              href={ROUTES.FORGOT_PASSWORD}
+              className="block text-sm underline mb-8"
+              data-testid="login-forgot-password"
+            >
+              {t('auth.login.form.forgot_password')}
+            </Link> 
+            <p className='block text-sm underline mb-8 log_inwith'>Log in with a different email</p>
+            <p className='block text-sm underline mb-8'>Privacy</p>
+
+            {formError && (
+              <p
+                className="text-error text-xs my-5"
+                data-testid="login-error-field"
+              >
+                {formError}
+              </p>
+            )}
+
+            <div className="flex justify-center">
+              <CaptchaView className="mb-5" data-testid="login-captcha" />
+            </div>
+
+            <Button
+              className="w-full h-12 uppercase text-xs pinkbtn border-0"
+              type="submit"
+              disabled={isCaptchaVisible && !captchaValidated}
+              data-testid="login-submit"
+            >
+              {t('auth.login.form.submit')}
+            </Button>
           </div>
-        {/* )} */}
-
-        {/* <Link
-          href={ROUTES.FORGOT_PASSWORD}
-          className="block text-sm underline mb-8"
-          data-testid="login-forgot-password"
-        >
-          {t('auth.login.form.forgot_password')}
-        </Link> */}
-        {emailValidated && errors.email && (
-          <p className='block text-sm underline mb-8 log_inwith'>Log in with a different email</p>
-        )}
-        <p className='block text-sm underline mb-8'>Privacy</p>
-
-        {formError && (
-          <p
-            className="text-error text-xs my-5"
-            data-testid="login-error-field"
-          >
-            {formError}
-          </p>
         )}
 
-        <div className="flex justify-center">
-          <CaptchaView className="mb-5" data-testid="login-captcha" />
-        </div>
-
-        <Button
-          className="w-full h-12 uppercase text-xs pinkbtn border-0"
-          type="submit"
-          disabled={isCaptchaVisible && !captchaValidated}
-          data-testid="login-submit"
-          // onClick={() => handleEmailValidated()}
-        >
-          {t('auth.login.form.submit')}
-        </Button>
 
         <p className="relative text-gray-600 text-center my-4 before:absolute before:h-[1px] before:w-5/12 before:bg-gray-600 before:bg-opacity-25 before:top-1/2 before:left-0 after:absolute after:h-[1px] after:w-5/12 after:bg-gray-600 after:bg-opacity-25 after:top-1/2 after:right-0">
           {t('auth.login.form.or')}
