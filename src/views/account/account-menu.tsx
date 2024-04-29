@@ -69,7 +69,7 @@ export default function AccountMenu() {
       .unwrap()
       .then(() => {
         signOut({
-          callbackUrl: '/'
+          callbackUrl: '/account'
         });
       })
       .catch((error) => console.error(error));

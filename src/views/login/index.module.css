@@ -1,0 +1,17 @@
+ .login_logo {
+     width: 40% !important;
+     margin: 0 auto !important;
+     padding: 40px 0 !important;
+     border-radius: 0 0 50px 50px !important;
+     box-shadow: 0 6px 4px -3px #C576AC !important;
+ }
+
+ .login_line {
+     width: 150px !important;
+ }
+
+
+ .log_inwith {
+     color: #E287CE !important;
+     font-family: Georgia, 'Times New Roman', Times, serif !important;
+ }

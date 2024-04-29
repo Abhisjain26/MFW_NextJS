@@ -2,6 +2,7 @@ enum GENERAL_ROUTES {
   HOME = '/',
   BASKET = '/baskets/basket',
   LIST = '/list',
+  SEARCH = '/search',
 }
 
 enum AUTH_ROUTES {

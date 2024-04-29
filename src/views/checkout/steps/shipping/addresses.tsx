@@ -7,7 +7,7 @@ import { CheckoutAddressType } from '@akinon/next/types';
 import { Checkbox, Icon, Link, Modal } from '@theme/components';
 import AddressBox from './address-box';
 import { useAddAddressMutation } from '@akinon/next/data/client/address';
-import { AddressForm } from '@theme/views/account/address-form';
+import { AddressForm } from '@theme/views/account/address-form/address-form';
 import { useLocalization } from '@akinon/next/hooks';
 import PluginModule, { Component } from '@akinon/next/components/plugin-module';
 import { Trans } from '@akinon/next/components/trans';
@@ -95,7 +95,7 @@ const Addresses = () => {
 
   return (
     <>
-    
+
       <div className="w-full">
         {addressTypes
           // .filter((addressType) =>
@@ -120,7 +120,7 @@ const Addresses = () => {
                   )}
               </div> */}
               {/* <div className="px-8 py-4 border-gray-400"> */}
-                {/* <p className="text-xs mb-4">
+              {/* <p className="text-xs mb-4">
                   <Trans
                     i18nKey="checkout.address.content"
                     components={{
@@ -130,8 +130,8 @@ const Addresses = () => {
                     }}
                   />
                 </p> */}
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
-                  {/* {addressList.map((address) => (
+              {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
+              {/* {addressList.map((address) => (
                     <AddressBox
                       key={address.pk}
                       addressType={addressType}
@@ -146,12 +146,12 @@ const Addresses = () => {
                     />
                   ))} */}
 
-                  {/* <PluginModule
+              {/* <PluginModule
                     component={Component.ClickCollect}
                     props={{ addressTypeParam: addressType.requestParam }}
                   /> */}
 
-                  {/* <div
+              {/* <div
                     role="button"
                     onClick={() => setIsModalOpen(true)}
                     className={clsx(
@@ -171,16 +171,16 @@ const Addresses = () => {
                       </span>
                     </div>
                   </div> */}
-                  {/* <Modal
+              {/* <Modal
                     portalId="orders-checkout-new-address-modal"
                     title={t('checkout.address.add_new_address')}
                     open={isModalOpen}
                     setOpen={setIsModalOpen}
                     className="w-full sm:w-[28rem] max-h-[90vh] overflow-y-auto" */}
-                  {/* > */}
-                    <AddressForm onSubmit={onSubmit} />
-                  {/* </Modal> */}
-                {/* </div> */}
+              {/* > */}
+              <AddressForm onSubmit={onSubmit} />
+              {/* </Modal> */}
+              {/* </div> */}
               {/* </div> */}
             </div>
           ))}

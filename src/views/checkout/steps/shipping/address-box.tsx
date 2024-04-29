@@ -14,7 +14,7 @@ import {
 import { Address, CheckoutAddressType } from '@akinon/next/types';
 import { Button, Modal, Radio } from '@theme/components';
 import { resetCheckoutState } from '@akinon/next/redux/reducers/checkout';
-import { AddressForm } from '@theme/views/account/address-form';
+import { AddressForm } from '@theme/views/account/address-form/address-form';
 import { useLocalization } from '@akinon/next/hooks';
 
 interface AddressBoxProps {

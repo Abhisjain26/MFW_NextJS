@@ -21,6 +21,7 @@ import {
 import { useAppSelector } from '@akinon/next/redux/hooks';
 import { useLocalization } from '@akinon/next/hooks';
 import { Image, Link } from '@akinon/next/components';
+import Style from './address-form.module.css'
 
 type SelectOptionType = {
   label: string;
@@ -303,6 +304,8 @@ export const AddressForm = (props: Props) => {
               {errors.line.message}
             </span>
           )}
+          <p className={`${Style.add_address_form} text-xs`}>+ Add apartments, suit, etc.</p>
+
         </label>
 
         {/* <label className="text-xs text-gray-800 relative">
@@ -334,7 +337,6 @@ export const AddressForm = (props: Props) => {
             {errors.line.message}
           </span>
         )}
-      <p className='add_address_form text-xs'>+ Add apartments, suit, etc.</p>
       </label> */}
 
 
@@ -358,6 +360,7 @@ export const AddressForm = (props: Props) => {
               label={t('account.address_book.form.province.title')}
               required
             />
+
           </div>
           <div className="flex-1 address_form_content_input">
             <Select
@@ -418,7 +421,7 @@ export const AddressForm = (props: Props) => {
         <div>
           <h3 className='color_blue'>Shipping Method</h3>
           <Input
-            className='shipping_method mt-2'
+            className={`${Style.shipping_method} mt-2`}
             placeholder='Enter your shipping address to view available shipping methods.'
           />
         </div>
@@ -428,7 +431,7 @@ export const AddressForm = (props: Props) => {
           <p className='text-xs mt-1'>All transactions are secure and encrypted.</p>
           <div className='relative mt-2'>
             <Input
-              className='paypal_method '
+              className={`${Style.paypal_method}`}
               placeholder='PayPal'
             />
             <div className="absolute inset-y-0 right-0 top-0 flex items-center pr-2 pointer-events-none">
@@ -475,7 +478,7 @@ export const AddressForm = (props: Props) => {
       )} */}
         <Button
           type="submit"
-          className="flex items-center justify-center font-semibold gap-2 paypal_button"
+          className={`flex items-center justify-center font-semibold gap-2 ${Style.paypal_button}`}
           data-testid="address-form-submit"
         >
           <span>{t('account.address_book.form.submit_button')}</span><span className='text-base '><i>PayPal</i></span>
@@ -485,19 +488,19 @@ export const AddressForm = (props: Props) => {
 
       <div className='mt-10 flex items-center justify-between'>
         <div>
-          <Link className='addres_form_policy' href="#">Refund Policy</Link>
+          <Link className={`${Style.addres_form_policy}`} href="#">Refund Policy</Link>
         </div>
         <div>
-          <Link className='addres_form_policy' href="#">Shipping Policy</Link>
+          <Link className={`${Style.addres_form_policy}`} href="#">Shipping Policy</Link>
         </div>
         <div>
-          <Link className='addres_form_policy' href="#">Privacy Policy</Link>
+          <Link className={`${Style.addres_form_policy}`} href="#">Privacy Policy</Link>
         </div>
         <div>
-          <Link className='addres_form_policy' href="#">terms of Service</Link>
+          <Link className={`${Style.addres_form_policy}`} href="#">terms of Service</Link>
         </div>
         <div>
-          <Link className='addres_form_policy' href="#">Contact Information</Link>
+          <Link className={`${Style.addres_form_policy}`} href="#">Contact Information</Link>
         </div>
       </div>
     </>

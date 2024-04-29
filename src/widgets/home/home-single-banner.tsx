@@ -41,7 +41,7 @@ export default async function HomeSingleBanner() {
   });
 
   return (
-    <div className="container relative">
+    <div className="container container_mx relative">
       {data?.attributes?.single_banner?.value && (
         <Link
           href={data?.attributes?.single_banner?.value?.url}

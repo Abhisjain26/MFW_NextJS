@@ -2,7 +2,7 @@ import 'server-only';
 
 import { getWidgetData } from '@akinon/next/data/server';
 import { ImageType } from '@akinon/next/types';
-import HomeHeroSliderContent from '@theme/views/widgets/home/home-hero-slider-content';
+import HomeHeroSliderContent from '@theme/views/widgets/home/banner-slider';
 
 type HeroSliderItem = [
   {

@@ -43,12 +43,12 @@ export default function FooterSubscriptionForm() {
 
   return (
     <div>
-      <div className="flex mb-5">
+      <div className="flex mb-5 relative z-10">
         <Input
           id="footer-subscription-email"
           type="email"
           placeholder={t('common.newsletter_signup.email_address')}
-          className="text-sm h-7 w-44"
+          className="text-sm h-7 w-50 email_subscribe_input"
           {...register('email')}
           error={errors.email}
           data-testid="newsletter-input"
@@ -57,15 +57,16 @@ export default function FooterSubscriptionForm() {
         <Button
           type="submit"
           appearance="outlined"
-          className="text-xs font-semibold h-7"
+          className="text-xs font-semibold h-7 email_subscribe_button"
           data-testid="newsletter-submit"
           onClick={handleSubmit(onSubmit)}
         >
-          {t('common.newsletter_signup.submit')}
+          Subscribe
+          {/* {t('common.newsletter_signup.submit')} */}
         </Button>
       </div>
 
-      <Checkbox
+      {/* <Checkbox
         {...register('subscribe_contract')}
         error={errors.subscribe_contract}
         data-testid="newsletter-agreement-checkbox"
@@ -104,7 +105,7 @@ export default function FooterSubscriptionForm() {
             {t('common.newsletter_signup.close')}
           </Button>
         </Modal>
-      </Checkbox>
+      </Checkbox> */}
     </div>
   );
 }

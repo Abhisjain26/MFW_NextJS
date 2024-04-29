@@ -70,7 +70,20 @@ export const HOME_WIDGETS: {
   'home-subscribe': dynamic(
     async () => import('@theme/widgets/home/home-subscribe')
   ),
+  'home-media-covergae': dynamic(
+    async () => import('@theme/widgets/home/home-media-covergae')
+  ),
   'thank-you': dynamic(
     async () => import('@theme/widgets/home/home-thankyou')
   ),
+  'about-us': dynamic(
+    async () => import('@theme/widgets/about/about-us')
+  ),
+  'about-e-commerce': dynamic(
+    async () => import('@theme/widgets/about/about-ecommerce')
+  ),
+  'about-co-founder': dynamic(
+    async () => import('@theme/widgets/about/about-cofounder')
+  ),
+
 };

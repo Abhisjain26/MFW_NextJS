@@ -49,16 +49,16 @@ export default function HomeValentineContent({ data }) {
                                 }
                                 <button className='btn pinkbtn rounded-md'>{item.value.link}SHOP NOW</button>
                             </div>
+                            <div className='home_advertisment_image'>
+                                <Image
+                                    src={item.kwargs.value.image.url}
+                                    width={500}
+                                    height={500}
+                                    alt={""}
+                                />
+                            </div>
                         </div>
-                        <div className='home_advertisment_image'>
-                            <Image
-                                src={item.kwargs.value.image.url}
-                                width={500}
-                                height={500}
-                                alt={""}
-                            />
 
-                        </div>
 
                     </div>
                 ))}
@@ -71,15 +71,15 @@ const Wrapper = Styled.section`
     .home_advertisment_container{
         border-radius:30px;
         position:relative;
-        margin-top:50px;
-        margin-bottom:100px;
+        margin-top:20px;
+        margin-bottom:10px;
         background-color:#F3F3F3;
     }
     .home_advertisment_image{
         width:50% ;
         padding-right:30px;
         position:absolute;
-        bottom:-80px;
+        bottom:-120px;
         right:0;
     }
     .home_advertisment_image img{

@@ -20,6 +20,7 @@ import dynamic from 'next/dynamic';
 import PluginModule, { Component } from '@akinon/next/components/plugin-module';
 import { Image } from '@akinon/next/components';
 import Styled from 'styled-components';
+import Style from './page.module.css'
 
 const Checkout = () => {
   const { t } = useLocalization();
@@ -116,25 +117,25 @@ const Checkout = () => {
   }
 
   return (
-    <Wrapper>
+    <div>
       <PluginModule component={Component.MasterpassProvider}>
         <PluginModule component={Component.MasterpassDeleteConfirmationModal} />
         <PluginModule component={Component.MasterpassOtpModal} />
         <PluginModule component={Component.MasterpassLinkModal} />
 
         <div className="container py-5">
-          <div className='w-3/5 px-24 border border-b-0  mx-auto text-center checkout_main_container pt-5 pb-12'>
+          <div className={`w-3/5 px-24 border border-b-0  mx-auto text-center ${Style.checkout_main_container} pt-5 pb-12`}>
             <h2 className='color_blue mt-3'>Express Checkout</h2>
-            <button className='checkout_paypal_button'><Image className='checkout_paypal_image' src="/images/local/paypal.svg" alt='Paypal' width={100} height={100} /></button>
+            <button className={`${Style.checkout_paypal_button}`}><Image className={`${Style.checkout_paypal_image}`} src="/images/local/paypal.svg" alt='Paypal' width={100} height={100} /></button>
           </div>
 
           {/* <CheckoutStepList /> */}
           <div className='border relative w-3/5 mx-auto checkout_or_mobile'>
-            <div className='color_blue or_checkout'>OR</div>
+            <div className={`color_blue ${Style.or_checkout}`}>OR</div>
           </div>
 
-          <div className=" flex flex-wrap justify-center checkout_main_container">
-            <div className='w-3/5 checkout_content_mobile px-24 border border-t-0 pt-9 pb-5'>
+          <div className={`flex flex-wrap justify-center ${Style.checkout_main_container}`}>
+            <div className={`w-3/5 ${Style.checkout_content_mobile} px-24 border border-t-0 pt-9 pb-5`}>
               {steps.current === CheckoutStep.Shipping && <ShippingStep />}
               {steps.current === CheckoutStep.Payment && <PaymentStep />}
             </div>
@@ -145,18 +146,8 @@ const Checkout = () => {
           </div>
         </div>
       </PluginModule>
-    </Wrapper>
+    </div>
   );
 };
-
-const Wrapper = Styled.section`
-  @media screen and (max-width:767px){
-    .checkout_main_container{
-      width:auto !important;
-      padding:0 20px !important;
-      margin-top:10px !important;
-    }
-  }
-`
 
 export default Checkout;

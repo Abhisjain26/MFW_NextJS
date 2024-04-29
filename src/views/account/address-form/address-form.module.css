@@ -1,0 +1,23 @@
+.add_address_form {
+    color: #0047FF !important;
+  }
+  
+  .shipping_method {
+    background-color: #F3F3F3 !important;
+  }
+  
+  .paypal_method {
+    background-color: #F5F8FF !important;
+    border: 1px solid #0047FF !important;
+  }
+  
+  .paypal_button {
+    background-color: #0070BA !important;
+    color: #fff !important;
+  }
+  
+  .addres_form_policy {
+    color: #0047FF !important;
+    text-decoration: underline !important;
+    font-size: 12px !important;
+  }

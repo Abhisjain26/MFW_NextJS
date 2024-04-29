@@ -14,6 +14,7 @@ import { pushBeginCheckout } from '@theme/utils/gtm';
 import { ROUTES } from '@theme/routes';
 import { useRouter, useLocalization } from '@akinon/next/hooks';
 import PluginModule, { Component } from '@akinon/next/components/plugin-module';
+import Style from './sumary.module.css'
 
 interface Props {
   basket: Basket;
@@ -99,16 +100,16 @@ export const Summary = (props: Props) => {
       <div className='border px-2 py-3 flex items-center justify-between'>
         <div className='flex mb-3'>
           <div>
-            <Icon name='pin' className='summary_icon' size={16} />
+            <Icon name='pin' className={`${Style.summary_icon}`} size={16} />
           </div>
           <div>
             <h3 className='color_blue text-sm'>Your Location</h3>
             <h3 className='text-sm'>Erand Gardens Ext 94, 1682</h3>
-            <p className='loaction_text_color text-xs'>We need your address to check item availability</p>
+            <p className={`${Style.loaction_text_color} text-xs`}>We need your address to check item availability</p>
           </div>
         </div>
         <div >
-          <Button className='pinkbtn add_address_button border-0 text-xs px-3'>Add Address</Button>
+          <Button className={`pinkbtn ${Style.add_address_button} border-0 text-xs px-3`}>Add Address</Button>
         </div>
       </div>
       <div className='border px-2 py-3'>
@@ -215,7 +216,7 @@ export const Summary = (props: Props) => {
             </div>
             {basket.voucher_code ? (
               <Button
-                className="h-9 w-20 px-0 summary_cart_button"
+                className={`h-9 w-20 px-0 ${Style.summary_cart_button}`}
                 // appearance="outlined"
                 data-testid="basket-voucher-remove"
                 type="button"

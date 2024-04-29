@@ -11,6 +11,7 @@ import {
   useCommonProductAttributes,
   useLocalization
 } from '@akinon/next/hooks';
+import Style from './sumary.module.css'
 import PluginModule, { Component } from '@akinon/next/components/plugin-module';
 import { Image } from '@akinon/next/components/image';
 import clsx from 'clsx';
@@ -117,7 +118,7 @@ export const BasketItem = (props: Props) => {
                   <Icon
                     name="close"
                     size={8}
-                    className="self-center cursor-pointer close_cart_icon" // TODO: Add hover color. Fill not working
+                    className={`self-center cursor-pointer ${Style.close_cart_icon}`} // TODO: Add hover color. Fill not working
                     onClick={() => setRemoveBasketModalOpen(true)}
                     data-testid="basket-product-remove"
                   />
@@ -136,7 +137,7 @@ export const BasketItem = (props: Props) => {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row md:items-center gap-3 lg:w-52 cart_button_add_mobile">
-                <div className="px-2 cart_button_add py-2 px-3"  >
+                <div className={`px-2 ${Style.cart_button_add} py-2 px-3`}  >
                   <button
                     onClick={() => {
                       updateQuantity(basketItem.product.pk, Math.max(1, basketItem.quantity - 1));
@@ -144,16 +145,16 @@ export const BasketItem = (props: Props) => {
                     disabled={basketItem.quantity <= 1}
                     className="btn btn-secondary"
                   >
-                    <Icon size={10} name='minus' className='cart_add_minus p-1' />
+                    <Icon size={10} name='minus' className={`${Style.cart_add_minus} p-1`} />
                   </button>
-                  <span className="mx-4 color_cart_add_button">{basketItem.quantity}</span>
+                  <span className={`mx-4 ${Style.color_cart_add_button}`}>{basketItem.quantity}</span>
                   <button
                     onClick={() => {
                       updateQuantity(basketItem.product.pk, basketItem.quantity + 1);
                     }}
                     className="btn btn-secondary "
                   >
-                    <Icon size={10} name='plus' className='cart_minus_add p-1' />
+                    <Icon size={10} name='plus' className={`${Style.cart_minus_add} p-1`} />
                     
                   </button>
                 </div>

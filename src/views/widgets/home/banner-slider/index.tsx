@@ -4,6 +4,7 @@ import React from 'react';
 import { CarouselCore } from '@theme/components/carousel-core';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
+import Style from './home-hero.module.css'
 
 export default function HomeHeroSliderContent({ data }) {
 
@@ -16,7 +17,7 @@ export default function HomeHeroSliderContent({ data }) {
             items: 1
           }
         }}
-        className='container rounded-1'
+        className='container rounded-1 container_mx'
         arrows={true}
         swipeable={true}
       >
@@ -30,12 +31,12 @@ export default function HomeHeroSliderContent({ data }) {
               height: '450px',
               borderRadius: '20px'
             }}
-            className='home_hero_slider'
+            className={`${Style.home_hero_slider}`}
           >
-            <div className="home_slider_title">
+            <div className={`${Style.home_slider_title}`}>
               <h2><i>Designer</i></h2>
             </div>
-            <div className='home_slider_content'>
+            <div className={`${Style.home_slider_content}`}>
               <button><Link href="/list">Shop Now</Link></button>
             </div>
           </div>

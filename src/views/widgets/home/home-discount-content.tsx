@@ -9,7 +9,7 @@ export default function HomeDiscountContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='container relative home_advertisment_container flex gap-5'>
+            <div className='container container_mx relative home_discount_container flex gap-5'>
                 <div className="branch_leaf">
                     <Image
                         src={'/images/home/branch-leaf.png'}
@@ -46,6 +46,9 @@ const Wrapper = Styled.section`
     width:100% !important;
     height:100% !important;
     border-radius: 30px !important;
+  }
+  .home_discount_container{
+    margin-top:100px;
   }
   .home_discount{
     width:50%;

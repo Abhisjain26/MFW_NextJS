@@ -2,7 +2,7 @@ import 'server-only';
 
 import { getWidgetData } from '@akinon/next/data/server';
 import { ImageType } from '@akinon/next/types';
-import HomeNewsContent from '@theme/views/widgets/home/home-news';
+import AboutContent from '@theme/views/widgets/about/about-content';
 
 type HeroSalesItem = [
     {
@@ -11,6 +11,8 @@ type HeroSalesItem = [
             value: {
                 mobile_image: ImageType;
                 image: ImageType;
+            subtext:string;
+
             };
         };
         value: {
@@ -18,21 +20,21 @@ type HeroSalesItem = [
             mobile_image: string;
             alt: string;
             image: string;
-            text: string;
-            subtext: string,
+            text:string;
+            subtext:string;
         };
     }
 ];
 
 type HomeLeapType = {
-    home_news: HeroSalesItem;
+    about_us: HeroSalesItem;
 };
 
 export default async function HomeHeroSlider() {
     const data = await getWidgetData<HomeLeapType>({
-        slug: 'news'
+        slug: 'about-us'
     });
 
-    return <HomeNewsContent data={data} />;
+    return <AboutContent data={data} />;
 }
 

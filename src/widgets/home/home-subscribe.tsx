@@ -2,7 +2,7 @@ import 'server-only';
 
 import { getWidgetData } from '@akinon/next/data/server';
 import { ImageType } from '@akinon/next/types';
-import HomeSubscribeContent from '@theme/views/widgets/home/home-subscribe-content';
+import HomeSubscribeContent from '@theme/views/widgets/home/subscribe';
 
 type HeroSalesItem = [
     {

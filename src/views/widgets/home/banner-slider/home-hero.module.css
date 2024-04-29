@@ -1,0 +1,24 @@
+.home_hero_slider {
+    position: relative ;
+    margin-top: 20px ;
+  }
+  
+  .home_slider_title {
+    position: absolute ;
+    top: 32% ;
+    font-size: 70px ;
+    color: #FFFAF1 ;
+    font-family: Georgia ;
+    left: 180px ;
+    transform: translateY(-50%) ;
+  }
+  
+  .home_slider_content {
+    position: absolute ;
+    top: 50% ;
+    border: 1px solid #FFFAF1 ;
+    padding: 10px 30px ;
+    color: #FFFAF1 ;
+    left: 250px ;
+    transform: translateY(-50%) ;
+  }

@@ -1,0 +1,86 @@
+.about_main_content{
+    border: 1px solid #E987B4;
+    margin-top: 20px;
+    border-radius: 20px;
+    border-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    padding: 1.25rem 0.55rem 1.25rem 2.75rem;
+    border-bottom-right-radius: 0px;
+}
+.about_main_content_text{
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #003744;
+}
+.about_main_content_image{
+    width: 20px;
+    height: 20px;
+}
+.about_main_content_image_1{
+    width: 800px;
+    height: 400px;
+}
+.about_main_content_image_1 img{
+    border-radius: 11px;
+}
+.about_content{
+    background-color: #FCF1ED;
+    padding: 30px;
+}
+.about_content p{
+    margin-top: 15px;
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000000;
+}
+.about_main_subcontent_text{
+    font-size: 20px;
+    color: #C576AC  ;
+}
+.about_ecommerce_content{
+    border: 1px solid #E987B4;
+    border-radius: 20px;
+    padding: 1.25rem 2.75rem 0rem 4.80rem;
+    border-top: 0px;
+    border-radius: 0px;
+    border-bottom: 0px;
+}
+.about_cofounder_content{
+    border: 1px solid #E987B4;
+    border-radius: 20px;
+    padding: 1.25rem 2.75rem 3rem 4.80rem !important;
+    border-top: 0px;
+    margin-bottom: 30px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    
+}
+.padding_about_main{
+    padding: 0rem 0.55rem 1.25rem 2.75rem;
+}
+.about_main_subcontent p{
+    margin-top: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+.about_main_subcontent a{
+    color: #0057FF;
+    text-decoration: underline;
+}
+.about_main_subcontent span{
+    text-decoration: underline;
+}
+.about_cofounder_content{
+    padding: 1.25rem 2.75rem 1.25rem 1.90rem;
+}
+.about_main_subcontent_text1{
+    margin-top: 10px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000000;
+    font-weight: 600;
+}
+.about_ecommerce_about{
+    border-bottom: 1px solid #C576AC;
+    padding-bottom: 30px;
+}

@@ -7,7 +7,7 @@ import {
   useSetDefaultAddressMutation
 } from '@akinon/next/data/client/address';
 import { Address } from '@akinon/next/types';
-import { AddressForm } from './address-form';
+import { AddressForm } from './address-form/address-form';
 import { Button, Modal, Radio } from '@theme/components';
 import { useLocalization } from '@akinon/next/hooks';
 

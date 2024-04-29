@@ -107,6 +107,10 @@
   }
 }
 
+.container {
+  max-width: 1150px;
+}
+
 .header_logo {
   width: 170px !important;
 }
@@ -209,147 +213,31 @@
   width: 100% !important;
 }
 
-// ------------------  Home Banner  --------------------
-.home_hero_slider {
-  position: relative !important;
-  margin-top: 20px !important;
-}
-
-.home_slider_title {
-  position: absolute !important;
-  top: 32% !important;
-  font-size: 70px !important;
-  color: #FFFAF1 !important;
-  font-family: Georgia !important;
-  left: 180px !important;
-  transform: translateY(-50%) !important;
-}
-
-.home_slider_content {
-  position: absolute !important;
-  top: 50% !important;
-  border: 1px solid #FFFAF1 !important;
-  padding: 10px 30px !important;
-  color: #FFFAF1 !important;
-  left: 250px !important;
-  transform: translateY(-50%) !important;
-}
-
-// --------------------  Cart  -------------------------
-
 .color_blue {
   color: #003744 !important;
   font-weight: 600 !important;
 }
-
-.close_cart_icon {
-  background-color: #C475AB !important;
-  color: #fff !important;
+.stories_banner img{
   border-radius: 50% !important;
-  padding: 5px !important;
+  border: 0 !important;
 }
-
-.cart_button_add {
-  border: 1px solid #b9b9b9 !important;
-}
-
-.color_cart_add_button {
-  color: #343434 !important;
-}
-
-.border_cart_add {
-  border: 1px solid #343434 !important;
-  padding: 3px 0 !important;
-}
-
-.cart_add_minus {
-  border: 1px solid #b9b9b9 !important;
-  transform: skewY(-10deg);
-}
-
-.cart_minus_add {
-  border: 1px solid #b9b9b9 !important;
-  transform: skewY(-170deg);
-}
-
-.summary_cart_button {
-  position: absolute !important;
-  top: 50% !important;
-  right: 10px !important;
-  transform: translateY(-50%) !important;
-  background-color: #999999 !important;
-  color: #fff !important;
-  border: 1px solid #999999 !important;
-}
-
-.summary_icon {
-  color: #C475AB !important;
-  margin-right: 10px !important;
-}
-
-.loaction_text_color {
-  color: #0076CB !important;
-}
-
-.add_address_button {
-  font-size: 12px !important;
-  padding: 0px 16px !important;
-}
-
-// -----------------   end of cart  ------------------- 
 
 // ----------------- Checkout  -------------------
 
-.checkout_paypal_button {
-  background-color: #FFC439 !important;
-  width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-}
-
-.checkout_paypal_image {
-  padding: 10px 0 !important;
-  width: 100px !important;
-  height: auto !important;
-}
 
 .color_lightblue {
   color: #0047FF !important;
 }
 
-.or_checkout {
-  position: absolute !important;
-  top: -16px !important;
-  font-size: 20px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  background-color: #fff !important;
-  padding: 0 20px !important;
+.title_all {
+  display: flex !important;
+  justify-content: center !important;
+  font-size: 30px !important;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  color: #000000 !important;
+  font-weight: 600;
 }
 
-.add_address_form {
-  color: #0047FF !important;
-}
-
-.shipping_method {
-  background-color: #F3F3F3 !important;
-}
-
-.paypal_method {
-  background-color: #F5F8FF !important;
-  border: 1px solid #0047FF !important;
-}
-
-.paypal_button {
-  background-color: #0070BA !important;
-  color: #fff !important;
-}
-
-.addres_form_policy {
-  color: #0047FF !important;
-  text-decoration: underline !important;
-  font-size: 12px !important;
-}
 
 // ------------------   End of checkout  ---------------------
 
@@ -477,6 +365,7 @@
   margin-bottom: 10px;
 }
 
+
 //---------------   End of detail page  ----------------------- 
 
 // -----------------------   login page  -------------------------- 
@@ -494,27 +383,30 @@
   padding-left: 0px 4rem 0px 0px !important;
 }
 
-.login_logo {
-  width: 40% !important;
-  margin: 0 auto !important;
-  padding: 40px 0 !important;
-  border-radius: 0 0 50px 50px !important;
-  box-shadow: 0 6px 4px -3px #C576AC !important;
-}
-
-.login_line {
-  width: 150px !important;
-}
 
 .hidden_password {
   display: none;
 }
 
-.log_inwith {
-  color: #E287CE !important;
-  font-family: Georgia, 'Times New Roman', Times, serif !important;
+.email_subscribe_input {
+  width: 300px !important;
+  height: 40px !important;
+  border-top-left-radius: 30px !important;
+  border-bottom-left-radius: 30px !important;
+  background: #fff !important;
+  padding: 0 10px !important;
 }
 
+.email_subscribe_button {
+  // padding: 20px 0 !important;
+  height: 40px !important;
+  background-color: #C475AB !important;
+  color: #fff !important;
+  width: 120px !important;
+  border: 0 !important;
+  border-top-right-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+}
 
 // ----------------------- Search ------------------------------------
 
@@ -531,11 +423,13 @@
 }
 
 .search_input {
-  background-color:#F0F0F0 !important;
+  background-color: #F0F0F0 !important;
 }
-.search_icon{
+
+.search_icon {
   color: #EB89B5 !important;
 }
+
 // ----------------------- End of login page  -------------------------- 
 
 @media screen and (max-width:767px) {
@@ -673,10 +567,7 @@
     width: 110px !important;
   }
 
-  .checkout_content_mobile {
-    padding: 0 20px !important;
-    width: 100% !important;
-  }
+
 
   .address_form_content {
     flex-direction: column;
@@ -688,5 +579,11 @@
 
   .checkout_or_mobile {
     margin-top: 30px !important;
+  }
+}
+@media screen and (min-width: 640px) {
+  .container_mx {
+    padding-right: 0rem !important;
+    padding-left: 0rem !important;
   }
 }

@@ -9,8 +9,9 @@ import { BasketItem, Summary } from '@theme/views/basket';
 import { useLocalization } from '@akinon/next/hooks';
 import { Image } from '@akinon/next/components';
 import FeatureComponent from '@theme/views/widgets/feature/feature-product-content';
-import styled from 'styled-components';
 import { pushBeginCheckout } from '@theme/utils/gtm';
+import Style from './page.module.css'
+
 
 export default function Page() {
   const { data: basket, isLoading, isSuccess } = useGetBasketQuery();
@@ -34,9 +35,9 @@ export default function Page() {
   // }, [basket]);
 
   return (
-    <Wrapper>
+    <div>
       <div className='container'>
-        <div className='cart_header'>
+        <div className={`${Style.cart_header}`}>
           <p>Your cart shows the price in your local currency. We process all orders in USD and you will be checked out using the most current exchange rate.</p>
         </div>
         <div className="flex items-center justify-between py-2  border-gray-200 lg:py-3">
@@ -74,7 +75,7 @@ export default function Page() {
             ) : (
               <div className="flex flex-col items-center container max-w-screen-sm py-4 px-4 xs:py-6 xs:px-6 sm:py-8 sm:px-8 lg:max-w-screen-xl">
                 <h1
-                  className="w-full text-xl font-light text-secondary text-center cart_empty_title sm:text-2xl"
+                  className={`w-full text-xl font-light text-secondary text-center ${Style.cart_empty_title} sm:text-2xl`}
                   data-testid="basket-empty"
                 >
                   {t('basket.empty.title')}
@@ -87,7 +88,7 @@ export default function Page() {
                 <div>
                   <Image src='/images/cart/empty_cart.svg' width={100} height={100} alt='' />
                 </div>
-                <p className='cart_empty_subtitle'>{t('basket.empty.content_third')}</p>
+                <p className={`${Style.cart_empty_sutitle}`}>{t('basket.empty.content_third')}</p>
                 <Link href={ROUTES.HOME} passHref>
                   <Button className="px-10 pinkbtn border-0 flex items-center gap-2 justify-center mt-2" appearance="filled">
                     <Icon name='cart' size={12} />
@@ -99,47 +100,12 @@ export default function Page() {
             ))}
 
         </div>
-        <div className='feature_outer_container' style={{ background: '#FDF0F6' }}>
+        <div className={`${Style.feature_outer_container}`} style={{ background: '#FDF0F6' }}>
           <div className='pb-2'>
             {/* <FeatureComponent data={data} /> */}
           </div>
         </div>
       </div>
-    </Wrapper>
+    </div>
   );
 }
-
-const Wrapper = styled.section`
-  .cart_header{
-    width: 100%;
-    text-align:center;
-    padding:8px 0;
-    border-radius: 30px;
-    background-color: #7A0067;
-  }
-  .cart_header p{
-    font-size: 15px;
-    color: #fff;
-    font-weight: 600;
-  }
-  .react-multiple-carousel__arrow {
-    min-height: 30px !important;
-    min-width: 30px !important;
-    /* right: 0 !important; */
-  }
-  .react-multiple-carousel__arrow::before {
-    font-size: 14px !important;
-  }
-  .feature_outer_container{
-    padding:20px;
-  }
-  @media screen and (max-width:767px){
-    .feature_outer_container{ 
-    padding:10px;
-  }
-  .cart_header p{
-    padding:0 10px;
-    font-size: 12px;
-  }
-  }
- `

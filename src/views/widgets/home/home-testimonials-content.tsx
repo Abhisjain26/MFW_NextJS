@@ -5,13 +5,13 @@ import { CarouselCore } from '@theme/components/carousel-core';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
 import { Image } from '@akinon/next/components/image';
-import Title from './title/Title';
+import Title from './title';
 
 export default function HomeTestimonialsContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='partner_content testimonials_content container'>
+            <div className='partner_content testimonials_content container container_mx'>
                 <div className="leaf-right">
                     <Image width={50} height={70} src={'images/home/leaf-right.svg'} className='leaf_right_testimonials' alt="Leaf" />
                 </div>
@@ -87,6 +87,7 @@ const Wrapper = Styled.section`
   }
   .react-multi-carousel-track {
     gap:20px;
+    width:100%;
   }
   .react-multi-carousel-item  {
     width:320px !important;

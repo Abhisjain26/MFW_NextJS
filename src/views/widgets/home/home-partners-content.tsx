@@ -5,7 +5,7 @@ import { CarouselCore } from '@theme/components/carousel-core';
 import { Link } from '@theme/components';
 import Styled from 'styled-components';
 import { Image } from '@akinon/next/components/image';
-import Title from './title/Title';
+import Title from './title';
 
 export default function HomePartnersContent({ data }) {
 
