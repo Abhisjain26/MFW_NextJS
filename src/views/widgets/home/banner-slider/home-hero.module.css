@@ -22,3 +22,8 @@
     left: 250px ;
     transform: translateY(-50%) ;
   }
+  @media screen and (max-width:768px) {
+    .home_slider_title , .home_slider_content{
+      left: 30px;
+    }
+  }

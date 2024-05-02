@@ -2,8 +2,12 @@ import clsx from 'clsx';
 import { GetCategoryResponse } from '@akinon/next/types';
 import Breadcrumb from '@theme/views/breadcrumb';
 import { CategoryBanner } from '@theme/views/category/category-banner';
-import ListPage from '@theme/views/category/category-info';
+import ListPage from '@theme/views/search/category-info';
 import HomeHeroSlider from '@theme/widgets/home/home-hero-slider';
+import Search from '../header/search';
+import Results from '../header/search/results';
+import SearchModal from './search-modal';
+
 
 export default async function Layout({
   data,
@@ -11,12 +15,10 @@ export default async function Layout({
 }: {
   data: GetCategoryResponse;
   children?: React.ReactNode;
-})
-
-{
+}) {
   return (
     <>
-      <HomeHeroSlider />
+      {/* <HomeHeroSlider /> */}
       <div
         className={clsx(
           data.category?.attributes?.category_banner
@@ -32,11 +34,12 @@ export default async function Layout({
             'lg:absolute lg:inset-x-0 z-10 container lg:my-4 mx-auto'
           )}
         >
-          <Breadcrumb />
+          <SearchModal total={data.pagination.total_count} />
+          {/* <Breadcrumb /> */}
         </div>
         <CategoryBanner {...data.category?.attributes?.category_banner} />
+        <ListPage data={data} />
       </div>
-      <ListPage data={data} />
     </>
   );
 }

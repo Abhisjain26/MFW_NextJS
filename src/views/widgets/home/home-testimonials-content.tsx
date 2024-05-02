@@ -98,6 +98,16 @@ const Wrapper = Styled.section`
   .react-multiple-carousel__arrow--left {
     left: calc(0% + 1px);
   }
-
+  @media screen and (max-width:2400px) and (min-width:1300px) {
+    .leaf_right_testimonials{
+        right:-20px;
+        width: 60px;
+        height:auto;
+        display:none;
+    }
+    .top_testimonials,.bottom_testimonials{
+        width:20px;
+    }
+}
 
 `

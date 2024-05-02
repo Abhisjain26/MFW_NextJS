@@ -26,6 +26,7 @@ export default async function Header() {
           'mx-auto',
           'header-m-template-cols',
           'flex',
+          'w-full',
           'justify-center',
           'mb-5',
           // 'border-gray-100',
@@ -51,14 +52,16 @@ export default async function Header() {
               <Image width={100} height={90} alt='' className='mobile_header_logo' src="/images/logoMall.svg" />
             </div>
             <div className='flex justify-center gap-5'>
-              <Icon name="search" size={20} className='icon_header'  />
+              <Icon name="search" size={20} className='icon_header' />
               <Icon name="cart" size={20} className='icon_header' />
               <Icon name="user" size={20} className='icon_header' />
             </div>
           </div>
         </div>
         <MobileMenu menu={menu} />
-        <Navbar menu={menu} />
+        <div className='header_none'>
+          <Navbar menu={menu} />
+        </div>
       </div>
     </header>
   );

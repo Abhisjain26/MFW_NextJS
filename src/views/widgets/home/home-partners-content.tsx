@@ -11,9 +11,9 @@ export default function HomePartnersContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='partner_content'>
+            <div className='partner_content relative'>
                 <Title title={"Our Strategic Partners"} />
-                <div className='relative'>
+                <div className=''>
                     <Image src={"images/home/rectangle-left.png"} className='rectanagle_left' width={100} height={100} alt='' />
                     <Image src={"images/home/rectangle-right.png"} className='rectanagle_right' width={100} height={100} alt='' />
                     <CarouselCore
@@ -71,6 +71,8 @@ const Wrapper = Styled.section`
     position:absolute;
     top:20px;
     left:-50px;
+    width:300px;
+    height:185px;
     z-index:1;
   }
   .rectanagle_right{
@@ -78,8 +80,11 @@ const Wrapper = Styled.section`
     top:20px;
     z-index:1;
     right:-50px;
+    width:300px;
+    height:185px;
   }
   .react-multi-carousel-track {
     gap:20px;
   }
+  
 `

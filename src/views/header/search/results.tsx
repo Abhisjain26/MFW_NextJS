@@ -121,7 +121,7 @@ export default function Results(props: ResultsProps) {
             ))}
           </div>
           <Link
-            href={`${ROUTES.LIST}/?search_text=${debouncedSearchText}`}
+            href={`${ROUTES.SEARCH}/?search_text=${debouncedSearchText}`}
             data-testid="search-view-all"
             className="w-full py-3 px-10 border border-primary text-center text-xs font-semibold hover:bg-primary hover:text-white transition-all"
           >

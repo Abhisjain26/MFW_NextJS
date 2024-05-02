@@ -23,14 +23,17 @@ type HomeLeapType = {
 };
 
 export default async function FeatureIntimate() {
-    const searchParams = new URLSearchParams()
-     
-    const datas = await getWidgetData<HomeLeapType>({
+    const searchParams = new URLSearchParams();
+    searchParams.set('attributes_bestseller-text', 'True');
+    // Modify the search parameters as needed
+
+    const widgetData = await getWidgetData<HomeLeapType>({
         slug: 'feature-intimate'
     });
-    // searchParams["attributes_bestseller-text"] = "True";
-    // searchParams.get('attributes_featured-text');
-    searchParams.set('attributes_featured-text','True');
+
+    // Extract relevant data from the widget data
+    // const home_feature_intimate = widgetData;
     const data = await getListData({ searchParams });
+
     return <HomeFeatureIntimateContent data={data} />;
 }

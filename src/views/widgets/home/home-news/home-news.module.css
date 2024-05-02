@@ -172,4 +172,7 @@
     .news_hidden {
         display: none;
     }
+    .news_container{
+        margin: 40px auto;
+      }
 }

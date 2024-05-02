@@ -124,5 +124,16 @@ const Wrapper = Styled.section`
             font-size:36px !important;
         }
     }
+    @media screen and (max-width:2400px) and (min-width:1300px) {
+    .home_leaf{
+        width: 80px !important;
+        height:80px !important;
+        bottom: -54% !important;
+        left: -50px !important;
+    }
+    .home_dress{
+        bottom:-20px;
+        width:20px;
+    }
 `;
 

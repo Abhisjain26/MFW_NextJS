@@ -221,7 +221,49 @@
   border-radius: 50% !important;
   border: 0 !important;
 }
-
+.pagination_next{
+  background-color: #003744 !important;
+  color: #fff !important;
+  padding: 7px 10px 7px 22px !important;
+  text-transform: uppercase;
+}
+.pagination_count_number a{
+  padding: 5px 10px !important;
+  border:1px solid #999999 !important;
+}
+.pagination_text_color{
+  color: #999999 !important;
+}
+.search_text_search{
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-size: 24px !important;
+  color: #003744 !important;
+}
+.phoneix_life_image img{
+  width: 80px !important;
+  height: auto !important;
+}
+.digital_second_image img{
+  height: 400px !important;
+}
+.dress_digital_left_image{
+  position: absolute;
+  left: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.dress_digital_right_image{
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.dress_digital_right_image img , .dress_digital_left_image img{
+  width: 20px !important;
+}
+.home_advertisment_container{
+  background: #fff !important;
+}
 // ----------------- Checkout  -------------------
 
 
@@ -335,18 +377,18 @@
 }
 
 .heading-main {
-  font-family: Playfair Display;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
   font-size: 45px;
   font-style: italic;
   font-weight: 400;
   line-height: 60px;
-  text-align: left;
 
 }
 
 .border-pink {
-  padding: inherit;
-  border-radius: 30px 0px 0px 0px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
   border: 1px solid #E987B4;
 }
 
@@ -356,15 +398,21 @@
   text-align: left;
   color: #003744;
 }
+.fintech-desc p{
+  margin-top: 10px;
+}
 
 .button-inner {
   border: 1px solid #C475AB;
-  padding: 5px;
+  padding:  15px 20px;
   margin-right: 10px;
   margin-top: 25px;
   margin-bottom: 10px;
 }
-
+.button-inner img{
+  width: 160px !important;
+  height:30px !important;
+}
 
 //---------------   End of detail page  ----------------------- 
 
@@ -501,14 +549,6 @@
     font-size: 20px !important;
   }
 
-  .subscribe_back {
-    height: 245px !important;
-  }
-
-  .subscribe_top {
-    height: 295px !important;
-  }
-
   .home_thankyou_text h3 {
     font-size: 16px !important;
   }
@@ -585,5 +625,43 @@
   .container_mx {
     padding-right: 0rem !important;
     padding-left: 0rem !important;
+  }
+}
+@media screen and (max-width:768px) {
+  .container{
+    max-width: 95%;
+    margin: 0 auto ;
+  }
+  .home_leaf,.home_flower,.home_banner_leaf{
+    display: none;
+  }
+  .home_advertisment_container,.home_advertisment_image{
+    margin: 20px auto;
+  }
+  .home_discount_container{
+    margin: 20px auto !important;
+  }
+  .rectanagle_left,.rectanagle_right{
+    top:0 !important;
+    height:157px !important;
+  }
+  .header_none{
+    display: none;
+  }
+  .common_flex_direction{
+    flex-direction: column;
+  }
+  .common_width{
+    width: 100% !important;
+  }
+  .common_image{
+    margin-top: 20px;
+    border-radius: 0px;
+  }
+  .fintech-desc{
+    width: 50%;
+  }
+  .common_margin{
+    margin: 20px 0;
   }
 }

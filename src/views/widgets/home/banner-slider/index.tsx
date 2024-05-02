@@ -3,13 +3,12 @@
 import React from 'react';
 import { CarouselCore } from '@theme/components/carousel-core';
 import { Link } from '@theme/components';
-import Styled from 'styled-components';
 import Style from './home-hero.module.css'
 
 export default function HomeHeroSliderContent({ data }) {
 
   return (
-    <Wrapper>
+    <div>
       <CarouselCore
         responsive={{
           all: {
@@ -42,13 +41,7 @@ export default function HomeHeroSliderContent({ data }) {
           </div>
         ))}
       </CarouselCore>
-    </Wrapper>
+    </div>
   );
 }
 
-const Wrapper = Styled.section`
-  
-  @media screen and (max-width:767px) {
-    
-  } 
-`

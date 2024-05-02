@@ -128,4 +128,14 @@ const Wrapper = Styled.section`
             font-size:36px !important;
         }
     }
+    @media screen and (max-width:2400px) and (min-width:1300px) {
+    .home_flower{
+        width: 80px !important;
+        height:80px !important;
+    }
+    .home_dress{
+        width:20px;
+        bottom:-20px;
+    }
+}
 `

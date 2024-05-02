@@ -58,4 +58,15 @@ const Wrapper = Styled.section`
     top: 69px;
     right: -80px;
   }
+  @media screen and (max-width:2400px) and (min-width:1300px) {
+    .branch_leaf{
+        top: 82px;
+        right: -59px;
+        width:150px;
+    }
+    .home_dress{
+        width:20px;
+        bottom:-20px;
+    }
+}
 `

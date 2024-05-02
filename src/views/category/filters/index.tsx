@@ -78,6 +78,7 @@ export const Filters = (props: Props) => {
         <span className="text-sm">1 {t('category.filters.results')}</span>
         <span>{t('category.filters.ready_to_wear')}</span>
       </div>
+      
       {facets.map((facet) => {
         let Component = null;
         

@@ -39,5 +39,4 @@ const Wrapper = Styled.section`
   .home_advertisment_image img{
     border-radius: 10px;
   }
-
 `

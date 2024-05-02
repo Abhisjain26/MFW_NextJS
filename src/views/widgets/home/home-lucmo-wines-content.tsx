@@ -73,7 +73,7 @@ const Wrapper = Styled.section`
         position:relative;
         margin-top:20px;
         margin-bottom:10px;
-        background-color:#F3F3F3;
+        background-color:#F3F3F3 !important;
     }
     .home_advertisment_image{
         width:50% ;
