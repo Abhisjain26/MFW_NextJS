@@ -59,7 +59,7 @@ export default async function Header() {
           </div>
         </div>
         <MobileMenu menu={menu} />
-        <div className='header_none'>
+        <div className='header_none w-full'>
           <Navbar menu={menu} />
         </div>
       </div>
