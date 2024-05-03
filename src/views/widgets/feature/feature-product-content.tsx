@@ -15,7 +15,6 @@ import { pushProductClicked, pushProductListProductViewed } from '@theme/utils/g
 import { useInView } from 'react-intersection-observer';
 
 export default function FeatureComponent({ data }) {
-
   // const { facets, selectedFacets } = useAppSelector((state) => state.category);
   // const pathname = usePathname();
   // const searchParams = useSearchParams();
@@ -109,7 +108,6 @@ export default function FeatureComponent({ data }) {
         arrows={true}
         swipeable={true}
       >
-
         {data.products.map((item, index) => {
           const image = item.productimage_set[0];
           return (<div className='home_feature_container flex gap-1' key={index}>

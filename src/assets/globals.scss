@@ -123,7 +123,7 @@
 }
 
 .header_content li {
-  padding: 4px 10px !important;
+  padding: 4px 10px;
 }
 
 .breadcrummp_all a,
@@ -166,7 +166,9 @@
   color: #003744 !important;
   font-weight: 600 !important;
 }
-
+.header_rechange{
+  padding: 0 !important;  
+}
 .mobile_menu_items:hover {
   background-color: #EB89B5 !important;
   color: #fff !important;
@@ -264,6 +266,46 @@
 .home_advertisment_container{
   background: #fff !important;
 }
+
+.login_bg {
+  background-image: url('../../public/images/local/login-bg.svg') !important;
+  background-position: top !important;
+  background-size: cover !important;
+  padding: 30px 10px !important;
+  background-repeat: no-repeat !important;
+  padding: 0 10px !important;
+}
+
+.login_blur {
+  backdrop-filter: blur(10px) !important;
+  padding-left: 0px 4rem 0px 0px !important;
+}
+
+
+.hidden_password {
+  display: none;
+}
+
+.email_subscribe_input {
+  width: 300px !important;
+  height: 40px !important;
+  border-top-left-radius: 30px !important;
+  border-bottom-left-radius: 30px !important;
+  background: #fff !important;
+  padding: 0 10px !important;
+}
+
+.email_subscribe_button {
+  // padding: 20px 0 !important;
+  height: 40px !important;
+  background-color: #C475AB !important;
+  color: #fff !important;
+  width: 120px !important;
+  border: 0 !important;
+  border-top-right-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+}
+
 // ----------------- Checkout  -------------------
 
 
@@ -416,46 +458,6 @@
 
 //---------------   End of detail page  ----------------------- 
 
-// -----------------------   login page  -------------------------- 
-.login_bg {
-  background-image: url('../../public/images/local/login-bg.svg') !important;
-  background-position: top !important;
-  background-size: cover !important;
-  padding: 30px 10px !important;
-  background-repeat: no-repeat !important;
-  padding: 0 10px !important;
-}
-
-.login_blur {
-  backdrop-filter: blur(10px) !important;
-  padding-left: 0px 4rem 0px 0px !important;
-}
-
-
-.hidden_password {
-  display: none;
-}
-
-.email_subscribe_input {
-  width: 300px !important;
-  height: 40px !important;
-  border-top-left-radius: 30px !important;
-  border-bottom-left-radius: 30px !important;
-  background: #fff !important;
-  padding: 0 10px !important;
-}
-
-.email_subscribe_button {
-  // padding: 20px 0 !important;
-  height: 40px !important;
-  background-color: #C475AB !important;
-  color: #fff !important;
-  width: 120px !important;
-  border: 0 !important;
-  border-top-right-radius: 30px !important;
-  border-bottom-right-radius: 30px !important;
-}
-
 // ----------------------- Search ------------------------------------
 
 .search_bar_content {
@@ -477,8 +479,8 @@
 .search_icon {
   color: #EB89B5 !important;
 }
+// ----------------------- End of Search  -------------------------- 
 
-// ----------------------- End of login page  -------------------------- 
 
 @media screen and (max-width:767px) {
   .max-container {

@@ -20,7 +20,7 @@ export default function HomeMediaContent({ data }) {
                     {data?.attributes?.media_coverage?.map((item, i) => (
                         <div key={i} className={`${Style.home_media_content}`}>
                             <p className={`${Style.home_media_text}`}>{item.value.text}</p>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/XskpZiITrNI?si=LsRYk-blXO72Iagd" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>                            
+                            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=2imXu9x02c8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
                         </div>
                     ))}
                 </div>

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import clsx from 'clsx';
 import { useSearchParams } from 'next/navigation';
-import { Pagination } from '@theme/components';
+import { PaginationSearch } from '@theme/components';
 import { ProductItem } from '@theme/views/search/index';
 import { GetCategoryResponse } from '@akinon/next/types';
 import { useAppDispatch } from '@akinon/next/redux/hooks';
@@ -20,7 +20,7 @@ interface ListPageProps {
 
 export default function ListPage(props: ListPageProps) {
   const { data } = props;
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // TODO: Move to redux
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [paginationData, setPaginationData] = useState([...data.products]);
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -102,7 +102,7 @@ export default function ListPage(props: ListPageProps) {
               ))}
             </div>
             {data.products.length > 0 && (
-              <Pagination
+              <PaginationSearch
                 total={data.pagination.total_count}
                 limit={data.pagination.page_size}
                 currentPage={data.pagination.current_page}

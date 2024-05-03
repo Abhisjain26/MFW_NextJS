@@ -3,7 +3,7 @@ import 'server-only';
 import clsx from 'clsx';
 import { ROUTES } from '@theme/routes';
 import { menuGenerator } from '@akinon/next/utils';
-import { Icon } from '@theme/components';
+import { Icon, Link } from '@theme/components';
 
 import HeaderBand from './band';
 import MobileHamburgerButton from './mobile-hamburger-button';
@@ -17,9 +17,11 @@ export default async function Header() {
   const menu = menuGenerator(response);
 
   return (
-    <header className="relative container">
+    <header className="relative container_md">
       <div className=' flex justify-center mt-5'>
-        <Image width={200} height={150} alt='' className='header_logo' src="/images/logoMall.svg" />
+        <Link href="/">
+          <Image width={200} height={150} alt='' className='header_logo' src="/images/logoMall.svg" />
+        </Link>
       </div>
       <div
         className={clsx([

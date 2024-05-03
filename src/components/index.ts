@@ -5,7 +5,7 @@ export * from './accordion';
 export * from './modal';
 export * from './icon';
 export * from './price';
-export * from './pagination';
+export * from './pagination-search';
 export * from './badge';
 export * from './language-select';
 export * from './source';

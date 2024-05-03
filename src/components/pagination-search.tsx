@@ -7,8 +7,9 @@ import usePagination from '@akinon/next/hooks/use-pagination';
 import { useLocalization } from '@akinon/next/hooks';
 import { useRouter } from '@akinon/next/hooks';
 import { useInView } from 'react-intersection-observer';
+import ListPage from '@theme/views/category/category-info';
 
-export const Pagination = (props: PaginationProps) => {
+export const PaginationSearch = (props: PaginationProps) => {
   const { t } = useLocalization();
   const router = useRouter();
   const {
@@ -46,6 +47,7 @@ export const Pagination = (props: PaginationProps) => {
   const { ref, inView } = useInView({ threshold: 0.75 });
   const [prevPage, setPrevPage] = useState(page);
   const [nextPage, setNextPage] = useState(page);
+  // const lastpage = {}
 
   const createListItems = useCallback(() => {
     setPaginationItems([]);
@@ -194,74 +196,85 @@ export const Pagination = (props: PaginationProps) => {
       {type === 'list' && (
         <ul
           className={twMerge(
-            'flex mt-8 mb-4 justify-center items-center',
+            'flex mt-8 mb-4 justify-between items-center',
             containerClassName
           )}
         >
-          {prev && (
-            <li>
-              <Link
-                onClick={(e) => handleClick(e, prev)}
-                href={prev}
-                className={twMerge(
-                  'flex cursor-pointer text-sm px-2',
-                  prevClassName
-                )}
-              >
-                <span>&lt;</span>
-                <span className="hidden lg:inline-block ms-4">
-                  {t('category.pagination.previous')}
-                </span>
-              </Link>
-            </li>
-          )}
-
-          {paginationItems.map((item, i) => (
-            <li key={i}>
-              {item?.url != '#' ? (
+          <div className='flex justify-end w-6/12'>
+            <div className='pagination_next'>
+              {showNext && next && (
+                <li>
+                  <Link
+                    onClick={(e) => handleClick(e, next)}
+                    href={next}
+                    className={twMerge(
+                      'flex cursor-pointer text-xs px-2',
+                      nextClassName
+                    )}
+                  >
+                    <span className="hidden lg:inline-block me-4">
+                      {t('category.pagination.next')}
+                    </span>
+                  </Link>
+                </li>
+              )}
+            </div>
+          </div>
+          <div className='flex'>
+            {prev && (
+              <li>
                 <Link
-                  onClick={(e) => handleClick(e, item.url)}
-                  href={item.url}
+                  onClick={(e) => handleClick(e, prev)}
+                  href={prev}
                   className={twMerge(
-                    clsx(
-                      'text-xs px-2 cursor-pointer',
-                      { 'pointer-events-none': item.url === null },
-                      Number(page) === Number(item?.page)
-                        ? 'font-semibold text-black-800'
-                        : 'text-gray-400'
-                    ),
-                    pageClassName
+                    'flex cursor-pointer text-sm px-2',
+                    prevClassName
                   )}
                 >
-                  {item?.page}
+                  <span className="hidden lg:inline-block ms-2 pagination_text_color">
+                    Page
+                  </span>
                 </Link>
-              ) : (
-                <span className="cursor-default text-xs flex items-center justify-center">
-                  {item?.page}
-                </span>
-              )}
-            </li>
-          ))}
+              </li>
+            )}
+            {paginationItems.map((item, i) => (
 
-          {showNext && (
-            <li>
-              <Link
-                onClick={(e) => handleClick(e, next)}
-                href={next}
-                className={twMerge(
-                  'flex cursor-pointer text-xs px-2',
-                  nextClassName
+              <li key={i} className='pagination_count_number pagination_text_color'>
+                {item?.url != '#' && Number(page) === Number(item?.page) ? (
+                  <Link
+                    onClick={(e) => handleClick(e, item.url)}
+                    href={item.url}
+                    className={twMerge(
+                      clsx(
+                        'text-xm px-2 cursor-pointer',
+                        { 'pointer-events-none': item.url === null },
+                        Number(page) === Number(item?.page)
+                          ? 'pagination_text_color'
+                          : 'pagination_text_color'
+                      ),
+                      pageClassName
+                    )}
+                  >
+                    {item?.page}
+                  </Link>
+                ) : (
+                  <span
+                    className="cursor-default text-xs flex items-center justify-center pagination_text_color"
+                    style={{ display: Number(page) === Number(item?.page) ? 'block' : 'none' }}
+                  >
+                    {item?.page}
+                  </span>
                 )}
-              >
-                <span className="hidden lg:inline-block me-4">
-                  {t('category.pagination.next')}
-                </span>
-                <span>&gt;</span>
-              </Link>
+              </li>
+            ))}
+            <li className="hidden pagination_text_color lg:inline-block mx-2">
+              of
             </li>
-          )}
+            <li className='cursor-default pagination_text_color font-semibold px-1 text-black-800 text-xs flex items-center justify-center'>{paginationItems[paginationItems.length - 1]?.page ? paginationItems[paginationItems.length - 1].page : ''}</li>
+          </div>
         </ul>
       )}
+
     </>
   );
 };

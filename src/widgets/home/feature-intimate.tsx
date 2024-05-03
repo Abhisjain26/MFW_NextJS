@@ -25,7 +25,6 @@ type HomeLeapType = {
 export default async function FeatureIntimate() {
     const searchParams = new URLSearchParams();
     searchParams.set('attributes_bestseller-text', 'True');
-    // Modify the search parameters as needed
 
     const widgetData = await getWidgetData<HomeLeapType>({
         slug: 'feature-intimate'

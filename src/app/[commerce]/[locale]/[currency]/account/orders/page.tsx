@@ -3,11 +3,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useGetOrdersQuery } from '@akinon/next/data/client/account';
-import { LoaderSpinner, Pagination, Select } from '@theme/components';
+import { LoaderSpinner, Select } from '@theme/components';
 import { ContentHeader } from '@theme/views/account/content-header';
 import { Order } from '@theme/views/account/order';
 import { useLocalization, useRouter } from '@akinon/next/hooks';
 import { Trans } from '@akinon/next/components/trans';
+import { Pagination } from '@akinon/next/components';
 
 const AccountOrders = () => {
   const { t } = useLocalization();

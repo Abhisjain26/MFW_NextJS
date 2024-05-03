@@ -47,7 +47,7 @@ export default function Navbar(props: NavbarProps) {
   }, []);
 
   return (
-    <div className='relative w-full'>
+    <div className='relative w-full container'>
       <nav className="relative w-full flex-wrap items-center justify-center hidden header-grid-area-nav sm:flex justify-between">
         <ul className="flex flex-wrap w-full items-center justify-center header_content mt-8 justify-between">
           {menu.map((item, index) =>
@@ -130,15 +130,70 @@ export default function Navbar(props: NavbarProps) {
                       }
                     )}
                   >
-                    <Tabs className='flex pt-5'>
+                    <div className="flex text-black w-full mx-auto justify-center flex-wrap space-x-8 lg:space-x-0">
+                      {item.children.map((child, index) => (
+                        <div key={index} className='text-center'>
+                          <Link
+                            onClick={() => {
+                              dispatch(setOpenedMenu(null));
+                            }}
+                            href={child.url}
+                            className="block mb-4 font-semibold text-ms mt-3 transition-colors w-max lg:w-44 hover:text-secondary"
+                          >
+                            {child.label}
+                          </Link>
+                          {child.children && (
+                            <ul>
+                              {child.children.map((grandChild, index) => (
+                                <li key={index} className='header_rechange'>
+                                  <Link
+                                    onClick={() => {
+                                      dispatch(setOpenedMenu(null));
+                                    }}
+                                    href={grandChild.url}
+                                    className="block mb-4 text-ms transition-colors w-max lg:w-44 hover:text-secondary"
+                                  >
+                                    {grandChild.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    {item.extra_context.attributes.images && (
+                      <div className="flex">
+                        {item.extra_context.attributes.images.map(
+                          (image, index) =>
+                            image.kwargs.value.image && (
+                              <Link href={image.value.url} key={index}>
+                                {/* TODO: There is no image. It should be checked. May need fix. */}
+                                <Image
+                                  src={image.kwargs.value.image?.url}
+                                  alt={image.value.title}
+                                  title={image.value.title}
+                                  width={265}
+                                  height={323}
+                                />
+                                <span className="block mt-4">
+                                  {image.value.title}
+                                </span>
+                                <span className="inline-block mt-2 text-xs uppercase border-b border-gray-500">
+                                  {image.value.link_text}
+                                </span>
+                              </Link>
+                            )
+                        )}
+                      </div>
+                    )}
+                    {/* <Tabs className='flex pt-5'>
                       <TabList className=" space-x-8 lg:space-x-0 navbar_content_card">
                         {item.children.map((childItem, childIndex) => (
                           <Tab key={childIndex} className="flex">
                             <div className='flex items-center'>
                               <Link
-                                // onClick={() => {
-                                //   dispatch(setOpenedMenu(null));
-                                // }}
+                               
                                 href={childItem.url}
                                 className="block mb-4 flex text-xs items-center justify-between text-black transition-colors w-max lg:w-44 hover:text-secondary"
                               >
@@ -173,7 +228,7 @@ export default function Navbar(props: NavbarProps) {
                           )}
                         </TabPanel>
                       ))}
-                    </Tabs>
+                    </Tabs> */}
                   </div>
                 )}
               </li>

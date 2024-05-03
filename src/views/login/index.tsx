@@ -129,6 +129,12 @@ export const Login = () => {
     setIsContinue(true);
   };
 
+  const handleloginG = ()=>{
+    signIn('google',{
+      callbackUrl: `${window.location.origin}/`,
+
+    })
+  }
   return (
     <section
       className={clsx([
@@ -257,7 +263,8 @@ export const Login = () => {
       </form>
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 pb-8">
-        {oauthProviders.map((provider) => (
+      <button onClick={handleloginG}>Sign in with Google</button>
+        {/* {oauthProviders.map((provider) => (
           <Button
             key={provider.key}
             className="w-full h-14 uppercase text-xs font-semibold flex items-center justify-center gap-2 hover:bg-transparent hover:border hover:border-primary-800 hover:text-primary"
@@ -268,7 +275,7 @@ export const Login = () => {
               location.href = `/${provider.key}/login/`;
             }}
           >
-            {/* {provider.image && (
+            {provider.image && (
               <Image
                 src={provider.image}
                 alt={provider.label}
@@ -276,11 +283,11 @@ export const Login = () => {
                 height={18}
                 className="flex-shrink-0"
               />
-            )} */}
+            )}
 
             {provider.localeKey ? t(provider.localeKey) : provider.label}
           </Button>
-        ))}
+        ))} */}
       </div>
     </section>
   );

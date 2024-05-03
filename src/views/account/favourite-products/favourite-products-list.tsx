@@ -4,9 +4,10 @@ import { useSearchParams } from 'next/navigation';
 import { useGetFavoritesQuery } from '@akinon/next/data/client/wishlist';
 
 import { FavoriteItem } from '@theme/views/account';
-import { LoaderSpinner, Pagination } from '@theme/components';
+import { LoaderSpinner } from '@theme/components';
 import { useLocalization } from '@akinon/next/hooks';
 import { useRouter } from '@akinon/next/hooks';
+import { Pagination } from '@akinon/next/components';
 
 const FavoriteProductsList = () => {
   const { t } = useLocalization();
