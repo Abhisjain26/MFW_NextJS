@@ -15,6 +15,9 @@
 .gift_card_image{
     width: 50%;
 }
+.gift_card_image img{
+    width: 100%;
+}
 .gift_card_logo{
     position: absolute;
     top:20px;
