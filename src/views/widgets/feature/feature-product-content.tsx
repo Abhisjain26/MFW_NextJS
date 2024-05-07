@@ -119,7 +119,7 @@ export default function FeatureComponent({ data }) {
               </Link>
 
               <div className="home_feature_text">
-                <h2>{item.name}</h2>
+                <h2>{item.name}</h2>        
                 <div className="home_feature_price flex gap-4">
                   <h3>{item.price}</h3>
                   <h4>{item.price_old}</h4>

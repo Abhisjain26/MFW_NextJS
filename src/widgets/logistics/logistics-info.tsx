@@ -3,7 +3,7 @@ import 'server-only';
 import { getWidgetData } from '@akinon/next/data/server';
 import { ImageType } from '@akinon/next/types';
 import AboutContent from '@theme/views/widgets/about/about-content';
-import LogisticsContent from '@theme/views/widgets/logistics/logistics-info-content';
+import LogisticsContent from '@theme/views/logistics/logistics-info-content';
 
 type HeroSalesItem = [
     {

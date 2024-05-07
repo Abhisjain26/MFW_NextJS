@@ -3,7 +3,7 @@ import 'server-only';
 import { getWidgetData } from '@akinon/next/data/server';
 import { ImageType } from '@akinon/next/types';
 import AboutContent from '@theme/views/widgets/about/about-content';
-import FintechContent from '@theme/views/widgets/fintech/fintech-content-info';
+import FintechContent from '@theme/views/fintech/fintech-content-info';
 
 type HeroSalesItem = [
     {

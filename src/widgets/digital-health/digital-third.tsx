@@ -2,7 +2,7 @@ import 'server-only';
 
 import { getWidgetData } from '@akinon/next/data/server';
 import { ImageType } from '@akinon/next/types';
-import DigitalThirdContent from '@theme/views/widgets/digital-health/digital-third-content';
+import DigitalThirdContent from '@theme/views/digital-health/digital-third-content';
 
 type HeroSalesItem = [
     {
@@ -11,7 +11,7 @@ type HeroSalesItem = [
             value: {
                 mobile_image: ImageType;
                 image: ImageType;
-            subtext:string;
+                subtext: string;
 
             };
         };
@@ -20,8 +20,8 @@ type HeroSalesItem = [
             mobile_image: string;
             alt: string;
             image: string;
-            text:string;
-            subtext:string;
+            text: string;
+            subtext: string;
         };
     }
 ];

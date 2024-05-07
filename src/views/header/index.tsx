@@ -48,7 +48,7 @@ export default async function Header() {
       >
         {/* <HeaderBand /> */}
         <div className='flex items-center mobile_content_middle w-full'>
-          <div className='flex items-center justify-between w-full'>
+          <div className='flex items-center justify-between w-full container'>
             <div className='flex items-center gap-5'>
               <MobileHamburgerButton />
               <Image width={100} height={90} alt='' className='mobile_header_logo' src="/images/logoMall.svg" />
