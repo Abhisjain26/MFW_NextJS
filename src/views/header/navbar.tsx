@@ -138,7 +138,7 @@ export default function Navbar(props: NavbarProps) {
                               dispatch(setOpenedMenu(null));
                             }}
                             href={child.url}
-                            className="block mb-4 font-semibold text-ms mt-3 transition-colors w-max lg:w-44 hover:text-secondary"
+                            className="block mb-4 font-semibold text-ms mt-3 transition-colors w-max lg:w-44 hover_color"
                           >
                             {child.label}
                           </Link>
@@ -151,7 +151,7 @@ export default function Navbar(props: NavbarProps) {
                                       dispatch(setOpenedMenu(null));
                                     }}
                                     href={grandChild.url}
-                                    className="block mb-4 text-ms transition-colors w-max lg:w-44 hover:text-secondary"
+                                    className="block mb-4 text-ms transition-colors w-max lg:w-44 hover_color"
                                   >
                                     {grandChild.label}
                                   </Link>

@@ -20,19 +20,19 @@ interface Props {
 }
 
 export const ProductItem = (props: Props ) => {
-
+  
   // TODO: Static image will change (TR)
   const { product, width, height, index } = props;
   const [viewed, setViewed] = useState(false);
   const { FavButton } = useFavButton(product.pk);
   const { ref, inView } = useInView();
-
+  
   const image_url = product.productimage_set[0]?.image;
   const absolute_url = product.absolute_url;
   const product_name = product.name;
   const retail_price = product.retail_price;
   const price = product.price;
-
+  
   useEffect(() => {
     if (!viewed && inView) {
       setViewed(true);
