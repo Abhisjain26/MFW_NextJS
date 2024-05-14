@@ -21,7 +21,6 @@ interface ListPageProps {
 
 export default function FeatureComponent(props: ListPageProps) {
   const { data } = props;
-  console.log(data)
 
   // const { facets, selectedFacets } = useAppSelector((state) => state.category);
   // const pathname = usePathname();

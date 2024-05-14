@@ -7,8 +7,6 @@ import FeatureComponent from '@theme/views/widgets/feature/feature-product-conte
 // import FeaturePage from '@theme/app/[commerce]/[locale]/[currency]/feature/page'
 import { GetCategoryResponse } from '@akinon/next/types';
 
-
-
 export default function HomeFeatureIntimateContent({
   data,
   backgroundColor,
@@ -20,14 +18,12 @@ export default function HomeFeatureIntimateContent({
   data: GetCategoryResponse;
   children?: React.ReactNode;
 }) {
-  console.log(data)
-  console.log(widgetData);
 
   return (
-    <Wrapper className='container' style={{ backgroundColor: backgroundColor }}>
+    <Wrapper className='container' style={{ backgroundColor }}>
 
-      {widgetData?.attributes?.home_feature_intimate?.map((item, i) => (
-        <div>
+      {widgetData?.attributes?.home_feature_intimate?.map((item, index) => (
+        <div key={index}> {/* Added key prop */}
           <div className='home_slider_feature'>
             <h2>{item.value.text}</h2>
           </div>
