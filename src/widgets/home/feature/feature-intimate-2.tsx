@@ -24,15 +24,17 @@ type HomeLeapType = {
 
 export default async function FeatureIntimate() {
     const searchParams = new URLSearchParams();
-    searchParams.set('attributes_bestseller-text', 'True');
+    searchParams.set('attributes_type', 'Eyelashes');
+
+    const backgroundColor = '#FDF0F6';
 
     const widgetData = await getWidgetData<HomeLeapType>({
-        slug: 'feature-intimate'
+        slug: 'feature-intimate-2'
     });
 
     // Extract relevant data from the widget data
     // const home_feature_intimate = widgetData;
     const data = await getListData({ searchParams });
 
-    return <HomeFeatureIntimateContent data={data} />;
+    return <HomeFeatureIntimateContent data={data} widgetData={widgetData} backgroundColor="pink" />;
 }

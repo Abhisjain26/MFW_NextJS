@@ -10,11 +10,19 @@ import convertFacetSearchParams from '@theme/utils/convert-facet-search-params';
 import { useAppSelector } from '@akinon/next/redux/hooks';
 import { usePathname } from 'next/navigation';
 import { getListData } from '@akinon/next/data/server';
-import { Category } from '@akinon/next/types';
+import { Category, GetCategoryResponse } from '@akinon/next/types';
 import { pushProductClicked, pushProductListProductViewed } from '@theme/utils/gtm';
 import { useInView } from 'react-intersection-observer';
+import { ProductItem } from '@theme/views/product-item';
 
-export default function FeatureComponent({ data }) {
+interface ListPageProps {
+  data: GetCategoryResponse;
+}
+
+export default function FeatureComponent(props: ListPageProps) {
+  const { data } = props;
+  console.log(data)
+
   // const { facets, selectedFacets } = useAppSelector((state) => state.category);
   // const pathname = usePathname();
   // const searchParams = useSearchParams();
@@ -38,7 +46,7 @@ export default function FeatureComponent({ data }) {
 
   // useEffect(() => {
   //   if (!viewed && inView) {
-  //     setViewed(true);
+  //     setViewed(true);l
   //     pushProductListProductViewed(data);
   //   }
   // }, [inView]);
@@ -85,7 +93,9 @@ export default function FeatureComponent({ data }) {
   //     cart: 'Add to Cart'
   //   },
   // ]
-  const absolute_url = data.absolute_url || '';
+  // const absolute_url = data.absolute_url || '';
+  const [paginationData, setPaginationData] = useState([...data.products]);
+
 
   return (
     <Wrapper>
@@ -108,7 +118,22 @@ export default function FeatureComponent({ data }) {
         arrows={true}
         swipeable={true}
       >
-        {data.products.map((item, index) => {
+
+
+        {paginationData?.map((product, index) => (
+          <>
+            {
+              <ProductItem 
+                key={product.pk}
+                product={product}
+                width={250}
+                height={510}
+                index={index}
+              />
+            }
+          </>
+        ))}
+        {/* {data.products.map((item, index) => {
           const image = item.productimage_set[0];
           return (<div className='home_feature_container flex gap-1' key={index}>
             <div className='home_feature_card'>
@@ -132,7 +157,7 @@ export default function FeatureComponent({ data }) {
             </div>
           </div>
           )
-        })}
+        })} */}
       </CarouselCore>
     </Wrapper >
   );
@@ -182,6 +207,10 @@ const Wrapper = Styled.section`
     width:100%;
     text-align:center;
     padding:8px 10px;
+  }
+    .react-multi-carousel-track{
+    gap:10px;
+    /* width:260px !important; */
   }
   @media screen and (max-width:767px){
     .home_feature_container{

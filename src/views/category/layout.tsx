@@ -11,9 +11,7 @@ export default async function Layout({
 }: {
   data: GetCategoryResponse;
   children?: React.ReactNode;
-})
-
-{
+}) {
   return (
     <>
       <HomeHeroSlider />
@@ -37,6 +35,7 @@ export default async function Layout({
         <CategoryBanner {...data.category?.attributes?.category_banner} />
       </div>
       <ListPage data={data} />
+
     </>
   );
 }

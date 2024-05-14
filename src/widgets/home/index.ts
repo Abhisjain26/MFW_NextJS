@@ -35,7 +35,7 @@ export const HOME_WIDGETS: {
     async () => import('@theme/widgets/home/home-leap')
   ),
   'feature-intimate': dynamic(
-    async () => import('@theme/widgets/home/feature-intimate')
+    async () => import('@theme/widgets/home/feature/feature-intimate-1')
   ),
   // 'feature-product': dynamic(
   //   async () => import('@theme/widgets/home/home-feature-product')
@@ -43,11 +43,21 @@ export const HOME_WIDGETS: {
   'high-performance': dynamic(
     async () => import('@theme/widgets/home/home-high-performance')
   ),
+  
+  'feature-intimate-2': dynamic(
+    async () => import('@theme/widgets/home/feature/feature-intimate-2')
+  ),
   'finance-plus': dynamic(
     async () => import('@theme/widgets/home/home-finance-plus')
   ),
+  'feature-intimate-3': dynamic(
+    async () => import('@theme/widgets/home/feature/feature-intimate-3')
+  ),
   'power-on': dynamic(
     async () => import('@theme/widgets/home/home-power-on')
+  ),
+  'feature-intimate-4': dynamic(
+    async () => import('@theme/widgets/home/feature/feature-intimate-4')
   ),
   'samsung-endless': dynamic(
     async () => import('@theme/widgets/home/home-samsung-endless')

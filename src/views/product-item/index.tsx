@@ -51,6 +51,7 @@ export const ProductItem = (props: Props ) => {
           <Link href={absolute_url} onClick={() => pushProductClicked(product)}>
             {image_url ? (
               <Image
+              
                 fill
                 loading="lazy"
                 src={image_url}
@@ -111,5 +112,8 @@ height:100%;
   }
   .bluebtn{
     padding:16px 0;
+  }
+  .react-multi-carousel-item {
+    width:260px !important;
   }
 `

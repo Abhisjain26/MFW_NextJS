@@ -10,26 +10,32 @@ import { GetCategoryResponse } from '@akinon/next/types';
 
 
 export default function HomeFeatureIntimateContent({
-    data,
-    children,
-  }: {
-    data: GetCategoryResponse;
-    children?: React.ReactNode;
-  }) {
-    
-    return (
-        <Wrapper className='container'>
-            {/* {datas?.attributes?.home_feature_intimate?.map((item, i) => ( */}
-            <div>
-                <div className='home_slider_feature'>
-                    <h2>Feature Shoes</h2>
-                </div>
-                {/* <FeaturePage /> */}
-                <FeatureComponent data={data}/>
-            </div>
-            {/* ))} */}
-        </Wrapper>
-    );
+  data,
+  backgroundColor,
+  children,
+  widgetData
+}: {
+  backgroundColor:string;
+  widgetData:any;
+  data: GetCategoryResponse;
+  children?: React.ReactNode;
+}) {
+  console.log(data)
+  console.log(widgetData);
+
+  return (
+    <Wrapper className='container' style={{ backgroundColor: backgroundColor }}>
+
+      {widgetData?.attributes?.home_feature_intimate?.map((item, i) => (
+        <div>
+          <div className='home_slider_feature'>
+            <h2>{item.value.text}</h2>
+          </div>
+        </div>
+      ))}
+      <FeatureComponent data={data} />
+    </Wrapper>
+  );
 }
 
 const Wrapper = Styled.section`
