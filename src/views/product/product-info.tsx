@@ -25,6 +25,7 @@ export default function ProductInfo({ data }: ProductPageProps) {
   const [stockAlertResponseMessage, setStockAlertResponseMessage] =
     useState(null);
 
+  
   const [addProduct, { isLoading: isAddToCartLoading }] =
     useAddProductToBasket();
   const [addStockAlert, { isLoading: isAddToStockAlertLoading }] =

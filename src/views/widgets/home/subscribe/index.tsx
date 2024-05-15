@@ -24,7 +24,7 @@ export default function HomeSubscribeContent({ data }) {
                         </div>
                     </div>
                 ))}
-                <div className='flex justify-center w-full'>
+                <div className={`flex justify-center${Style.subscribe_input}`}>
                     <FooterSubscriptionForm />
                 </div>
             </div>

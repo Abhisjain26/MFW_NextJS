@@ -22,6 +22,10 @@ export default function HomePartnersContent({ data }) {
                                 breakpoint: { max: 5000, min: 0 },
                                 items: 6
                             }
+                            // mobile: {
+                            //     breakpoint: { max: 768, min: 0 },
+                            //     items: 5
+                            // }
                         }}
                         className='flex justify-center w-full gap-10'
                         arrows={true}

@@ -1,0 +1,32 @@
+.entertainment{
+    width:320px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.entertainment_image{
+    width:100%;
+    margin-top: 7px;
+    height: 100%;
+}
+.entertainment_content h3{
+    color: #003744;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    margin-top: 7px;
+}
+.entertainment_content p{
+    margin-top: 7px;
+    color: #CCCCCC;
+    font-size: 14px;
+}
+.entertainment_button{
+    color:#C576AC;
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #C576AC;
+    margin-top: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

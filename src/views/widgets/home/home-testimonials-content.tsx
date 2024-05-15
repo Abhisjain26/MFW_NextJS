@@ -20,11 +20,15 @@ export default function HomeTestimonialsContent({ data }) {
                     <CarouselCore
                         responsive={{
                             all: {
-                                breakpoint: { max: 4000, min: 0 },
+                                breakpoint: { max: 5000, min: 0 },
                                 items: 3
+                            },
+                            mobile: {
+                                breakpoint: { max: 768, min: 0 },
+                                items: 1
                             }
                         }}
-                        className='flex justify-center w-full gap-10'
+                        // className='flex justify-center w-full gap-10'
                         arrows={true}
                         swipeable={true}
                     >
@@ -34,7 +38,7 @@ export default function HomeTestimonialsContent({ data }) {
                                     <Image width={10} src={"images/home/top_testimonials.png"} className='top_testimonials' height={10} alt={""} />
                                     <Image width={10} src={"images/home/bottom_testimonials.png"} className='bottom_testimonials' height={10} alt={""} />
                                 </div>
-                                <div className='home_testimonials_subtext'>
+                                <div className='home_testimonials_subtext relative'>
                                     <h2>{item.value.subtext}</h2>
                                 </div>
                             </div>
@@ -61,6 +65,7 @@ const Wrapper = Styled.section`
       padding:40px 20px 20px;
       border-radius:10px;
       height:100%;
+      width:inherit;
     }
     .top_testimonials{
         position:absolute;
@@ -89,14 +94,32 @@ const Wrapper = Styled.section`
     gap:20px;
     width:100%;
   }
-  .react-multi-carousel-item  {
+  /* .react-multi-carousel-item  {
     width:320px !important;
-  }
+  } */
   .react-multiple-carousel__arrow--right {
     right: calc(0% + 1px);
   }
   .react-multiple-carousel__arrow--left {
     left: calc(0% + 1px);
+  }
+  @media screen and (max-width:768px) {
+    .home_testimonials_card{
+        padding:40px 20px;
+    }
+    .home_testimonials_text{
+        padding-left:0;
+        text-align:center;
+    }
+    .react-multi-carousel-track {
+        gap:0;
+    }
+    .top_testimonials{
+        left:0;
+    }
+    .bottom_testimonials{
+        right:0;
+    }
   }
   @media screen and (max-width:2400px) and (min-width:1300px) {
     .leaf_right_testimonials{
@@ -106,6 +129,10 @@ const Wrapper = Styled.section`
         display:none;
     }
     .top_testimonials,.bottom_testimonials{
+        width:20px;
+    }
+  
+    .top_testimonials{
         width:20px;
     }
 }

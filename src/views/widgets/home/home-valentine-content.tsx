@@ -121,11 +121,17 @@ const Wrapper = Styled.section`
     }
     
     @media screen and (max-width:767px){
+        .home_advertisment_content_mobile{
+            flex-direction: column-reverse;
+        }
         .home_advertisment_content .read_more_btn{
             display:block;
         }
         .home_advertisment_content h1{
-            font-size:36px !important;
+            font-size:36px;
+        }
+        .home_advertisment_image{
+            text-align:center;
         }
     }
     @media screen and (max-width:2400px) and (min-width:1300px) {

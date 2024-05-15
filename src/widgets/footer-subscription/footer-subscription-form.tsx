@@ -42,8 +42,8 @@ export default function FooterSubscriptionForm() {
   };
 
   return (
-    <div>
-      <div className="flex mb-5 relative z-10">
+    <div className='w-full'>
+      <div className="flex mb-5 relative justify-center z-10 w-full">
         <Input
           id="footer-subscription-email"
           type="email"

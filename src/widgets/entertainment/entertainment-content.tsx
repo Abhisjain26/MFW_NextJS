@@ -3,7 +3,7 @@ import 'server-only';
 import { getWidgetData } from '@akinon/next/data/server';
 import { ImageType } from '@akinon/next/types';
 import AboutContent from '@theme/views/widgets/about/about-content';
-import FintechContent from '@theme/views/fintech/index';
+import EntertanimentContent from '@theme/views/entertainment';
 
 type HeroSalesItem = [
     {
@@ -28,14 +28,14 @@ type HeroSalesItem = [
 ];
 
 type HomeLeapType = {
-    fintech_info: HeroSalesItem;
+    entertainmnet_info: HeroSalesItem;
 };
 
 export default async function HomeHeroSlider() {
     const data = await getWidgetData<HomeLeapType>({
-        slug: 'fintech-1'
+        slug: 'entertainment-info'
     });
 
-    return <FintechContent data={data} />;
+    return <EntertanimentContent data={data} />;
 }
 

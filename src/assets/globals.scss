@@ -527,9 +527,6 @@
     padding: 0 !important;
   }
 
-  .home_advertisment_content h1 {
-    font-size: 40px !important;
-  }
 
   .home_advertisment_image {
     position: unset !important;
@@ -639,15 +636,15 @@
   .home_leaf,.home_flower,.home_banner_leaf{
     display: none;
   }
-  .home_advertisment_container,.home_advertisment_image{
-    margin: 20px auto;
+  .home_advertisment_container{
+    margin: 10px auto;
   }
   .home_discount_container{
     margin: 20px auto !important;
   }
   .rectanagle_left,.rectanagle_right{
-    top:0 !important;
-    height:157px !important;
+    top: 58px !important;
+    height: 67px !important;
   }
   .header_none{
     display: none;
@@ -667,5 +664,18 @@
   }
   .common_margin{
     margin: 20px 0;
+  }
+  .title_all,.home_advertisment_content h1,.home_slider_feature h2{
+    text-align: center;
+  }
+  .email_subscribe_input,.email_subscribe_button{
+    width: auto !important; 
+  }
+}
+
+@media screen and (max-width:420px) and (min-width:320px) {
+  .title_all,.home_advertisment_content h1,.home_slider_feature h2 {
+    font-size: 24px !important;
+    text-align: center;
   }
 }

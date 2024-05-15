@@ -174,5 +174,8 @@
     }
     .news_container{
         margin: 40px auto;
-      }
+    }
+    .news_content{
+        flex-direction: column-reverse;
+    }
 }

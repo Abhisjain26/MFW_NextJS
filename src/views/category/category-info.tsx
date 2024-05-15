@@ -148,14 +148,11 @@ export default function ListPage(props: ListPageProps) {
             </div>
             {data.products.length > 0 && (
               <Pagination
-                type='infinite'
                 total={data.pagination.total_count}
-                // limit={data.pagination.page_size}
+                limit={data.pagination.page_size}
                 currentPage={data.pagination.current_page}
-                onPageChange={handlePageChange}
-                // numberOfPages={data.pagination.num_pages}
+                numberOfPages={data.pagination.num_pages}
                 
-                // onClick={onPageChang}
                 />
             )}
           </div>

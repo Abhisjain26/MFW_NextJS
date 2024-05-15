@@ -54,12 +54,34 @@
     transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width:768px) {
+/* @media screen and (max-width:768px) {
     .subscribe_back {
-        height: 315px ;
+        height: 315px;
     }
 
     .subscribe_top {
         height: 360px ;
+    }
+} */
+
+
+@media screen and (max-width:768px) {
+    .subscribe_back {
+        height: 350px;
+    }
+    .subscribe_input{
+        width: 80%;
+    }
+    .subscribe_top {
+        height: 390px;
+    }
+    .home_subscribe_title{
+        font-size: 20px;
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width:400px) and (min-width:338px) {
+    .subscribe_top {
+        height: 460px;
     }
 }

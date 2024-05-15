@@ -107,7 +107,11 @@ const Wrapper = Styled.section`
             display:block;
         }
         .home_advertisment_content h1{
-            font-size:36px !important;
+            font-size:36px ;
+        }
+        .home_advertisment_image{
+            text-align:center;
+            margin-top:40px;
         }
     }
 `

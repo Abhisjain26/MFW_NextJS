@@ -9,7 +9,7 @@ export default function HomeDiscountContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='container container_mx relative home_discount_container flex gap-5'>
+            <div className='container container_mx relative home_discount_container   flex gap-5'>
                 <div className="branch_leaf">
                     <Image
                         src={'/images/home/branch-leaf.png'}
@@ -57,6 +57,21 @@ const Wrapper = Styled.section`
     position:absolute;
     top: 69px;
     right: -80px;
+  }
+  @media screen and (max-width:768px){
+    .home_discount_container{
+        flex-direction:column;
+        gap:10px;
+    }
+    .home_discount img{
+        margin:0;
+    }
+    .home_advertisment_image {
+        margin:0;
+    }
+    .home_advertisment_content h1 {
+    font-size: 40px;
+  }
   }
   @media screen and (max-width:2400px) and (min-width:1300px) {
     .branch_leaf{

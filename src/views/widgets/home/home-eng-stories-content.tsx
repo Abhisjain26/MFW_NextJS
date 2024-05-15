@@ -19,6 +19,10 @@ export default function HomeengStories({ data }) {
                             all: {
                                 breakpoint: { max: 5000, min: 0 },
                                 items: 6
+                            },
+                            mobile :{
+                                breakpoint:{max:768,min:0},
+                                items:2
                             }
                         }}
                         arrows={true}

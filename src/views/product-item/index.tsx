@@ -89,11 +89,11 @@ export const ProductItem = (props: Props ) => {
           <div className="font-semibold mt-1">
             {parseFloat(retail_price) > parseFloat(price) && (
               <Price
-                value={retail_price}
+              value={"$" + retail_price}
                 className="font-normal line-through mr-3"
               />
             )}
-            <Price value={price} data-testid="product-price" className='listing_text' />
+            <span className='listing_text'>$ <Price value={`${"$" + price}`} data-testid="product-price" className='listing_text' /></span>
             <button className='pinkbtn w-full font-normal uppercase py-5 rounded-none'>Buy Now</button>
             <button className='bluebtn mt-1 font-normal flex justify-center items-center w-full uppercase rounded-none'><Image width={20} className='add_to_cart_image mr-1' height={20} src={'images/listing/add-to-cart.svg'} alt='' />Add to cart</button>
           </div>

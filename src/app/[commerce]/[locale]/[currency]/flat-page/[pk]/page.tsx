@@ -45,6 +45,13 @@ async function Page({ params }: PageProps<{ pk: number }>) {
         <FintechContent.default />
       </>
     );
+  } else if(url === '/entertainment') {
+    const EntertanimnetContent = await import('@theme/widgets/entertainment/entertainment-content');
+    return(
+      <>
+        <EntertanimnetContent.default />
+      </>
+    )
   }
 
   // If the URL doesn't match any special case, render the default content

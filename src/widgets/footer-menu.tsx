@@ -1,6 +1,7 @@
 import 'server-only';
 
-import { Link, Accordion } from '@theme/components';
+import { Link } from '@theme/components';
+import { AccordionFooter } from '@theme/components/accordion-footer';
 import { getWidgetData } from '@akinon/next/data/server';
 import FooterSocial from '@theme/widgets/footer-social';
 
@@ -54,7 +55,7 @@ export default async function FooterMenu() {
 
   return (
     <div className="flex-1">
-      <div className="hidden justify-between text-xs md:flex md:px-6 md:py-4">
+      <div className="justify-between text-xs md:flex md:px-6 md:py-4">
         <div>
           <div className="mb-4 font-medium text-xl" data-testid="footer-categories">
             {data?.attributes?.first_column_title?.value}
@@ -88,12 +89,12 @@ export default async function FooterMenu() {
               {data?.attributes?.second_column_items?.map((item, i) => (
                 <li className="mb-2 text-base" key={i}>
                   <div
-                    // href={item?.value?.redirect_url || '#'}
-                    // target={
-                    //   item?.value?.is_target_blank === 'true'
-                    //     ? '_blank'
-                    //     : '_self'
-                    // }
+                  // href={item?.value?.redirect_url || '#'}
+                  // target={
+                  //   item?.value?.is_target_blank === 'true'
+                  //     ? '_blank'
+                  //     : '_self'
+                  // }
                   >
                     <em dangerouslySetInnerHTML={{ __html: item?.value?.name || '' }} />
                   </div>
@@ -117,12 +118,12 @@ export default async function FooterMenu() {
               {data?.attributes?.third_column_items?.map((item, i) => (
                 <li className="mb-2 text-base" key={i}>
                   <div
-                    // href={item?.value?.redirect_url || '#'}
-                    // target={
-                    //   item?.value?.is_target_blank === 'true'
-                    //     ? '_blank'
-                    //     : '_self'
-                    // }
+                  // href={item?.value?.redirect_url || '#'}
+                  // target={
+                  //   item?.value?.is_target_blank === 'true'
+                  //     ? '_blank'
+                  //     : '_self'
+                  // }
                   >
                     <em dangerouslySetInnerHTML={{ __html: item?.value?.name || '' }} />
                   </div>
@@ -140,20 +141,17 @@ export default async function FooterMenu() {
           </div>
         </div>
       </div>
-      <div className="block md:hidden">
-        <Accordion
+      {/* <div>
+        <AccordionFooter
           title={data?.attributes?.first_column_title?.value}
           titleClassName="text-xs font-medium"
         >
           <div>
-
-            {/* {console.log(data.attributes.first_column_items)} */}
-
             <ul className="text-xs px-4">
-              {data?.attributes?.first_column_items
+              
+              {/* {data?.attributes?.first_column_items
                 ?.filter(
                   (category) => {
-                    // console.log("rk", category);
 
                     return category?.value?.is_side_column_item === 'True'
                   }
@@ -169,25 +167,12 @@ export default async function FooterMenu() {
                             : '_self'
                         }
                       >
-                        {/* {console.log("hello",item)} */}
                         {item?.value?.name}
-
                       </Link>
                     </li>
                   )
-                })
-              }
-            </ul>
-          </div>
-        </Accordion>
-
-        <Accordion
-          title={data?.attributes?.second_column_title?.value}
-          titleClassName="text-xs font-medium"
-        >
-          <div>
-            <ul className="text-xs px-4">
-              {data?.attributes?.second_column_items?.map((item, i) => (
+                }) */}
+                 {/* {data?.attributes?.first_column_items?.map((item, i) => (
                 <li className="mb-2" key={i}>
                   <Link
                     href={item?.value?.redirect_url || '#'}
@@ -200,61 +185,85 @@ export default async function FooterMenu() {
                     {item?.value?.name}
                   </Link>
                 </li>
-              ))}
-            </ul>
-
+              ))} */}
+              {/* } */}
+            {/* </ul> */}
           </div>
-        </Accordion>
+      //   </AccordionFooter>
 
-        <Accordion
-          className="last:mb-0"
-          title={data?.attributes?.third_column_title?.value}
-          titleClassName="text-x;l font-medium"
-        >
-          <div>
-            <ul className="text-xs px-4">
-              {data?.attributes?.third_column_items?.map((item, i) => (
-                <li className="mb-2" key={i}>
-                  <Link
-                    href={item.value.redirect_url || '#'}
-                    target={
-                      item.value.is_target_blank === 'true' ? '_blank' : '_self'
-                    }
-                  >
-                    {item.value.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+      //   <AccordionFooter
+      //     title={data?.attributes?.second_column_title?.value}
+      //     titleClassName="text-xs font-medium"
+      //   >
+      //     <div>
+      //       <ul className="text-xs px-4">
+      //         {data?.attributes?.second_column_items?.map((item, i) => (
+      //           <li className="mb-2" key={i}>
+      //             <Link
+      //               href={item?.value?.redirect_url || '#'}
+      //               target={
+      //                 item?.value?.is_target_blank === 'true'
+      //                   ? '_blank'
+      //                   : '_self'
+      //               }
+      //             >
+      //               {item?.value?.name}
+      //             </Link>
+      //           </li>
+      //         ))}
+      //       </ul>
 
-        </Accordion>
+      //     </div>
+      //   </AccordionFooter>
 
-        <Accordion
-          className="last:mb-0"
-          title={data?.attributes?.fourth_column_title?.value}
-          titleClassName="text-xs font-medium"
-        >
-          {/* <div>
-            <ul className="text-xs px-4">
-              {data?.attributes?.third_column_items?.map((item, i) => (
-                <li className="mb-2" key={i}>
-                  <Link
-                    href={item.value.redirect_url || '#'}
-                    target={
-                      item.value.is_target_blank === 'true' ? '_blank' : '_self'
-                    }
-                  >
-                    {item.value.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-        </Accordion>
+      //   <AccordionFooter
+      //     className="last:mb-0"
+      //     title={data?.attributes?.third_column_title?.value}
+      //     titleClassName="text-x;l font-medium"
+      //   >
+      //     <div>
+      //       <ul className="text-xs px-4">
+      //         {data?.attributes?.third_column_items?.map((item, i) => (
+      //           <li className="mb-2" key={i}>
+      //             <Link
+      //               href={item.value.redirect_url || '#'}
+      //               target={
+      //                 item.value.is_target_blank === 'true' ? '_blank' : '_self'
+      //               }
+      //             >
+      //               {item.value.name}
+      //             </Link>
+      //           </li>
+      //         ))}
+      //       </ul>
+      //     </div>
 
-      </div>
-    </div>
+      //   </AccordionFooter>
+
+      //   <AccordionFooter
+      //     className="last:mb-0"
+      //     title={data?.attributes?.fourth_column_title?.value}
+      //     titleClassName="text-xs font-medium"
+      //   >
+      //     <div>
+      //       <ul className="text-xs px-4">
+      //         {data?.attributes?.third_column_items?.map((item, i) => (
+      //           <li className="mb-2" key={i}>
+      //             <Link
+      //               href={item.value.redirect_url || '#'}
+      //               target={
+      //                 item.value.is_target_blank === 'true' ? '_blank' : '_self'
+      //               }
+      //             >
+      //               {item.value.name}
+      //             </Link>
+      //           </li>
+      //         ))}
+      //       </ul>
+      //     </div>
+      //   </AccordionFooter>
+      // </div> */}
+    // </div>
   );
 }
 
@@ -404,7 +413,7 @@ export default async function FooterMenu() {
 
 //       </div>
 //       <div className="block md:hidden">
-//         <Accordion
+//         <AccordionFooter
 //           title={data?.attributes?.first_column_title?.value}
 //           titleClassName="text-xs font-medium"
 //         >
@@ -442,7 +451,7 @@ export default async function FooterMenu() {
 //               }
 //             </ul>
 //           </div>
-//         </Accordion>
+//         </AccordionFooter>
 
 //         <Accordion
 //           title={data?.attributes?.second_column_title?.value}

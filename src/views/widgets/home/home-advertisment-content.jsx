@@ -121,7 +121,13 @@ const Wrapper = Styled.section`
             display:block;
         }
         .home_advertisment_content h1{
-            font-size:36px !important;
+            font-size:36px;
+        }
+        .home_advertisment_image{
+            text-align:center;
+        }
+        .home_advertisment_content h1 {
+            font-size: 40px ;
         }
     }
     @media screen and (max-width:2400px) and (min-width:1300px) {
@@ -135,5 +141,6 @@ const Wrapper = Styled.section`
         bottom:-20px;
         width:20px;
     }
+}
 `;
 

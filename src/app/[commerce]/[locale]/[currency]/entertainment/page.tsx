@@ -1,6 +1,6 @@
 import 'server-only';
 
-import { LOGISTICS_WIDGETS } from '@theme/widgets/logistics/logistics-info-content';
+import { ENTERTAINMENT_WIDGETS } from '@theme/widgets/entertainment';
 import { getWidgetData } from '@akinon/next/data/server';
 import { withSegmentDefaults } from '@akinon/next/hocs/server';
 import LazyComponent from '@akinon/next/components/lazy-component';
@@ -17,7 +17,7 @@ export const revalidate = 600;
 
 async function Page() {
   const data = await getWidgetData<HomeWidgetOrderType>({
-    slug: 'logisctics-widgets'
+    slug: 'entertainment-widgets'
   });
 
   if (!data?.attributes?.widget_order) {
@@ -25,7 +25,7 @@ async function Page() {
   }
 
   return data.attributes.widget_order.map((widget, index) => {
-    const Widget = LOGISTICS_WIDGETS[widget.value.item_slug];
+    const Widget = ENTERTAINMENT_WIDGETS[widget.value.item_slug];
 
     if (Widget) {
       if (index > 2) {

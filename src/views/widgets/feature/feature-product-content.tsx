@@ -94,18 +94,12 @@ export default function FeatureComponent(props: ListPageProps) {
   // ]
   // const absolute_url = data.absolute_url || '';
   const [paginationData, setPaginationData] = useState([...data.products]);
-
-
   return (
     <Wrapper>
       <CarouselCore
         responsive={{
           all: {
-            breakpoint: { max: 4000, min: 0 },
-            items: 4
-          },
-          table: {
-            breakpoint: { max: 4000, min: 0 },
+            breakpoint: { max: 5000, min: 0 },  
             items: 4
           },
           mobile: {
@@ -113,7 +107,7 @@ export default function FeatureComponent(props: ListPageProps) {
             items: 2
           }
         }}
-        className='container rounded-1'
+        className='rounded-1'
         arrows={true}
         swipeable={true}
       >
@@ -125,8 +119,8 @@ export default function FeatureComponent(props: ListPageProps) {
               <ProductItem 
                 key={product.pk}
                 product={product}
-                width={250}
-                height={510}
+                width={0}
+                height={0}
                 index={index}
               />
             }
@@ -163,61 +157,11 @@ export default function FeatureComponent(props: ListPageProps) {
 }
 
 const Wrapper = Styled.section`
-.home_feature_container{
-  /* margin-top:10px; */
-  padding:10px;
-}
-  .home_feature_card{
-    width:100%;
-  }
-  .home_feature_image_1{
-    width:100%;
-    height:100%;
-  }
-  .home_feature_image{
-    position:relative;
-    width:100%;
-    height:auto;
-    /* border:1px solid #fff; */
-  }
-  .home_feature_text h2{
-    color:#003744;
-    font-size:16px;
-  }
-  .home_feature_price h3{
-    color:#003744;
-    font-size:14px;
-    font-weight:600;
-  }
-  .home_feature_price h4{
-    color:#666666;
-    font-size:12px;
-    text-decoration:line-through;
-  }
-  .pinkbtn{
-    width:100%;
-    text-align:center;
-    margin-bottom:10px;
-    border-radius:0px !important;
-  }
-  .addCart{
-    background-color:#003744;
-    color:#fff;
-    width:100%;
-    text-align:center;
-    padding:8px 10px;
-  }
+
     .react-multi-carousel-track{
     gap:10px;
-    /* width:260px !important; */
   }
   @media screen and (max-width:767px){
-    .home_feature_container{
-      padding:0;
-      flex-wrap:wrap;
-    }
-    .home_feature_card{
-      width:98%;
-    }
+   
 }
 `

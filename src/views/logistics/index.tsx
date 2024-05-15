@@ -1,18 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { CarouselCore } from '@theme/components/carousel-core';
-import { Link } from '@theme/components';
-import Styled from 'styled-components';
+import React from 'react';
 import { Image } from '@akinon/next/components/image';
-import { useSearchParams } from 'next/dist/client/components/navigation';
-import convertFacetSearchParams from '@theme/utils/convert-facet-search-params';
-import { useAppSelector } from '@akinon/next/redux/hooks';
-import { usePathname } from 'next/navigation';
-import { getListData } from '@akinon/next/data/server';
-import { Category } from '@akinon/next/types';
-import { pushProductClicked, pushProductListProductViewed } from '@theme/utils/gtm';
-import { useInView } from 'react-intersection-observer';
+
 
 export default function LogisticsContent({ data }) {
 
