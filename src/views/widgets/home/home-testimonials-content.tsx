@@ -20,7 +20,7 @@ export default function HomeTestimonialsContent({ data }) {
                     <CarouselCore
                         responsive={{
                             all: {
-                                breakpoint: { max: 5000, min: 0 },
+                                breakpoint: { max: 6000, min: 0 },
                                 items: 3
                             },
                             mobile: {
@@ -65,7 +65,7 @@ const Wrapper = Styled.section`
       padding:40px 20px 20px;
       border-radius:10px;
       height:100%;
-      width:inherit;
+      width:auto;
     }
     .top_testimonials{
         position:absolute;
@@ -91,7 +91,7 @@ const Wrapper = Styled.section`
     margin-top:40px;    
   }
   .react-multi-carousel-track {
-    gap:20px;
+    /* gap:20px; */
     width:100%;
   }
   /* .react-multi-carousel-item  {
