@@ -30,7 +30,6 @@ export default function FeatureComponent(props: ListPageProps) {
   //   convertFacetSearchParams(selectedFacets).toString();
 
   // const urlSearchParams = new URLSearchParams(facetSearchParams);
-  // console.log(urlSearchParams);
 
   // const searchText = searchParams.get('search_text');
   // searchText && urlSearchParams.set('search_text', searchText);
@@ -38,7 +37,6 @@ export default function FeatureComponent(props: ListPageProps) {
 
   // const getFeatureeData = async () => {
   //   const data1 = await getListData({ searchParams });
-  //   console.log(data1);
   // }
   // const [viewed, setViewed] = useState(false);
   // const { ref, inView } = useInView();

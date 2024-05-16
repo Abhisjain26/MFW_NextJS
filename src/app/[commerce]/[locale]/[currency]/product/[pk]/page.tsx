@@ -34,7 +34,7 @@ export async function generateMetadata({
         }))
       }
     };
-    // console.log(data);
+    
     // eslint-disable-next-line no-empty
   } catch (error) { }
 

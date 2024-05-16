@@ -11,7 +11,7 @@ export default function MobileHamburgerButton() {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="flex row-start-2 sm:hidden ">
+    <div className="flex row-start-2">
       <PwaBackButton />
       <Button
         className={clsx([

@@ -7,10 +7,12 @@ import { MenuItemType } from '@akinon/next/types';
 import React, { useEffect, useState } from 'react';
 import { Icon, Link } from '@theme/components';
 import Search from './search';
-import { useLocalization } from '@akinon/next/hooks';
 import { Image } from '@akinon/next/components/image';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { ROUTES } from '@theme/routes';
+import { useRouter, useLocalization } from '@akinon/next/hooks';
+
 
 interface NavbarProps {
   menu: MenuItemType[];
@@ -18,11 +20,14 @@ interface NavbarProps {
 
 export default function Navbar(props: NavbarProps) {
   const { menu } = props;
+  // const router = useRouter();
 
   const dispatch = useAppDispatch();
   const { isSearchOpen, openedMenu } = useAppSelector((state) => state.header);
   const [currentUrl, setCurrentUrl] = useState("");
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+  const [filteredData, setFilteredData] = useState([]);
+  const router = useRouter();
 
   const handleTabClick = (index) => {
     setSelectedTabIndex(index);
@@ -31,6 +36,7 @@ export default function Navbar(props: NavbarProps) {
   const isActive = (url: string) => {
     return url === currentUrl ? 'active_header' : '';
   };
+
 
   useEffect(() => {
     setCurrentUrl(window.location.pathname);
@@ -45,6 +51,29 @@ export default function Navbar(props: NavbarProps) {
       window.removeEventListener('popstate', handleUrlChange);
     };
   }, []);
+
+  // useEffect(() => {
+  //   if (page > 1 && data.products?.length === 0) {
+  //     const newUrl = new URL(window.location.href);
+  //     // newUrl.searchParams.delete('page');
+  //     router.push(newUrl.pathname + newUrl.search, undefined);
+  //   }
+
+  // }, [searchParams, data.products, page]);
+
+  const handleChildItemClick = (childUrl) => {
+    dispatch(setOpenedMenu(null));
+    router.push(`/list?attributes_type=${childUrl}&page=1`);
+  };
+
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+      
+  //   }
+  // }, [router]);  
+  // Close the opened menu
+
+  // Navigate to the list page with the selected data type as a query parameter
 
   return (
     <div className='relative w-full container'>
@@ -145,16 +174,17 @@ export default function Navbar(props: NavbarProps) {
                           {child.children && (
                             <ul>
                               {child.children.map((grandChild, index) => (
-                                <li key={index} className='header_rechange'>
-                                  <Link
+                                <li key={index} className='header_rechange cursor-pointer	'>
+                                  <div
                                     onClick={() => {
                                       dispatch(setOpenedMenu(null));
+                                      handleChildItemClick(grandChild.url); 
                                     }}
-                                    href={grandChild.url}
+                                    // href={grandChild.url}
                                     className="block mb-4 text-ms transition-colors w-max lg:w-44 hover_color"
                                   >
-                                    {grandChild.label}
-                                  </Link>
+                                    <span>{grandChild.label}</span>
+                                  </div>
                                 </li>
                               ))}
                             </ul>
@@ -169,19 +199,19 @@ export default function Navbar(props: NavbarProps) {
                             image.kwargs.value.image && (
                               <Link href={image.value.url} key={index}>
                                 {/* TODO: There is no image. It should be checked. May need fix. */}
-                                <Image
+                                {/* <Image
                                   src={image.kwargs.value.image?.url}
                                   alt={image.value.title}
                                   title={image.value.title}
                                   width={265}
                                   height={323}
-                                />
+                                /> */}
                                 <span className="block mt-4">
                                   {image.value.title}
                                 </span>
-                                <span className="inline-block mt-2 text-xs uppercase border-b border-gray-500">
+                                {/* <span className="inline-block mt-2 text-xs uppercase border-b border-gray-500">
                                   {image.value.link_text}
-                                </span>
+                                </span> */}
                               </Link>
                             )
                         )}

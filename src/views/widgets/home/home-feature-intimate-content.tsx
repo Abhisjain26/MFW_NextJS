@@ -46,4 +46,15 @@ const Wrapper = Styled.section`
     display: flex;
     justify-content: center;
   }
+  
+  .home_slider_feature h2{
+    text-wrap:wrap;
+    width:204px;
+    text-align:center;
+  }
+  @media screen and (max-width:768px){
+    .home_slider_feature h2{
+      width:170px;
+    }  
+  }
 `

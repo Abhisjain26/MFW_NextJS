@@ -25,7 +25,6 @@ export default function Page() {
       pushCartView(products);
     }
   }, [basket, isSuccess]);
-  // console.log("basket",basket.total_quantity);
 
   // useEffect(() => {
   //   const products = basket.basketitem_set.map((basketItem) => ({

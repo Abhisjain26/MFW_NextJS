@@ -24,7 +24,7 @@ interface ListPageProps {
 export default function ListPage(props: ListPageProps) {
   const { data } = props;
   
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // TODO: Move to redux
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [paginationData, setPaginationData] = useState([...data.products]);
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -57,9 +57,8 @@ export default function ListPage(props: ListPageProps) {
       // newUrl.searchParams.delete('page');
       router.push(newUrl.pathname + newUrl.search, undefined);
     }
-
   }, [searchParams, data.products, page]);
-
+  
   const dispatch = useAppDispatch();
   const { t } = useLocalization();
 
@@ -71,13 +70,12 @@ export default function ListPage(props: ListPageProps) {
     // setPage(newPage);
     setPaginationData((prev) => [...prev, ...data.products]);
   };
-  
  
   return (
     <>
       <div className="container px-4 mx-auto lg:px-0 lg:my-4">
         <div className="grid grid-cols-[19rem_1fr]">
-          <div className='w-9/10 fixed left-0 top-0 bottom-0 bg-white z-20 p-6 transition-all ease-in duration-300 lg:static lg:block lg:mr-16 lg:text-sm lg:p-0 '></div>
+          {/* <div className='w-9/10 fixed left-0 top-0 bottom-0 bg-white z-20 p-6 transition-all ease-in duration-300 lg:static lg:block lg:mr-16 lg:text-sm lg:p-0 '></div> */}
           <div className='flex flex-col items-center lg:items-stretch col-span-2 lg:col-span-1'>
             {/* <Breadcrumb /> */}
           </div>
@@ -152,7 +150,6 @@ export default function ListPage(props: ListPageProps) {
                 limit={data.pagination.page_size}
                 currentPage={data.pagination.current_page}
                 numberOfPages={data.pagination.num_pages}
-                
                 />
             )}
           </div>

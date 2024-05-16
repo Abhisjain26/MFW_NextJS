@@ -33,7 +33,7 @@ export default function HomeengStories({ data }) {
 
                             return (
                                 <div
-                                    className="mr-4 flex-shrink-0 first:ms-4 w-32 md:w-32"
+                                    className="flex-shrink-0 w-32 mx-auto"
                                     key={`story__${index}`}
                                 >
                                     <Link href={story?.value?.url} aria-label={story?.value?.alt}>
@@ -71,6 +71,18 @@ const Wrapper = Styled.section`
   }
   .home_advertisment_image img{
     border-radius: 10px;
+  }
+  @media screen and (max-width:768px){
+    .react-multiple-carousel__arrow{
+        background:#C475AB !important;
+        min-height:25px !important;
+        min-width:25px !important;
+        top:55px !important;
+    }
+    .react-multiple-carousel__arrow::before{
+        color:#fff !important;
+        font-size:12px !important;
+    }
   }
 
 `

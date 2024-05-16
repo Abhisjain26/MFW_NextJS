@@ -32,7 +32,7 @@ export default function Results(props: ResultsProps) {
         ?.entries ?? [],
     [currentData]
   );
-
+  
   const products = useMemo(
     () =>
       currentData?.groups.find((group) => group.suggestion_type === 'Product')

@@ -30,7 +30,6 @@ export const AccordionFooter = ({
   dataTestId
 }: AccordionProps) => {
 //   const [collapse, setCollapse] = useState(isCollapse);
-// console.log(subtitle);
 
   return (
     <div
@@ -60,7 +59,6 @@ export const AccordionFooter = ({
         )} */}
       </div>
       <div className="mt-3 text-sm" dangerouslySetInnerHTML={{ __html: String(children) }} />
-      {/* {console.log("byeee",children.props.children.props.children)} */}
       
     </div>
   );

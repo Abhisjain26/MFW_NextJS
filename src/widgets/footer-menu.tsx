@@ -279,7 +279,6 @@ export default async function FooterMenu() {
 //           <div className="mb-4 font-medium" data-testid="footer-categories">
 //             {data?.attributes?.first_column_title?.value}
 //           </div>
-//           {/* {console.log(data)
 //           } */}
 //           <div className="flex">
 //            {/* <ul className="lg:mr-8">
@@ -419,13 +418,11 @@ export default async function FooterMenu() {
 //         >
 //           <div>
 
-//             {/* {console.log(data.attributes.first_column_items)} */}
 
 //             <ul className="text-xs px-4">
 //               {data?.attributes?.first_column_items
 //                 ?.filter(
 //                   (category) => {
-//                     // console.log("rk", category);
 
 //                     return category?.value?.is_side_column_item === 'True'
 //                   }
@@ -441,7 +438,6 @@ export default async function FooterMenu() {
 //                             : '_self'
 //                         }
 //                       >
-//                         {/* {console.log("hello",item)} */}
 //                         {item?.value?.name}
 
 //                       </Link>

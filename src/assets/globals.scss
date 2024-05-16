@@ -147,9 +147,11 @@
 .header_login_mobile a {
   color: #EB89B5 !important;
 }
-.hover_color:hover{
+
+.hover_color:hover {
   color: #EB89B5 !important;
 }
+
 .explore_content {
   color: #EB89B5 !important;
   font-weight: 600 !important;
@@ -168,9 +170,11 @@
   color: #003744 !important;
   font-weight: 600 !important;
 }
-.header_rechange{
-  padding: 0 !important;  
+
+.header_rechange {
+  padding: 0 !important;
 }
+
 .mobile_menu_items:hover {
   background-color: #EB89B5 !important;
   color: #fff !important;
@@ -221,51 +225,63 @@
   color: #003744 !important;
   font-weight: 600 !important;
 }
-.stories_banner img{
+
+.stories_banner img {
   border-radius: 50% !important;
   border: 0 !important;
 }
-.pagination_next{
+
+.pagination_next {
   background-color: #003744 !important;
   color: #fff !important;
   padding: 7px 10px 7px 22px !important;
   text-transform: uppercase;
 }
-.pagination_count_number a{
+
+.pagination_count_number a {
   padding: 5px 10px !important;
-  border:1px solid #999999 !important;
+  border: 1px solid #999999 !important;
 }
-.pagination_text_color{
+
+.pagination_text_color {
   color: #999999 !important;
 }
-.search_text_search{
+
+.search_text_search {
   font-family: Georgia, 'Times New Roman', Times, serif !important;
   font-size: 24px !important;
   color: #003744 !important;
 }
-.phoneix_life_image img{
+
+.phoneix_life_image img {
   width: 80px !important;
   height: auto !important;
 }
-.digital_second_image img{
+
+.digital_second_image img {
   height: 400px !important;
 }
-.dress_digital_left_image{
+
+.dress_digital_left_image {
   position: absolute;
   left: -9px;
   top: 50%;
   transform: translateY(-50%);
 }
-.dress_digital_right_image{
+
+.dress_digital_right_image {
   position: absolute;
   right: -9px;
   top: 50%;
   transform: translateY(-50%);
 }
-.dress_digital_right_image img , .dress_digital_left_image img{
+
+.dress_digital_right_image img,
+.dress_digital_left_image img {
   width: 20px !important;
 }
-.home_advertisment_container{
+
+.home_advertisment_container {
   background: #fff !important;
 }
 
@@ -421,7 +437,7 @@
 }
 
 .heading-main {
-  font-family: Georgia, 'Times New Roman', Times, serif ;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 45px;
   font-style: italic;
   font-weight: 400;
@@ -442,20 +458,22 @@
   text-align: left;
   color: #003744;
 }
-.fintech-desc p{
+
+.fintech-desc p {
   margin-top: 10px;
 }
 
 .button-inner {
   border: 1px solid #C475AB;
-  padding:  15px 20px;
+  padding: 15px 20px;
   margin-right: 10px;
   margin-top: 25px;
   margin-bottom: 10px;
 }
-.button-inner img{
+
+.button-inner img {
   width: 160px !important;
-  height:30px !important;
+  height: 30px !important;
 }
 
 //---------------   End of detail page  ----------------------- 
@@ -481,12 +499,13 @@
 .search_icon {
   color: #EB89B5 !important;
 }
+
 // ----------------------- End of Search  -------------------------- 
-.home_dress{
-  position:absolute !important;
-  bottom:-28px !important;
-  left:50% !important;
-  transform:translateY(-50%) !important;
+.home_dress {
+  position: absolute !important;
+  bottom: -28px !important;
+  left: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 @media screen and (max-width:767px) {
@@ -516,7 +535,7 @@
   .home_advertisment_content_mobile,
   .home_advertisment_container {
     flex-direction: column;
-    margin-top: 20px !important;
+    // margin-top: 20px !important;
     margin-bottom: 10px !important;
   }
 
@@ -563,14 +582,9 @@
     font-size: 28px !important;
   }
 
-  .mobile_content_middle,
-  .mobile_header_logo {
-    display: block !important;
-  }
-
-  .header_logo {
-    display: none !important;
-  }
+  // .header_logo {
+  //   display: none !important;
+  // }
 
   .home_slider_content h2 {
     text-align: center !important;
@@ -605,15 +619,12 @@
   }
 
   .quantity-main .quantity-button {
-
     width: 35%;
   }
 
   .cart_button_add_mobile {
     width: 110px !important;
   }
-
-
 
   .address_form_content {
     flex-direction: column;
@@ -627,60 +638,103 @@
     margin-top: 30px !important;
   }
 }
+
 @media screen and (min-width: 640px) {
   .container_mx {
     padding-right: 0rem !important;
     padding-left: 0rem !important;
   }
 }
+
 @media screen and (max-width:768px) {
-  .container{
+  .container {
     max-width: 95%;
-    margin: 0 auto ;
+    margin: 0 auto;
   }
-  .home_leaf,.home_flower,.home_banner_leaf{
-    display: none;
+
+  .mobile_content_middle,
+  .mobile_header_logo {
+    display: block !important;
   }
-  .home_advertisment_container{
+
+  // .home_leaf,.home_flower,.home_banner_leaf,.header_logo{
+  //   display: none;
+  // }
+  .home_advertisment_container {
     margin: 10px auto;
   }
-  .home_discount_container{
+
+  .home_discount_container {
     margin: 20px auto !important;
   }
+
   // .rectanagle_left,.rectanagle_right{
   //   top: 58px !important;
   //   height: 67px !important;
   // }
-  .header_none{
+  .header_none {
     display: none;
   }
-  .common_flex_direction{
+
+  .common_flex_direction {
     flex-direction: column;
   }
-  .common_width{
+
+  .common_width {
     width: 100% !important;
   }
-  .common_image{
+
+  .common_image {
     margin-top: 20px;
     border-radius: 0px;
   }
-  .fintech-desc{
+
+  .fintech-desc {
     width: 50%;
   }
-  .common_margin{
+
+  .common_margin {
     margin: 20px 0;
   }
-  .title_all,.home_advertisment_content h1,.home_slider_feature h2{
+
+  .title_all,
+  .home_advertisment_content h1,
+  .home_slider_feature h2 {
     text-align: center;
   }
-  .email_subscribe_input,.email_subscribe_button{
-    width: auto !important; 
+
+  .email_subscribe_input,
+  .email_subscribe_button {
+    width: auto !important;
+  }
+
+  .home_leaf {
+    display: block !important;
+    top: -8% !important;
+    left: -19px !important;
+    z-index: -1 !important;
+  }
+}
+
+@media screen and (max-width:1023px) and (min-width:768px) {
+
+  .header_logo,
+  .header_none {
+    display: none !important;
+  }
+
+  .mobile_content_middle,
+  .mobile_header_logo {
+    display: block !important;
   }
 }
 
 @media screen and (max-width:420px) and (min-width:320px) {
-  .title_all,.home_advertisment_content h1,.home_slider_feature h2 {
+
+  .title_all,
+  .home_advertisment_content h1,
+  .home_slider_feature h2 {
     font-size: 24px !important;
-    text-align: center;
+    text-align: left;
   }
 }
