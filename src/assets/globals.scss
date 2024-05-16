@@ -482,7 +482,12 @@
   color: #EB89B5 !important;
 }
 // ----------------------- End of Search  -------------------------- 
-
+.home_dress{
+  position:absolute !important;
+  bottom:-28px !important;
+  left:50% !important;
+  transform:translateY(-50%) !important;
+}
 
 @media screen and (max-width:767px) {
   .max-container {
@@ -642,10 +647,10 @@
   .home_discount_container{
     margin: 20px auto !important;
   }
-  .rectanagle_left,.rectanagle_right{
-    top: 58px !important;
-    height: 67px !important;
-  }
+  // .rectanagle_left,.rectanagle_right{
+  //   top: 58px !important;
+  //   height: 67px !important;
+  // }
   .header_none{
     display: none;
   }

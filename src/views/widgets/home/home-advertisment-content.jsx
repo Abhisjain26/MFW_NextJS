@@ -100,12 +100,12 @@ const Wrapper = Styled.section`
     .home_advertisment_content p{
         margin-top:10px;
     }
-    .home_dress{
+    /* .home_dress{
         position:absolute;
         bottom:-20px;
         left:50%;
         transform:translateY(-50%);
-    }
+    } */
     .home_leaf{
         position:absolute;
         bottom:-40%;
@@ -137,10 +137,10 @@ const Wrapper = Styled.section`
         bottom: -54% !important;
         left: -50px !important;
     }
-    .home_dress{
+    /* .home_dress{
         bottom:-20px;
         width:20px;
-    }
+    } */
 }
 `;
 

@@ -79,9 +79,9 @@ const Wrapper = Styled.section`
         right: -59px;
         width:150px;
     }
-    .home_dress{
+    /* .home_dress{
         width:20px;
         bottom:-20px;
-    }
+    } */
 }
 `

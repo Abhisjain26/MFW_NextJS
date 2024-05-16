@@ -99,8 +99,12 @@ export default function FeatureComponent(props: ListPageProps) {
       <CarouselCore
         responsive={{
           all: {
-            breakpoint: { max: 5000, min: 0 },  
+            breakpoint: { max: 5000, min: 0 },
             items: 4
+          },
+          tablet:{
+            breakpoint:{max:1023,min:0},
+            items:3
           },
           mobile: {
             breakpoint: { max: 767, min: 0 },
@@ -116,7 +120,7 @@ export default function FeatureComponent(props: ListPageProps) {
         {paginationData?.map((product, index) => (
           <>
             {
-              <ProductItem 
+              <ProductItem
                 key={product.pk}
                 product={product}
                 width={0}
@@ -157,11 +161,18 @@ export default function FeatureComponent(props: ListPageProps) {
 }
 
 const Wrapper = Styled.section`
-
-    .react-multi-carousel-track{
+/* .react-multi-carousel-item--active{
+  width:inherit !important;
+} */
+    /* .react-multi-carousel-track{
     gap:10px;
-  }
+  } */
   @media screen and (max-width:767px){
-   
+    /* .react-multi-carousel-item--active{
+  width:248px !important;
+} */
+.react-multi-carousel-track{ 
+    gap:2px;
+  }
 }
 `

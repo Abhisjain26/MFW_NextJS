@@ -21,11 +21,15 @@ export default function HomePartnersContent({ data }) {
                             all: {
                                 breakpoint: { max: 5000, min: 0 },
                                 items: 6
+                            },
+                            table:{
+                                breakpoint: { max: 1023, min: 0 },
+                                items: 3
+                            },
+                            mobile: {
+                                breakpoint: { max: 767, min: 0 },
+                                items: 1
                             }
-                            // mobile: {
-                            //     breakpoint: { max: 768, min: 0 },
-                            //     items: 5
-                            // }
                         }}
                         className='flex justify-center w-full gap-10'
                         arrows={true}
@@ -37,7 +41,7 @@ export default function HomePartnersContent({ data }) {
                                 key={i}
                                 className='home_hero_slider '
                             >
-                                <div className='home_news_text ms-3 '>
+                                <div className='home_news_text text-center'>
                                     <Image
                                         src={item.kwargs.value.image.url}
                                         width={100}
@@ -87,8 +91,29 @@ const Wrapper = Styled.section`
     width:300px;
     height:185px;
   }
-  .react-multi-carousel-track {
-    gap:20px;
-  }
   
+  /* .react-multi-carousel-track {
+    gap:20px;
+  } */
+  @media screen and (max-width:768px){
+    .rectanagle_left,.rectanagle_right{
+        display:none;
+    }
+    .react-multiple-carousel__arrow{
+        min-height:20px;
+        min-width:20px;
+    }
+    .react-multiple-carousel__arrow::before{
+        font-size:12px;
+    }
+    .react-multi-carousel-item  {
+        margin:auto;
+    }
+    /* .home_advertisment_image{
+        width:100px !important;
+    } */
+    /* .home_news_text{
+        padding:0 40px;
+    } */
+  }
 `

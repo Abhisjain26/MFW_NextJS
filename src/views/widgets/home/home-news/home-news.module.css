@@ -90,12 +90,12 @@
     font-family: sans-serif;
 }
 
-.home_dress {
+/* .home_dress {
     position: absolute;
     bottom: -20px;
     left: 50%;
     transform: translateY(-50%);
-}
+} */
 
 .home_top {
     margin-top: 30px;

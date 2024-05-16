@@ -25,7 +25,7 @@ export default function HomeNewsContent({ data }) {
         <div>
             <div className={`container container_mx ${Style.news}`}>
                 <div className={`${Style.news_container}`}>
-                    <div className={`${Style.home_dress}`}>
+                    <div className='home_dress'>
                         <Image src='images/home/dress.png'
                             width={20}
                             height={20}

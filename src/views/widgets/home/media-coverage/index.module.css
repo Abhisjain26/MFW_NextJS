@@ -41,12 +41,7 @@
     font-size: 12px;
     padding-top: 3px;
 }
-.home_dress{
-    position:absolute;
-    bottom:-20px;
-    left:50%;
-    transform:translateY(-50%);
-}
+
 @media (max-width: 768px) {
     /* .home_advertisment_content {
         flex-direction: row;

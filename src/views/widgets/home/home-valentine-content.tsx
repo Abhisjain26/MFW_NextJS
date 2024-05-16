@@ -105,12 +105,12 @@ const Wrapper = Styled.section`
     .home_advertisment_content p{
         margin-top:10px;
     }
-    .home_dress{
+    /* .home_dress{
         position:absolute;
         bottom:-20px;
         left:50%;
         transform:translateY(-50%);
-    }
+    } */
     .home_flower{
         position:absolute;
         top:-30px;
@@ -139,9 +139,9 @@ const Wrapper = Styled.section`
         width: 80px !important;
         height:80px !important;
     }
-    .home_dress{
+    /* .home_dress{
         width:20px;
         bottom:-20px;
-    }
+    } */
 }
 `

@@ -103,9 +103,13 @@ const Wrapper = Styled.section`
   .react-multiple-carousel__arrow--left {
     left: calc(0% + 1px);
   }
+  .home_testimonials_card{
+        width:375px;
+    }
   @media screen and (max-width:768px) {
     .home_testimonials_card{
         padding:40px 20px;
+        width:inherit;
     }
     .home_testimonials_text{
         padding-left:0;
