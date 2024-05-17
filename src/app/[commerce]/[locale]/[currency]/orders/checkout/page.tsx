@@ -15,7 +15,9 @@ import { useFetchCheckoutQuery } from '@akinon/next/data/client/checkout';
 import { Button, LoaderSpinner } from '@theme/components';
 import { pushAddPaymentInfo, pushAddShippingInfo } from '@theme/utils/gtm';
 import { CheckoutStep } from '@akinon/next/types';
-import { useRouter, useLocalization } from '@akinon/next/hooks';
+import { useRouter } from '@akinon/next/hooks/use-router';
+
+import {  useLocalization } from '@akinon/next/hooks';
 import dynamic from 'next/dynamic';
 import PluginModule, { Component } from '@akinon/next/components/plugin-module';
 import { Image } from '@akinon/next/components';
@@ -23,6 +25,8 @@ import Styled from 'styled-components';
 import Style from './page.module.css'
 
 const Checkout = () => {
+  const router = useRouter();
+ const productId  = router;
   const { t } = useLocalization();
   const { steps, preOrder } = useAppSelector(
     (state: RootState) => state.checkout
@@ -38,8 +42,8 @@ const Checkout = () => {
     refetchOnMountOrArgChange: true
   });
   const initialStepChanged = useRef<boolean>(false);
-  const router = useRouter();
   const dispatch = useAppDispatch();
+
 
   const CheckoutAuth = useMemo(
     () =>

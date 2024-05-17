@@ -10,7 +10,7 @@ export default function HomeengStories({ data }) {
     return (
         <Wrapper>
             <div className='container container_mx'>
-                <div className='title_all mt-10 pb-5'>
+                <div className='title_all explore_department mt-10 pb-5'>
                     EXPLORE OUR DEPARTMENTS
                 </div>
                 <div className="w-11/12 mx-auto pb-10">
@@ -82,6 +82,9 @@ const Wrapper = Styled.section`
     .react-multiple-carousel__arrow::before{
         color:#fff !important;
         font-size:12px !important;
+    }
+    .explore_department{
+        text-align:center;
     }
   }
 

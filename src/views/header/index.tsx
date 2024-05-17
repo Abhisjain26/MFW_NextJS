@@ -18,9 +18,9 @@ export default async function Header() {
 
   return (
     <header className="relative container_md">
-      <div className=' flex justify-center mt-5'>
+      <div className=' flex justify-center mt-5 header_logo_main'>
         <Link href="/">
-          <Image width={200} height={150} alt='' className='header_logo' src="/images/logoMall.svg" />
+          <Image width={200} height={150} alt='' className='header_logo ' src="/images/logoMall.svg" />
         </Link>
       </div>
       <div
@@ -68,3 +68,4 @@ export default async function Header() {
     </header>
   );
 }
+

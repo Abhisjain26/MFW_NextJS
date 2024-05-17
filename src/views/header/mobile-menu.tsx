@@ -13,10 +13,10 @@ import {
   CurrencySelect,
   Icon,
   LanguageSelect,
-  Link
+  Link,
+  // Image // Import Image component
 } from '@theme/components';
 import { useLocalization } from '@akinon/next/hooks';
-import { Image } from '@akinon/next/components';
 
 interface MobileMenuProps {
   menu: MenuItemType[];
@@ -24,16 +24,14 @@ interface MobileMenuProps {
 
 export default function MobileMenu(props: MobileMenuProps) {
   const { menu } = props;
-  const dispatch = useAppDispatch();
-  const [selectedSubMenu, setSelectedSubMenu] = useState<MenuItemType | null>(
-    null
-  );
-  const { t } = useLocalization();
-  const [activeTab, setActiveTab] = useState(0); // State to manage active tab index
 
-  const isMobileMenuOpen = useAppSelector(
-    (state) => state.header.isMobileMenuOpen
-  );
+  const dispatch = useAppDispatch();
+  const [selectedSubMenu, setSelectedSubMenu] = useState<MenuItemType | null>(null);
+
+  const { t } = useLocalization();
+  const [activeTab, setActiveTab] = useState(0);
+
+  const isMobileMenuOpen = useAppSelector((state) => state.header.isMobileMenuOpen);
 
   const handleTabClick = (index: number) => {
     setActiveTab(index);
@@ -42,26 +40,25 @@ export default function MobileMenu(props: MobileMenuProps) {
 
   return (
     <>
-      {/* MENU OVERLAY */}
       <div
         className={clsx(
-          'fixed top-0 left-0 z-30 w-screen h-screen invisible opacity-0 bg-black bg-opacity-80 transition duration-500',
+          'fixed top-0 left-0 z-30 w-screen h-screen bg-black bg-opacity-80 transition-opacity',
           {
-            '!visible !opacity-100 scroll-lock': isMobileMenuOpen
+            'opacity-100 visible': isMobileMenuOpen,
+            'opacity-0 invisible': !isMobileMenuOpen
           }
         )}
-        // TODO: Remove this after we have a better solution for clicking outside of the menu
         onClick={() => {
           dispatch(closeMobileMenu());
           setSelectedSubMenu(null);
         }}
       />
-      {/* TODO: Add a way to close the menu when clicking outside of it */}
       <div
         className={clsx(
-          'fixed top-0 left-0 z-50 flex flex-col bg-white w-72 pt-4 h-screen invisible opacity-0 transition duration-500 transform -translate-x-72',
+          'fixed top-0 left-0 z-50 flex flex-col bg-white w-72 h-screen transform transition-transform',
           {
-            '!visible !opacity-100 translate-x-0': isMobileMenuOpen
+            'translate-x-0': isMobileMenuOpen,
+            '-translate-x-72': !isMobileMenuOpen
           }
         )}
       >
@@ -74,34 +71,71 @@ export default function MobileMenu(props: MobileMenuProps) {
                   <Link
                     href={item.url}
                     onClick={(e) => {
-                      if (item.children.length > 0) {
+                      if (item.children && item.children.length > 0) {
                         e.preventDefault();
                         setSelectedSubMenu(item);
                       }
                     }}
                     className="flex items-center justify-between"
                   >
-                    <span>{item.label}</span>
-                    <Icon name="chevron-end" size={14} />
+                    <span className='flex gap-2'>
+                      <span>
+                        {item.extra_context &&
+                          item.extra_context.attributes &&
+                          item.extra_context.attributes.menu_image && (
+                            <img
+                              width={10}
+                              height={10}
+                              alt=""
+                              src={item.extra_context.attributes.menu_image.kwargs.url}
+                            />
+                          )}
+                      </span>
+
+                      <span>{item.label}</span>
+                    </span>
+                    {item.children && item.children.length > 0 ? (
+                      <Icon name='chevron-end' size={12} />
+                    ) : null}
                   </Link>
                 </Tab>
               ))}
             </TabList>
+
             {menu.map((item, index) => (
               <TabPanel key={index}>
-                <ul className='flex flex-wrap items-center justify-center gap-10'>
-                  {item.children.map((child, childIndex) => (
-                    <li key={childIndex} className="grid place-items-center">
-                      <Image className='navbar_dummy_image' alt='' width={100} height={100} src={'images/navbar/dummy-navbar.svg'} />
+                <ul className='flex flex-wrap items-center'>
+                  {item.children && item.children.map((child, childIndex) => (
+                    <li key={childIndex} className="grid mobile_inline_content px-5 place-items-left">
                       <Link
-                        onClick={() => dispatch(closeMobileMenu())}
+                        onClick={() => {
+                          dispatch(closeMobileMenu());
+                        }}
                         href={child.url}
-                        className="text-sm flex items-center justify-between py-4"
+                        className="text-xm flex items-center justify-between py-4"
                       >
                         <span>{child.label}</span>
+
                       </Link>
+                      {child.children && (
+                        <ul>
+                          {child.children.map((grandChild, grandChildIndex) => (
+                            <li key={grandChildIndex} className='header_rechange cursor-pointer'>
+                              <div
+                                onClick={() => {
+                                  dispatch(closeMobileMenu());
+                                }}
+                                className="block mb-4 text-xs transition-colors w-max lg:w-44 hover_color"
+                              >
+                                <span>{grandChild.label}</span>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </li>
                   ))}
+
                 </ul>
               </TabPanel>
             ))}

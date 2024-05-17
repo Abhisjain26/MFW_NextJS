@@ -14,6 +14,7 @@ import { Category, GetCategoryResponse } from '@akinon/next/types';
 import { pushProductClicked, pushProductListProductViewed } from '@theme/utils/gtm';
 import { useInView } from 'react-intersection-observer';
 import { ProductItem } from '@theme/views/product-item';
+import { ProductMobileItem } from '@theme/views/product-item/index-mobile';
 
 interface ListPageProps {
   data: GetCategoryResponse;
@@ -100,9 +101,9 @@ export default function FeatureComponent(props: ListPageProps) {
             breakpoint: { max: 5000, min: 0 },
             items: 4
           },
-          tablet:{
-            breakpoint:{max:1023,min:0},
-            items:3
+          tablet: {
+            breakpoint: { max: 1023, min: 0 },
+            items: 3
           },
           mobile: {
             breakpoint: { max: 767, min: 0 },
@@ -128,48 +129,15 @@ export default function FeatureComponent(props: ListPageProps) {
             }
           </>
         ))}
-        {/* {data.products.map((item, index) => {
-          const image = item.productimage_set[0];
-          return (<div className='home_feature_container flex gap-1' key={index}>
-            <div className='home_feature_card'>
-              <Link href={item.absolute_url} onClick={() => pushProductClicked(data)}>
-                <div className="home_feature_image">
-                  <Image src={image.image} className='home_feature_image_1' width={100} height={100} alt="" />
-                </div>
-              </Link>
-
-              <div className="home_feature_text">
-                <h2>{item.name}</h2>        
-                <div className="home_feature_price flex gap-4">
-                  <h3>{item.price}</h3>
-                  <h4>{item.price_old}</h4>
-                </div>
-                <div>
-                  <button className='pinkbtn'>Shop Now</button>
-                  <button className='addCart'>Add to cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          )
-        })} */}
       </CarouselCore>
     </Wrapper >
   );
 }
 
 const Wrapper = Styled.section`
-/* .react-multi-carousel-item--active{
-  width:inherit !important;
-} */
-    /* .react-multi-carousel-track{
-    gap:10px;
-  } */
+
   @media screen and (max-width:767px){
-    /* .react-multi-carousel-item--active{
-  width:248px !important;
-} */
-.react-multi-carousel-track{ 
+    .react-multi-carousel-track{ 
     gap:2px;
   }
 }

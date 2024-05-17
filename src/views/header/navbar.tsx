@@ -68,7 +68,7 @@ export default function Navbar(props: NavbarProps) {
 
   // useEffect(() => {
   //   if (typeof window !== 'undefined') {
-      
+
   //   }
   // }, [router]);  
   // Close the opened menu
@@ -170,7 +170,9 @@ export default function Navbar(props: NavbarProps) {
                             className="block mb-4 font-semibold text-ms mt-3 transition-colors w-max lg:w-44 hover_color"
                           >
                             {child.label}
+                           
                           </Link>
+
                           {child.children && (
                             <ul>
                               {child.children.map((grandChild, index) => (
@@ -178,7 +180,7 @@ export default function Navbar(props: NavbarProps) {
                                   <div
                                     onClick={() => {
                                       dispatch(setOpenedMenu(null));
-                                      handleChildItemClick(grandChild.url); 
+                                      handleChildItemClick(grandChild.url);
                                     }}
                                     // href={grandChild.url}
                                     className="block mb-4 text-ms transition-colors w-max lg:w-44 hover_color"

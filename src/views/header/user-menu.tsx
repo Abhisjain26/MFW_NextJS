@@ -46,7 +46,13 @@ export const UserMenu = (props: UserMenuProps) => {
       <div className='flex items-center gap-1' onClick={handleIconClick}>
         <div><Icon name="chevron-start" size={16} /></div>
         <div><Image src='/images/navbar/mobile-user.svg' className='mobile_user_profile_image' width={100} height={100} alt='User Profile' /></div>
-        <div><h2 className='mobile_user_profile_text'>Hii,<br /> There</h2></div>
+        <div>
+          {status === 'authenticated' ? (
+            <h2 className='mobile_user_profile_text'>Hii , <br />{`${session.user.firstName} ${session.user.lastName}`}</h2>
+          ) : (
+            <h2 className='mobile_user_profile_text'>Hii,<br /> There</h2>
+          )}
+        </div>
       </div>
       <div>
         {status === 'authenticated' ? (
@@ -58,8 +64,8 @@ export const UserMenu = (props: UserMenuProps) => {
               onClick={() => dispatch(closeMobileMenu())}
             >
 
-              <Icon name="user" size={24} />
-              <span className="uppercase">{`${session.user.firstName} ${session.user.lastName}`}</span>
+              {/* <Icon name="user" size={24} /> */}
+              <span className="uppercase"></span>
             </Link>
           </div>
         ) : (

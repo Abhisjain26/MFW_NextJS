@@ -13,7 +13,7 @@ export default async function Layout({
   children?: React.ReactNode;
 }) {
   return (
-    <>
+    <div className='relative'>
       <HomeHeroSlider />
       <div
         className={clsx(
@@ -36,6 +36,6 @@ export default async function Layout({
       </div>
       <ListPage data={data} />
           
-    </>
+    </div>
   );
 }

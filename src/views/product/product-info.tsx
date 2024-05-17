@@ -1,12 +1,12 @@
 'use client';
 
 import clsx from 'clsx';
-import { Button, Icon,Modal} from '@theme/components';
+import { Button, Icon, Modal } from '@theme/components';
 import { useAddProductToBasket } from '../../hooks';
 import React, { useEffect, useState } from 'react';
 import { useAddStockAlertMutation } from '@akinon/next/data/client/wishlist';
 import { pushAddToCart, pushProductViewed } from '@theme/utils/gtm';
-import { PriceWrapper, Variant} from '@theme/views/product';
+import { PriceWrapper, Variant } from '@theme/views/product';
 import Share from '@theme/views/share';
 import { ProductPageProps } from './layout';
 import MiscButtons from './misc-buttons';
@@ -24,8 +24,6 @@ export default function ProductInfo({ data }: ProductPageProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [stockAlertResponseMessage, setStockAlertResponseMessage] =
     useState(null);
-
-  
   const [addProduct, { isLoading: isAddToCartLoading }] =
     useAddProductToBasket();
   const [addStockAlert, { isLoading: isAddToStockAlertLoading }] =
@@ -56,9 +54,9 @@ export default function ProductInfo({ data }: ProductPageProps) {
     } catch (error) {
       setProductError(
         error?.data?.non_field_errors ||
-          Object.keys(error?.data).map(
-            (key) => `${key}: ${error?.data[key].join(', ')}`
-          )
+        Object.keys(error?.data).map(
+          (key) => `${key}: ${error?.data[key].join(', ')}`
+        )
       );
     }
   };
@@ -128,25 +126,25 @@ export default function ProductInfo({ data }: ProductPageProps) {
 
 
 
-    const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
-    const handleQuantityChange = (e) => {
-      const newQuantity = parseInt(e.target.value);
-      // Ensure quantity is a positive integer
-      if (!isNaN(newQuantity) && newQuantity > 0) {
-        setQuantity(newQuantity);
-      }
-    };
+  const handleQuantityChange = (e) => {
+    const newQuantity = parseInt(e.target.value);
+    // Ensure quantity is a positive integer
+    if (!isNaN(newQuantity) && newQuantity > 0) {
+      setQuantity(newQuantity);
+    }
+  };
 
-    const handleIncrement = () => {
-      setQuantity(quantity + 1);
-    };
+  const handleIncrement = () => {
+    setQuantity(quantity + 1);
+  };
 
-    const handleDecrement = () => {
-      if (quantity > 1) {
-        setQuantity(quantity - 1);
-      }
-    };
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
 
   return (
     <>
@@ -173,42 +171,42 @@ export default function ProductInfo({ data }: ProductPageProps) {
       </div>
 
       <div className="quantity-main">
-      <h3>Quantity:</h3>
-      <div className="bottom-0 right-0 w-25 h-10 z-[20] justify-center sm:relative sm:mt-2 sm:font-regular quantity-button">
-      <button onClick={handleDecrement}>-</button>
-      <input
-        type="text"
-        value={quantity}
-        onChange={handleQuantityChange}
-        style={{ width: '50px', textAlign: 'center' }}
-      />
-      <button onClick={handleIncrement}>+</button>
+        <h3>Quantity:</h3>
+        <div className="bottom-0 right-0 w-25 h-10 z-[20] justify-center sm:relative sm:mt-2 sm:font-regular quantity-button">
+          <button onClick={handleDecrement}>-</button>
+          <input
+            type="text"
+            value={quantity}
+            onChange={handleQuantityChange}
+            style={{ width: '50px', textAlign: 'center' }}
+          />
+          <button onClick={handleIncrement}>+</button>
+        </div>
       </div>
-    </div>
 
 
 
 
       <div className="selectgroup">
-      <div className="selectgroupinner color bottom-0 right-0 justify-center fill-primary-foreground hover:fill-primary sm:relative sm:w-full sm:mt-2 sm:font-regular">
-        <h3>Color*</h3>
-      <select className="bottom-0 right-0 w-1/2 h-10 z-[20] justify-center sm:relative sm:w-full sm:mt-2 sm:font-regular">
-  <option value="someOption">Blue</option>
-  <option value="otherOption">Red</option>
-</select>
-</div>
-<div className="selectgroupinner size bottom-0 right-0 justify-center fill-primary-foreground hover:fill-primary sm:relative sm:w-full sm:mt-2 sm:font-regular">
-<h3>Size*</h3>
-      <select className='bottom-0 right-0 w-1/2 h-10 z-[20] justify-center sm:relative sm:w-full sm:mt-2 sm:font-regular'>
-  <option value="someOption">S</option>
-  <option value="otherOption">M</option>
-  <option value="otherOption">L</option>
-</select>
-</div>
+        <div className="selectgroupinner color bottom-0 right-0 justify-center fill-primary-foreground hover:fill-primary sm:relative sm:w-full sm:mt-2 sm:font-regular">
+          <h3>Color*</h3>
+          <select className="bottom-0 right-0 w-1/2 h-10 z-[20] justify-center sm:relative sm:w-full sm:mt-2 sm:font-regular">
+            <option value="someOption">Blue</option>
+            <option value="otherOption">Red</option>
+          </select>
+        </div>
+        <div className="selectgroupinner size bottom-0 right-0 justify-center fill-primary-foreground hover:fill-primary sm:relative sm:w-full sm:mt-2 sm:font-regular">
+          <h3>Size*</h3>
+          <select className='bottom-0 right-0 w-1/2 h-10 z-[20] justify-center sm:relative sm:w-full sm:mt-2 sm:font-regular'>
+            <option value="someOption">S</option>
+            <option value="otherOption">M</option>
+            <option value="otherOption">L</option>
+          </select>
+        </div>
 
 
 
-</div>
+      </div>
 
 
       {productError && (
@@ -216,60 +214,59 @@ export default function ProductInfo({ data }: ProductPageProps) {
           {productError}
         </div>
       )}
- <div className="button-group">
-      <Button
-        disabled={isAddToCartLoading || isAddToStockAlertLoading}
-        className={clsx(
-          'bottom-0 right-0 w-1/2 h-10 z-[20] flex items-center justify-center fill-primary-foreground',
-          'hover:fill-primary sm:relative sm:w-full sm:mt-3 sm:font-regular greenbtn'
-        )}
-        onClick={() => {
-          setProductError(null);
+      <div className="button-group">
+        <Button
+          disabled={isAddToCartLoading || isAddToStockAlertLoading}
+          className={clsx(
+            'bottom-0 right-0 w-1/2 h-10 z-[20] flex items-center justify-center fill-primary-foreground',
+            'hover:fill-primary sm:relative sm:w-full sm:mt-3 sm:font-regular greenbtn'
+          )}
+          onClick={() => {
+            setProductError(null);
+            if (inStock) {
+              addProductToCart();
+            } else {
+              addProductToStockAlertList();
+            }
+          }}
+          data-testid="product-add-to-cart"
+        >
+          {inStock ? (
+            <span>{t('product.add_to_cart')}</span>
+          ) : (
+            <>
+              <Icon name="bell" size={20} className="mr-4" />
+              <span>{t('product.add_stock_alert')}</span>
+            </>
+          )}
+        </Button>
 
-          if (inStock) {
-            addProductToCart();
-          } else {
-            addProductToStockAlertList();
-          }
-        }}
-        data-testid="product-add-to-cart"
-      >
-        {inStock ? (
-          <span>{t('product.add_to_cart')}</span>
-        ) : (
-          <>
-            <Icon name="bell" size={20} className="mr-4" />
-            <span>{t('product.add_stock_alert')}</span>
-          </>
-        )}
-      </Button>
+        <Button
+          disabled={isAddToCartLoading || isAddToStockAlertLoading}
+          className={clsx(
+            'bottom-0 right-0 w-1/2 h-10 z-[20] flex items-center justify-center fill-primary-foreground',
+            'hover:fill-primary sm:relative sm:w-full sm:mt-3 sm:font-regular pinkbtn'
+          )}
+          onClick={() => {
+            setProductError(null);
 
-      <Button
-        disabled={isAddToCartLoading || isAddToStockAlertLoading}
-        className={clsx(
-          'bottom-0 right-0 w-1/2 h-10 z-[20] flex items-center justify-center fill-primary-foreground',
-          'hover:fill-primary sm:relative sm:w-full sm:mt-3 sm:font-regular pinkbtn'
-        )}
-        onClick={() => {
-          setProductError(null);
-
-          if (inStock) {
-            addProductToCart();
-          } else {
-            addProductToStockAlertList();
-          }
-        }}
-        data-testid="favourites-icon"
-      >
-        {inStock ? (
-          <span>ADD TO WHISHLIST</span>
-        ) : (
-          <>
-            <Icon name="bell" size={20} className="mr-4" />
-            <span>{t('product.add_stock_alert')}</span>
-          </>
-        )}
-      </Button>
+            if (inStock) {
+              addProductToCart();
+            } else {
+              addProductToStockAlertList();
+            }
+          }}
+          data-testid="favourites-icon"
+        >
+          {inStock ? (
+            <span>ADD TO WHISHLIST</span>
+          ) : (
+            <>
+              <Icon name="bell" size={20} className="mr-4" />
+              <span>{t('product.add_stock_alert')}</span>
+            </>
+          )}
+        </Button>
 
 
 
@@ -280,17 +277,17 @@ export default function ProductInfo({ data }: ProductPageProps) {
 
       <div className="flex items-center my-2 sm:my-4">
 
-      <Image
-            src="/payments.png"
-            alt="payment"
-            width={285}
-            height={27}
-            className="block w-full"
-            style={{ height: 'auto', width: '100%' }}
-            // unoptimized
-          />
+        <Image
+          src="/payments.png"
+          alt="payment"
+          width={285}
+          height={27}
+          className="block w-full"
+          style={{ height: 'auto', width: '100%' }}
+        // unoptimized
+        />
 
-    </div>
+      </div>
       {/* <PluginModule
         component={Component.OneClickCheckoutButtons}
         props={{

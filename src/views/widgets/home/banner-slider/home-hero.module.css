@@ -26,4 +26,7 @@
     .home_slider_title , .home_slider_content{
       left: 30px;
     }
+    .home_hero_slider {
+      margin-top: 0px;
+    }
   }

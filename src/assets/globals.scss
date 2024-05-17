@@ -518,8 +518,12 @@
   }
 
   //--------------- Home --------------- //
-  .home_hero_slider {
-    margin-top: 0px;
+  .react-multiple-carousel__arrow {
+    z-index: 49 !important;
+  }
+
+  .mobile_inline_content {
+    width: 43% !important;
   }
 
   .home_slider_title {
@@ -672,8 +676,13 @@
   //   top: 58px !important;
   //   height: 67px !important;
   // }
-  .header_none {
-    display: none;
+  .header_none,
+  .header_logo_main {
+    display: none !important;
+  }
+
+  .mobile_content_middle {
+    margin-top: 10px !important;
   }
 
   .common_flex_direction {
