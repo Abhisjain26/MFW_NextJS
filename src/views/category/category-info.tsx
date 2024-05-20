@@ -114,9 +114,9 @@ export default function ListPage(props: ListPageProps) {
             {paginationData.length === 0 && page > 1 && <LoaderSpinner />}
 
             <div
-              className={clsx('grid gap-x-4 gap-y-12 grid-cols-1', {
-                'md:grid-cols-3': Number(layoutSize) === 3,
-                'lg:grid-cols-1': Number(layoutSize) === 1,
+              className={clsx('grid gap-x-4 gap-y-12 grid-cols-2', {
+                'md:grid-cols-2': Number(layoutSize) === 2,
+                'lg:grid-cols-2': Number(layoutSize) === 2,
                 'lg:grid-cols-3': Number(layoutSize) === 3
               })}
             >

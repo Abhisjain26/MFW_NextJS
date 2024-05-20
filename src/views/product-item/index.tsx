@@ -69,6 +69,17 @@ export const ProductItem = (props: Props) => {
       );
     }
   };
+
+  useEffect(() => {
+    let timer;
+    if (showPopup) {
+      timer = setTimeout(() => {
+        setShowPopup(false);
+      }, 2000); // 10 seconds
+    }
+    return () => clearTimeout(timer);
+  }, [showPopup]);
+
   // const handleNavigate = () => {
   //   navigate('/orders/checkout' , {state: {message:product.pk}});
   // };
@@ -133,10 +144,10 @@ export const ProductItem = (props: Props) => {
               />
             )}
             <span className='listing_text'>$ <Price value={`${"$" + price}`} data-testid="product-price" className='listing_text' /></span>
-            <Button className='pinkbtn w-full font-normal uppercase py-5 rounded-none add_to_cart_mobile'>
-              <Link href={{ pathname: '/orders/checkout', query: { productId: product.pk } }}>
-                Buy Now
-              </Link>
+            <Button className='pinkbtn w-full font-normal uppercase py-5 rounded-none add_to_cart_mobile' onClick={handleAddToCart}>
+              {/* <Link href={{ , query: { productId: product.pk } }}> */}
+              Buy Now
+              {/* </Link> */}
             </Button>
             <Button
               disabled={isAddToCartLoading || isAddToStockAlertLoading}
@@ -149,14 +160,14 @@ export const ProductItem = (props: Props) => {
               <div className="popup absolute pop_up border rounded p-4 top-0 right-10">
                 <div className='flex gap-2 items-center'>
                   <div>
-                    <Image src={selectedProduct.productimage_set[0]?.image || '/noimage.jpg'} width={30} sizes='10vw' height={30} aspectRatio={1} alt={selectedProduct.name} />
+                    <Image src={selectedProduct.productimage_set[0]?.image || '/noimage.jpg'} width={30} sizes='10vw' height={30} className='popup_image' aspectRatio={1} alt={selectedProduct.name} />
                   </div>
                   <div>
                     <div className="font-semibold text-white">{selectedProduct.name}</div>
                     <div className="font-normal text-white mt-2">Price: ${selectedProduct.price}</div>
                   </div>
                 </div>
-                <button onClick={() => setShowPopup(false)} className="p-2 w-full py-2 border"><Link href='/baskets/basket'>View All</Link></button>
+                <button onClick={() => setShowPopup(false)} className="p-2 popup_view_all w-full py-2 border"><Link href='/baskets/basket'>View All</Link></button>
               </div>
             )}
           </div>
@@ -184,6 +195,13 @@ height:100%;
     background-color: #b27697;
     border-radius: 10px;
     border: 1px solid #b27697;
+    position:fixed;
+    top:10px;
+    z-index:11;
+  }
+  .popup_image{
+    width:75px;
+    height:75px;
   }
   @media screen and (max-width:768px){
     .add_to_cart_mobile{
@@ -191,6 +209,17 @@ height:100%;
     }
     .listing_text{
       font-size:13px;
+    }
+    .pop_up{
+      right:0;
+      margin:10px 30px;
+    }
+    .popup_image{
+      width:120px;
+      height:110px;
+    }
+    .popup_view_all{
+      margin-top:10px;
     }
   }
 `

@@ -108,7 +108,7 @@ export const CategoryHeader = (props: Props) => {
             </div>
           </div>
           <Button
-            className="relative border-gray-100 text-left mr-5 bg-white text-primary-100 w-40 lg:hidden lg:mr-0"
+            className="relative filter_mobile border-gray-100 text-left mr-5 bg-white text-primary-100 w-40 lg:hidden lg:mr-0"
             onClick={() => setMenuStatus()}
             data-testid="list-filter"
           >
@@ -120,7 +120,7 @@ export const CategoryHeader = (props: Props) => {
             />
           </Button>
           <div className='flex items-center'>
-            <h3 className='uppercase text-base font-medium'>Sort by :</h3>
+            <h3 className='uppercase text-base sort_by_mobile font-medium'>Sort by :</h3>
             <Select
               options={sortOptions}
               value={sortOptions.find(({ is_selected }) => is_selected).value}
@@ -173,5 +173,17 @@ const Wrapper = Styled.section`
     color: #000000;
     font-weight: 600;
     font-size: 14px;
+  }
+  @media screen and (max-width:768px){
+    .dropdown_list_grid{
+      font-size:10px;
+    }
+    .sort_by_mobile{
+      font-size:10px;
+      white-space:nowrap;
+    }
+    .filter_mobile{
+      font-size:10px;
+    }
   }
 `
