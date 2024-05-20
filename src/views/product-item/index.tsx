@@ -144,10 +144,10 @@ export const ProductItem = (props: Props) => {
               />
             )}
             <span className='listing_text'>$ <Price value={`${"$" + price}`} data-testid="product-price" className='listing_text' /></span>
-            <Button className='pinkbtn w-full font-normal uppercase py-5 rounded-none add_to_cart_mobile' onClick={handleAddToCart}>
-              {/* <Link href={{ , query: { productId: product.pk } }}> */}
-              Buy Now
-              {/* </Link> */}
+            <Button className='pinkbtn w-full font-normal uppercase py-5 rounded-none add_to_cart_mobile' >
+              <Link href={{ pathname: 'orders/checkout', query: { productId: product.pk } }}>
+                Buy Now
+              </Link>
             </Button>
             <Button
               disabled={isAddToCartLoading || isAddToStockAlertLoading}
