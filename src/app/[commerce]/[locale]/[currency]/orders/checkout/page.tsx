@@ -144,9 +144,9 @@ const Checkout = () => {
               {steps.current === CheckoutStep.Payment && <PaymentStep />}
             </div>
 
-            {/* <div className="w-full h-fit-content mt-6 lg:w-1/3 lg:pl-8 lg:mt-0"> */}
-            {/* <Summary /> */}
-            {/* </div> */}
+            <div className="w-full h-fit-content mt-6 lg:w-1/3 lg:pl-8 lg:mt-0">
+            <Summary />
+            </div>
           </div>
         </div>
       </PluginModule>

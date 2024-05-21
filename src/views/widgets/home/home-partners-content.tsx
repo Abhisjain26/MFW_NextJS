@@ -11,7 +11,7 @@ export default function HomePartnersContent({ data }) {
 
     return (
         <Wrapper>
-            <div className='partner_content relative'>
+            <div className='partner_content relative '>
                 <Title title={"Our Strategic Partners"} />
                 <div className=''>
                     <Image src={"images/home/rectangle-left.png"} className='rectanagle_left' width={100} height={100} alt='' />
@@ -108,6 +108,9 @@ const Wrapper = Styled.section`
     }
     .react-multi-carousel-item  {
         margin:auto;
+    }
+    .home_advertisment_image{
+        width:150px !important;
     }
     /* .home_advertisment_image{
         width:100px !important;

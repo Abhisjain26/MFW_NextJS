@@ -113,7 +113,7 @@ const Wrapper = Styled.section`
     }
     .home_testimonials_text{
         padding-left:0;
-        text-align:center;
+        text-align:end;
     }
     .react-multi-carousel-track {
         gap:0;

@@ -24,6 +24,9 @@ export default function HomeMediaContent({ data }) {
                         </div>
                     ))}
                 </div>
+
+                
+
             </div>
         </div>
     );

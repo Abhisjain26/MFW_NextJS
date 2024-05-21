@@ -84,7 +84,7 @@ const Wrapper = Styled.section`
         font-size:12px !important;
     }
     .explore_department{
-        text-align:center;
+        text-align:center !important;
     }
   }
 

@@ -12,6 +12,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { ROUTES } from '@theme/routes';
 import { useRouter, useLocalization } from '@akinon/next/hooks';
+import { useGetBasketQuery } from '@akinon/next/data/client/basket';
 
 
 interface NavbarProps {
@@ -23,6 +24,7 @@ export default function Navbar(props: NavbarProps) {
   // const router = useRouter();
 
   const dispatch = useAppDispatch();
+  const { data: basket, isLoading, isSuccess } = useGetBasketQuery();
   const { isSearchOpen, openedMenu } = useAppSelector((state) => state.header);
   const [currentUrl, setCurrentUrl] = useState("");
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
@@ -170,7 +172,7 @@ export default function Navbar(props: NavbarProps) {
                             className="block mb-4 font-semibold text-ms mt-3 transition-colors w-max lg:w-44 hover_color"
                           >
                             {child.label}
-                           
+
                           </Link>
 
                           {child.children && (
@@ -280,9 +282,12 @@ export default function Navbar(props: NavbarProps) {
               <Icon name="user" size={16} />
             </Link>
           </li>
-          <li className="hover:text-secondary">
+          <li className="hover:text-secondary relative" >
             <Link href='/baskets/basket'>
               <Icon name="cart" size={16} />
+              <span className='absolute header_cart right-0'>
+                {basket && basket.total_quantity !== undefined && basket.total_quantity}
+              </span>
             </Link>
           </li>
         </ul>
