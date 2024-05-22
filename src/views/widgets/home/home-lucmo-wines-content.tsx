@@ -6,6 +6,7 @@ import Styled from 'styled-components';
 import { Image } from '@akinon/next/components/image';
 
 export default function HomeValentineContent({ data }) {
+    
     const [showFullText, setShowFullText] = useState(false);
     const [isMobileView, setIsMobileView] = useState(false);
 
@@ -36,7 +37,7 @@ export default function HomeValentineContent({ data }) {
                         key={i}
                     >
                         <div className='home_advertisment_content'>
-                            <div dangerouslySetInnerHTML={{ __html: showFullText || !isMobileView ? item.value.text : `${item.value.text.substring(0, 135)}...` }} />
+                            <div className='home_lucmo_wines_text' dangerouslySetInnerHTML={{ __html: showFullText || !isMobileView ? item.value.text : `${item.value.text.substring(0, 135)}...` }} />
                             <div className='flex items-center gap-3'>
                                 {isMobileView &&
                                     <>
@@ -112,6 +113,10 @@ const Wrapper = Styled.section`
         .home_advertisment_image{
             text-align:center;
             margin-top:40px;
+        }
+        .home_lucmo_wines_text h1{
+            text-transform:uppercase;
+            font-size:20px !important;
         }
     }
 `

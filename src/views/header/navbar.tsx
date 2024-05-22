@@ -13,6 +13,7 @@ import 'react-tabs/style/react-tabs.css';
 import { ROUTES } from '@theme/routes';
 import { useRouter, useLocalization } from '@akinon/next/hooks';
 import { useGetBasketQuery } from '@akinon/next/data/client/basket';
+import MobileHamburgerButton from './mobile-hamburger-button';
 
 
 interface NavbarProps {
@@ -79,7 +80,7 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <div className='relative w-full container'>
-      <nav className="relative w-full flex-wrap items-center justify-center hidden header-grid-area-nav sm:flex justify-between">
+      <nav className="relative w-full flex-wrap items-center mobile_dekstop_view justify-center hidden header-grid-area-nav sm:flex justify-between">
         <ul className="flex flex-wrap w-full items-center justify-center header_content mt-8 justify-between">
           {menu.map((item, index) =>
             item.label != null && (
@@ -294,6 +295,43 @@ export default function Navbar(props: NavbarProps) {
       </nav>
       <div>
         {isSearchOpen && <Search />}
+      </div>
+      <div className='mobile_desktop_container'>
+        <div className='flex items-center mt-3 justify-between '>
+          <div className='flex items-center gap-3'>
+            <div>
+              <MobileHamburgerButton />
+            </div>
+            <div>
+              <Image width={100} height={90} alt='' className='mobile_header_logo' src="/images/logoMall.svg" />
+            </div>
+          </div>
+          <div className='flex items-center gap-3'>
+            <div>
+              <button
+                onClick={() => dispatch(openSearch())}
+                className="flex items-center gap-2 text-sm uppercase transition hover:text-secondary cursor-pointer"
+                data-testid="header-nav-search"
+              >
+                <Icon name="search" size={16} />
+              </button>
+            </div>
+            <div className='relative'>
+              <Link href='/baskets/basket'>
+                <Icon name="cart" size={16} />
+                <span className='absolute header_cart left-3'>
+                  {basket && basket.total_quantity !== undefined && basket.total_quantity}
+                </span>
+              </Link>
+            </div>
+            <div>
+              <Link href="/account">
+                <Icon name="user" size={16} />
+              </Link>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   );

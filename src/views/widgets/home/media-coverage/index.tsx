@@ -4,6 +4,7 @@ import React from 'react';
 import Style from './index.module.css';
 import FooterSubscriptionForm from '@theme/widgets/footer-subscription/footer-subscription-form';
 import { Image } from '@akinon/next/components';
+import { CarouselCore } from '@theme/components/carousel-core';
 
 export default function HomeMediaContent({ data }) {
 
@@ -25,7 +26,33 @@ export default function HomeMediaContent({ data }) {
                     ))}
                 </div>
 
-                
+                <div className={`${Style.grid_media_mobile}`}>
+                    <CarouselCore
+                        responsive={{
+                            all: {
+                                breakpoint: { max: 5000, min: 0 },
+                                items: 6
+                            },
+                            mobile: {
+                                breakpoint: { max: 768, min: 0 },
+                                items: 1
+                            }
+                        }}
+                        // pagination={true}
+                        arrows={false}
+                        swipeable={false}
+                        showDots={true}
+                        className="w-full bg-white">
+                        {data?.attributes?.media_coverage?.map((item, i) => (
+                            <div key={i} className={`${Style.home_media_content}`}>
+                                <p className={`${Style.home_media_text}`}>{item.value.text}</p>
+                                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=2imXu9x02c8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+                            </div>
+                        ))}
+                    </CarouselCore>
+                </div>
+
+
 
             </div>
         </div>

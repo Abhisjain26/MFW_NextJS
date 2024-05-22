@@ -4,20 +4,22 @@ import clsx from 'clsx';
 import { ROUTES } from '@theme/routes';
 import { menuGenerator } from '@akinon/next/utils';
 import { Icon, Link } from '@theme/components';
-
+import { useGetBasketQuery } from '@akinon/next/data/client/basket';
 import HeaderBand from './band';
 import MobileHamburgerButton from './mobile-hamburger-button';
 import MobileMenu from './mobile-menu';
 import Navbar from './navbar';
 import { getMenu } from '@akinon/next/data/server';
 import { Image } from '@akinon/next/components/image';
+import IconMobile from './icon-mobile';
 
 export default async function Header() {
   const response = await getMenu();
   const menu = menuGenerator(response);
+  // const { data: basket, isLoading, isSuccess } = useGetBasketQuery();
 
   return (
-    <header className="relative container_md">
+    <header className="relative container_md ">
       <div className=' flex justify-center mt-5 header_logo_main'>
         <Link href="/">
           <Image width={200} height={150} alt='' className='header_logo ' src="/images/logoMall.svg" />
@@ -47,19 +49,27 @@ export default async function Header() {
         ])}
       >
         {/* <HeaderBand /> */}
-        <div className='flex items-center mobile_content_middle w-full'>
-          <div className='flex items-center justify-between w-full container'>
-            <div className='flex items-center gap-5'>
+        {/* <div className='flex items-center mobile_content_middle w-full'> */}
+          {/* <div className='flex items-center justify-between w-full container'> */}
+            {/* <div className='flex items-center gap-5'>
               <MobileHamburgerButton />
               <Image width={100} height={90} alt='' className='mobile_header_logo' src="/images/logoMall.svg" />
-            </div>
-            <div className='flex justify-center gap-5'>
-              <Icon name="search" size={20} className='icon_header' />
+            </div> */}
+            {/* <div className='flex justify-center gap-5'>
+              <Icon name="search" size={20} className='icon_header' /> */}
+              {/* <div className='relative'>
+                <Link href='/baskets/basket'>
+                  <Icon name="cart" size={16} />
+                  <span className='absolute header_cart right-0'>
+                    {basket && basket.total_quantity !== undefined && basket.total_quantity}
+                  </span>
+                </Link>
+              </div> */}
+              {/* <Icon name="user" size={20} className='icon_header' />
               <Icon name="cart" size={20} className='icon_header' />
-              <Icon name="user" size={20} className='icon_header' />
-            </div>
-          </div>
-        </div>
+            </div> */}
+          {/* </div> */}
+        {/* </div> */}
         <MobileMenu menu={menu} />
         <div className='header_none w-full'>
           <Navbar menu={menu} />

@@ -67,8 +67,8 @@ export default function HomeNewsContent({ data }) {
                             <div className={`${Style.home_news_para}`} dangerouslySetInnerHTML={{ __html: showFullText || !isMobileView ? item.value.subtext : `${item.value.subtext.substring(0, 135)}...` }} />
 
                             {isMobileView &&
-                                <div>
-                                    {item.value.text.length > 300 &&
+                                <div className='flex justify-center'>
+                                    {item.value.subtext.length > 300 &&
                                         <button className={`btn pinkbtn ${Style.read_more_btn}`} onClick={toggleText}>
                                             {showFullText ? 'LESS ARTICLES' : 'MORE ARTICLES'}
                                         </button>

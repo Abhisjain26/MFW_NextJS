@@ -25,7 +25,7 @@ export default function HomeFeatureIntimateContent({
 
       {widgetData?.attributes?.home_feature_intimate?.map((item, index) => (
         <div key={index}> {/* Added key prop */}
-          <div className='home_slider_feature'>
+          <div className='home_slider_feature uppercase'>
             <h2>{item.value.text}</h2>
           </div>
         </div>
@@ -57,12 +57,12 @@ const Wrapper = Styled.section`
   }
   .home_slider_feature h2{
     text-wrap:wrap;
-    width:204px;
+    width:254px;
     text-align:center;
   }
   @media screen and (max-width:768px){
     .home_slider_feature h2{
-      width:170px;
+      width:200px;
     }  
     .feature_desktop{
       display:none;

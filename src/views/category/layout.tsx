@@ -34,8 +34,7 @@ export default async function Layout({
         </div>
         <CategoryBanner {...data.category?.attributes?.category_banner} />
       </div>
-      <ListPage data={data} />
-          
+      <ListPage data={data} />          
     </div>
   );
 }

@@ -48,10 +48,10 @@ export default function Search() {
           isSearchOpen ? 'visible opacity-100' : 'invisible opacity-0'
         )}
       >
-        <div className="max-w-screen-2xl mx-auto flex flex-col gap-12 relative py-5">
-          <div className='w-7/12 mx-auto'>
-            <div className='w-11/12 px-16 py-9 bg-white'>
-              <div className="border-b border-gray-400 mx-auto flex-col py-1.5 gap-2 self-center items-center md:flex-row">
+        <div className="max-w-screen-2xl mx-auto flex flex-col gap-12 relative py-5 search_header_mobile">
+          <div className='w-7/12 mx-auto search_header_mobile_content'>
+            <div className='w-11/12 px-16 py-9 bg-white search_header_mobile_inner_content'>
+              <div className="border-b border-gray-400 mx-auto flex-col py-1.5 gap-2 self-center header_search_main_content items-center md:flex-row">
                 {/* <span className="text-xl lg:text-2xl">
               {t('common.search.results_for')}
             </span> */}
