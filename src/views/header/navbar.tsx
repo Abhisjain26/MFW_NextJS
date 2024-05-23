@@ -14,7 +14,7 @@ import { ROUTES } from '@theme/routes';
 import { useRouter, useLocalization } from '@akinon/next/hooks';
 import { useGetBasketQuery } from '@akinon/next/data/client/basket';
 import MobileHamburgerButton from './mobile-hamburger-button';
-
+// import { useRouter } from 'next/router';
 
 interface NavbarProps {
   menu: MenuItemType[];
@@ -30,17 +30,21 @@ export default function Navbar(props: NavbarProps) {
   const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   const [filteredData, setFilteredData] = useState([]);
+  const [change, setChange] = useState('')
   const router = useRouter();
-
+  const windowurl = window.location.pathname
   const handleTabClick = (index) => {
     setSelectedTabIndex(index);
     dispatch(setOpenedMenu(null));
   };
   const isActive = (url: string) => {
-    const result = (url.replace("-new","") === currentUrl ? 'active_header' : '');
+    const result = (url.replace("-new", "") === windowurl.replace("-new","") ? 'active_header' : '');
     return result;
   };
 
+  // useEffect(() => {
+  //   // setCurrentUrl(window.location.pathname);
+  // },[windowurl, change])
 
   useEffect(() => {
     // setCurrentUrl(window.location.pathname);
@@ -52,7 +56,7 @@ export default function Navbar(props: NavbarProps) {
     return () => {
       window.removeEventListener('popstate', handleUrlChange);
     };
-  }, [currentUrl]);
+  }, [currentUrl,windowurl, change]);
 
   // useEffect(() => {
   //   if (page > 1 && data.products?.length === 0) {
@@ -68,6 +72,10 @@ export default function Navbar(props: NavbarProps) {
     router.push(`/list?attributes_type=${childUrl}&page=1`);
   };
 
+  const handleChange = (url) => {
+    // router.push(url);
+  }
+
   // useEffect(() => {
   //   if (typeof window !== 'undefined') {
 
@@ -78,7 +86,7 @@ export default function Navbar(props: NavbarProps) {
   // Navigate to the list page with the selected data type as a query parameter
 
   return (
-    <div className='relative w-full container'>
+    <div key={change} className='relative w-full container'>
       <nav className="relative w-full flex-wrap items-center mobile_dekstop_view justify-center hidden header-grid-area-nav sm:flex justify-between">
         <ul className="flex flex-wrap w-full items-center justify-center header_content mt-8 justify-between">
           {menu.map((item, index) =>
@@ -101,6 +109,7 @@ export default function Navbar(props: NavbarProps) {
                   href={item.url}
                   className={`flex items-center ms-1 text-xs capitalize ${isActive(item.url)}`}
                   data-testid="navbar-category"
+                  onClick={() => { setChange(item.url); handleChange(item.url)}}
                 >
                   {item.label}
                 </Link>
