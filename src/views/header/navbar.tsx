@@ -27,7 +27,7 @@ export default function Navbar(props: NavbarProps) {
   const dispatch = useAppDispatch();
   const { data: basket, isLoading, isSuccess } = useGetBasketQuery();
   const { isSearchOpen, openedMenu } = useAppSelector((state) => state.header);
-  const [currentUrl, setCurrentUrl] = useState("");
+  const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   const [filteredData, setFilteredData] = useState([]);
   const router = useRouter();
@@ -37,23 +37,22 @@ export default function Navbar(props: NavbarProps) {
     dispatch(setOpenedMenu(null));
   };
   const isActive = (url: string) => {
-    return url === currentUrl ? 'active_header' : '';
+    const result = (url.replace("-new","") === currentUrl ? 'active_header' : '');
+    return result;
   };
 
 
   useEffect(() => {
-    setCurrentUrl(window.location.pathname);
-
+    // setCurrentUrl(window.location.pathname);
     const handleUrlChange = () => {
       setCurrentUrl(window.location.pathname);
     };
 
     window.addEventListener('popstate', handleUrlChange);
-
     return () => {
       window.removeEventListener('popstate', handleUrlChange);
     };
-  }, []);
+  }, [currentUrl]);
 
   // useEffect(() => {
   //   if (page > 1 && data.products?.length === 0) {
@@ -100,7 +99,7 @@ export default function Navbar(props: NavbarProps) {
 
                 <Link
                   href={item.url}
-                  className={`flex items-center ms-1 text-xs capitalize`}
+                  className={`flex items-center ms-1 text-xs capitalize ${isActive(item.url)}`}
                   data-testid="navbar-category"
                 >
                   {item.label}
@@ -185,7 +184,6 @@ export default function Navbar(props: NavbarProps) {
                                       dispatch(setOpenedMenu(null));
                                       handleChildItemClick(grandChild.url);
                                     }}
-                                    // href={grandChild.url}
                                     className="block mb-4 text-ms transition-colors w-max lg:w-44 hover_color"
                                   >
                                     <span>{grandChild.label}</span>
