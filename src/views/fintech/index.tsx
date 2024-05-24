@@ -31,7 +31,7 @@ export default function FintechContent({ data }) {
                                         Fintech
                                     </h1>
                                 </div>
-                                <div className='mt-4 text-1xl text-left md-mt-0 fintech-desc' dangerouslySetInnerHTML={{ __html: item.value.text }}></div>
+                                <div className='mt-4 text-1xl text-left md-mt-0 fintech-desc fintech_disc_mobile' dangerouslySetInnerHTML={{ __html: item.value.text }}></div>
                                 <div className="button-group">
                                     <button
                                         className="px-4 text-xs bg-primary text-primary-foreground border border-primary transition-all hover:bg-white hover:border-primary hover:text-primary bottom-0 right-0 w-1/1 h-10 z-[20] flex items-center justify-center fill-primary-foreground hover:fill-primary sm:relative sm\:w-1\/3 sm:mt-3 sm:font-regular greenbtn"

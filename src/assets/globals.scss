@@ -499,10 +499,12 @@
 .search_icon {
   color: #EB89B5 !important;
 }
-.footer_menu_text_content{
+
+.footer_menu_text_content {
   font-weight: 600 !important;
   font-size: 16px !important;
 }
+
 // ----------------------- End of Search  -------------------------- 
 .home_dress {
   position: absolute !important;
@@ -517,18 +519,22 @@
   top: -10px !important;
   font-size: 10px !important;
 }
-.footer_menu_fourth{
-  display:none;
+
+.footer_menu_fourth {
+  display: none;
 }
-.footer_menu_image{
+
+.footer_menu_image {
   width: 20px !important;
   height: 20px !important;
   background: transparent !important;
   background-image: none !important;
 }
-.mobile_desktop_container{
+
+.mobile_desktop_container {
   display: none !important;
 }
+
 @media screen and (max-width:767px) {
   .max-container {
     margin: 0 10px;
@@ -607,9 +613,17 @@
     font-size: 28px !important;
   }
 
-  // .header_logo {
-  //   display: none !important;
-  // }
+  .header_logo {
+    display: none !important;
+  }
+
+  .header_logo_main {
+    margin-top: 0px !important;
+  }
+
+  .fintech_disc_mobile {
+    width: 100% !important;
+  }
 
   .home_slider_content h2 {
     text-align: center !important;
@@ -698,8 +712,7 @@
   //   height: 67px !important;
   // }
   // .header_none,
-  .mobile_dekstop_view
-  .header_logo_main,
+  .mobile_dekstop_view .header_logo_main,
   .footer_menu_fourth_mobile {
     display: none !important;
   }
@@ -747,20 +760,27 @@
     left: -19px !important;
     z-index: -1 !important;
   }
-  .footer_menu_fourth{
+
+  .footer_menu_fourth {
     display: block;
   }
-  .mobile_desktop_container{
+
+  .mobile_desktop_container {
     display: block !important;
   }
-  .search_header_mobile,.search_header_mobile_content{
+
+  .search_header_mobile,
+  .search_header_mobile_content {
     max-width: 100% !important;
   }
-  .search_header_mobile_content,.search_header_mobile_inner_content{
+
+  .search_header_mobile_content,
+  .search_header_mobile_inner_content {
     width: 100%;
-    padding: 0 ;
+    padding: 0;
   }
-  .header_search_main_content{
+
+  .header_search_main_content {
     padding: 10px;
   }
 }
