@@ -106,7 +106,9 @@
     }
   }
 }
-
+h1,h2,h3,h4,h5,h6,p{
+  font-family: Georgia Regular !important;
+}
 .container {
   max-width: 1150px;
 }
@@ -131,7 +133,12 @@
   font-size: 16px;
   color: #999999;
 }
-
+.font_family{
+  font-family: Georgia Regular;
+}
+.font_family_italic{
+  font-family: Georgia Italic !important;
+}
 .breadcrummp_all a:last-of-type {
   color: #003744;
   font-size: 16px;
@@ -154,9 +161,10 @@
 
 .explore_content {
   color: #EB89B5 !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   text-align: center !important;
   font-size: 18px !important;
+  font-family: Georgia Regular ;
   white-space: nowrap !important;
 }
 
@@ -335,9 +343,10 @@
   display: flex !important;
   justify-content: center !important;
   font-size: 30px !important;
-  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  font-family: Georgia, Regular!important;
   color: #000000 !important;
-  font-weight: 600;
+  font-weight: 500;
+  text-transform: uppercase ;
 }
 
 
@@ -613,18 +622,6 @@
     font-size: 28px !important;
   }
 
-  .header_logo {
-    display: none !important;
-  }
-
-  .header_logo_main {
-    margin-top: 0px !important;
-  }
-
-  .fintech_disc_mobile {
-    width: 100% !important;
-  }
-
   .home_slider_content h2 {
     text-align: center !important;
   }
@@ -725,6 +722,39 @@
     flex-direction: column;
   }
 
+  .header_logo {
+    display: none !important;
+  }
+
+  .header_logo_main {
+    margin-top: 0px !important;
+  }
+
+  .fintech_disc_mobile {
+    width: 100% !important;
+  }
+
+  .logistics_desc {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .heading_main_logistics {
+    text-align: center !important;
+  }
+
+  .dress_digital_left_image {
+    bottom: -20px !important;
+    top: unset !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logistics_desc_mobile {
+    width: 100%;
+    padding: 0 10px;
+  }
+
   .common_width {
     width: 100% !important;
   }
@@ -746,7 +776,7 @@
   .home_advertisment_content h1,
   .home_slider_feature h2 {
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    font-family: Georgia, Regular !important;
   }
 
   .email_subscribe_input,
@@ -789,9 +819,15 @@
 
   .header_logo,
   .header_none {
-    display: none !important;
+    display: block !important;
   }
 
+  .mobile_desktop_container {
+    display: block !important;
+  }
+  .mobile_dekstop_view,.header_logo_main{
+    display: none !important;
+  }
   .mobile_content_middle,
   .mobile_header_logo {
     display: block !important;

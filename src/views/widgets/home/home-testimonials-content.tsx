@@ -84,6 +84,7 @@ const Wrapper = Styled.section`
         padding-left: 60px;
         font-size: 14px;
         text-align:end;
+        font-family: Georgia Regular; 
   }
   .home_testimonials_subtext{
     font-weight:700;

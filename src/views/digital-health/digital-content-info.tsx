@@ -28,7 +28,7 @@ export default function DigitalContent({ data }) {
                     <div className="flex common_flex_direction border-pink" key={index}>
                         <div className="w-6/12 common_width px-9">
                             <div className="w-full">
-                                <div className='mt-4 text-1xl text-left md-mt-0 fintech-desc' dangerouslySetInnerHTML={{ __html: item.value.text }}></div>
+                                <div className='mt-4 text-1xl text-left md-mt-0 fintech-desc fintech_disc_mobile' dangerouslySetInnerHTML={{ __html: item.value.text }}></div>
                             </div>
                         </div>
                         <div className="flex common_width common_image w-6/12 relative flex-col items-center">

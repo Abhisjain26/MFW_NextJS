@@ -94,7 +94,7 @@ const Wrapper = Styled.section`
         width:50%;
     }
     .home_advertisment_content h1{
-        font-size:50px;
+        font-size:30px;
         color:#000000;
     }
     .home_advertisment_content p{

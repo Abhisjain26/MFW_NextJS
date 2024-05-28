@@ -19,10 +19,10 @@ export default function HomePartnersContent({ data }) {
                     <CarouselCore
                         responsive={{
                             all: {
-                                breakpoint: { max: 5000, min: 0 },
+                                breakpoint: { max: 5000, min: 0},
                                 items: 6
                             },
-                            table:{
+                            table: {
                                 breakpoint: { max: 1023, min: 0 },
                                 items: 3
                             },
@@ -35,6 +35,9 @@ export default function HomePartnersContent({ data }) {
                         arrows={true}
                         swipeable={true}
                         infinite={true}
+                        autoPlay={true}
+                      
+
                     >
                         {data?.attributes?.home_partners?.map((item, i) => (
                             <div
@@ -91,7 +94,12 @@ const Wrapper = Styled.section`
     width:300px;
     height:185px;
   }
-  
+  .react-multi-carousel-item  {
+    margin:auto 0 !important;
+  }
+  .react-multi-carousel-track {
+    
+  }
   /* .react-multi-carousel-track {
     gap:20px;
   } */

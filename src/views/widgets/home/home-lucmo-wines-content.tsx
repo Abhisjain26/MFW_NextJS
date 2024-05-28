@@ -80,7 +80,8 @@ const Wrapper = Styled.section`
         width:50% ;
         padding-right:30px;
         position:absolute;
-        bottom:-120px;
+        /* bottom:-120px; */
+        top:0;
         right:0;
     }
     .home_advertisment_image img{
@@ -92,7 +93,7 @@ const Wrapper = Styled.section`
         width:45%;
     }
     .home_advertisment_content h1{
-        font-size:50px;
+        font-size:30px;
         line-height:50px;
         color:#000000;
     }

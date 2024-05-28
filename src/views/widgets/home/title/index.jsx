@@ -17,6 +17,7 @@ const Wrapper = Styled.section`
         justify-content:center;
         font-size:30px;
         font-family: Georgia, 'Times New Roman', Times, serif;
+        
         color: #000000;
     } */
     @media screen and (max-width:768px){

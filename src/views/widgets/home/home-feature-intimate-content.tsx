@@ -47,8 +47,8 @@ const Wrapper = Styled.section`
     margin-bottom:20px;
 
   .home_slider_feature{
-    font-size:30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:26px;
+    font-family: Georgia, Regular !important;
     display: flex;
     justify-content: center;
   }

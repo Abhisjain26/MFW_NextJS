@@ -70,10 +70,10 @@
 
 .home_news_title {
     position: absolute;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia,Regular;
     bottom: 7px;
     background-color: #E987B4;
-    font-size: 34px;
+    font-size: 30px;
     left: 50%;
     width: 100%;
     text-align: center;

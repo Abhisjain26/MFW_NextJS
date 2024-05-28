@@ -93,7 +93,7 @@ export default function Navbar(props: NavbarProps) {
             item.label != null && (
               <li
                 key={index}
-                className={`flex items-center h-full group ${openedMenu === item.pk ? 'active_header' : ''} ${isActive(item.url)}`}
+                className={`flex font_family text-base items-center h-full group ${openedMenu === item.pk ? 'active_header' : ''} ${isActive(item.url)}`}
                 onMouseEnter={() => {
                   dispatch(setOpenedMenu(item.pk));
                 }}
@@ -129,6 +129,7 @@ export default function Navbar(props: NavbarProps) {
                         'opacity-0',
                         'bg-white',
                         'text-dark',
+                        'w-6/10',
                         'border-x-2',
                         'border-gray',
                         'pt-22',
@@ -170,15 +171,15 @@ export default function Navbar(props: NavbarProps) {
                       }
                     )}
                   >
-                    <div className="flex text-black w-full mx-auto justify-center flex-wrap space-x-8 lg:space-x-0">
+                    <div className="flex text-black w-full mx-auto flex-wrap space-x-8 lg:space-x-0">
                       {item.children.map((child, index) => (
-                        <div key={index} className='text-center'>
+                        <div key={index} className='text-center w-3/12'>
                           <Link
                             onClick={() => {
                               dispatch(setOpenedMenu(null));
                             }}
                             href={child.url}
-                            className="block mb-4 font-semibold text-ms mt-3 transition-colors w-max lg:w-44 hover_color"
+                            className="block mb-4 font-semibold text-xs mt-3 transition-colors w-max lg:w-44 hover_color"
                           >
                             {child.label}
 
@@ -193,7 +194,7 @@ export default function Navbar(props: NavbarProps) {
                                       dispatch(setOpenedMenu(null));
                                       handleChildItemClick(grandChild.url);
                                     }}
-                                    className="block mb-4 text-ms transition-colors w-max lg:w-44 hover_color"
+                                    className="block mb-4 text-xs transition-colors w-max lg:w-44 hover_color"
                                   >
                                     <span>{grandChild.label}</span>
                                   </div>

@@ -33,10 +33,10 @@ export default function HomeHeroSliderContent({ data }) {
             className={`${Style.home_hero_slider}`}
           >
             <div className={`${Style.home_slider_title}`}>
-              <h2><i>Designer</i></h2>
+              <h2 className='font_family_italic'><i>Designer</i></h2>
             </div>
             <div className={`${Style.home_slider_content}`}>
-              <button><Link href="/list">Shop Now</Link></button>
+              <button><Link href="/list" className='font_family'>Shop Now</Link></button>
             </div>
           </div>
         ))}
