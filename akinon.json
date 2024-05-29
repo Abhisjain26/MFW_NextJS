@@ -3,7 +3,7 @@
   "description": "nextzero",
   "scripts": {
     "release": "echo \"DONE\"",
-    "build": "./build.sh"
+    "build": "sh build.sh"
   },
   "env": {},
   "formation": {
