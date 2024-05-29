@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Style from './join-mall-for-women.module.css'
+import Style from './index.module.css'
 import { Link } from '@akinon/next/components';
 
 export default function JoinMallForWoemanContent({ data }) {
-  
+
+
 
     return (
         <div className='my-10 container container_md'>
@@ -17,7 +18,7 @@ export default function JoinMallForWoemanContent({ data }) {
             </h1>
             <h2>{data.attributes.first_column_title.value}</h2>
             <h2 className='my-2' dangerouslySetInnerHTML={{ __html: data.attributes.second_column_title.value }}></h2>
-            <table className={`my-5 text-center ${Style.table} `}>
+            <table className={`mt-5 mb-2 text-center ${Style.table} `}>
                 <tr className={`my-2 text-center ${Style.tr} `}>
                     {data.attributes.first_column_table.map((item, i) => (
                         <th className={`${Style.th} `} key={i}><Link href={item?.value?.redirect_url}>{item?.value?.name}</Link></th>
@@ -38,7 +39,33 @@ export default function JoinMallForWoemanContent({ data }) {
                         <td className={`${Style.td} `} key={i}>{item?.value?.name}</td>
                     ))}
                 </tr>
-                <tr className={`my-2 text-center ${Style.tr} `}>
+                {/* <tr className={`my-2 text-center ${Style.tr} `}>
+                    {data.attributes.fifth_column_table.map((item, i) => (
+                        <td className={`${Style.td_4_column}`} key={i}>
+                            {item?.value?.name === "$nbsp;" ? <h1></h1> :
+                                <Link href={item?.value?.redirect_url}>
+                                    {item?.value?.name}
+                                </Link>
+                            }
+                        </td>
+                    ))}
+                </tr> */}
+            </table>
+            <table className={`text-center border-0 ${Style.table_2} `}>
+                <tr>
+                    {data.attributes.six_column_table.map((item, i) => (
+                        <td className={`${Style.td_4_column}`} key={i}>
+                            {item?.value?.name === "$nbsp;" ? <h1></h1> :
+                                <Link href={item?.value?.redirect_url}>
+                                    {item?.value?.name}
+                                </Link>
+                            }
+                        </td>
+                    ))}
+                </tr>
+            </table>
+            <table className={`text-center border-0 ${Style.table_2} `}>
+                <tr>
                     {data.attributes.fifth_column_table.map((item, i) => (
                         <td className={`${Style.td_4_column}`} key={i}>
                             {item?.value?.name === "$nbsp;" ? <h1></h1> :

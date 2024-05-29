@@ -21,7 +21,7 @@ interface ListPageProps {
 
 export default function ListPage(props: ListPageProps) {
   const { data } = props;
-  
+    
   const [isMenuOpen, setIsMenuOpen] = useState(false); // TODO: Move to redux
 
   const searchParams = useSearchParams();

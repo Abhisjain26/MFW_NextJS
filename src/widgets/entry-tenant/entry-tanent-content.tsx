@@ -1,9 +1,7 @@
 import 'server-only';
 
 import { getWidgetData } from '@akinon/next/data/server';
-import { ImageType } from '@akinon/next/types';
-import AboutContent from '@theme/views/widgets/about/about-content';
-import JoinMallForWoemanContent from '@theme/views/join-mall-for-women';
+import TANENTMIDDLEContent from '@theme/views/tanent/index.middle';
 
 type SideItem = {
     value: string;
@@ -49,21 +47,14 @@ type HeroSalesItem = [
 type HomeLeapType = {
     first_column_title: HeroSalesItem;
     second_column_title: HeroSalesItem;
-    first_column_table: JoinMallMenuItem;
-    second_column_table: HeroSalesItem;
-    third_column_table: HeroSalesItem;
-    fourth_column_table: HeroSalesItem;
-    fifth_column_table: HeroSalesItem;
-    six_column_table: HeroSalesItem;
-    third_column_title: HeroSalesItem;
-    third_column_items: HeroSalesItem;
+    hero_slider:HeroSalesItem;
 };
 
 export default async function HomeHeroSlider() {
     const data = await getWidgetData<HomeLeapType>({
-        slug: 'join-mall-for-women'
+        slug: 'entry-tenant'
     });
-
-    return <JoinMallForWoemanContent data={data} />;
+    
+    return <TANENTMIDDLEContent data={data} />;
 }
 

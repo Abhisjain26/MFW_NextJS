@@ -27,7 +27,7 @@ export default function Navbar(props: NavbarProps) {
   const dispatch = useAppDispatch();
   const { data: basket, isLoading, isSuccess } = useGetBasketQuery();
   const { isSearchOpen, openedMenu } = useAppSelector((state) => state.header);
-  const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
+  const [currentUrl, setCurrentUrl] = useState('');
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   const [filteredData, setFilteredData] = useState([]);
   const [change, setChange] = useState('')

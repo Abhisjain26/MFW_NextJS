@@ -45,11 +45,37 @@ async function Page({ params }: PageProps<{ pk: number }>) {
         <FintechContent.default />
       </>
     );
-  } else if(url === '/entertainment') {
+  } else if (url === '/entertainment') {
     const EntertanimnetContent = await import('@theme/widgets/entertainment/entertainment-content');
-    return(
+    return (
       <>
         <EntertanimnetContent.default />
+      </>
+    )
+  } else if (url === '/join-mall-for-women') {
+    const JoinMallForWomenContent = await import('@theme/widgets/join-mall-fow-women/join-mall-content');
+    return (
+      <>
+        <JoinMallForWomenContent.default />
+      </>
+    )
+  } else if (url === '/entry-tanent') {
+    const EntryTenantTopContent = await import('@theme/widgets/entry-tenant/entry-tenant-top-content');
+    const EntryTenantContent = await import('@theme/widgets/entry-tenant/entry-tanent-content');
+    return (
+      <>
+        <EntryTenantTopContent.default />
+        <EntryTenantContent.default />
+      </>
+    )
+  }
+  else if (url === '/key-tanent') {
+    const KeyTenantTopContent = await import('@theme/widgets/key-tenant/key-tenant-top-content');
+    const KeyTenantContent = await import('@theme/widgets/key-tenant/key-tanent-content');
+    return (
+      <>
+        <KeyTenantTopContent.default />
+        <KeyTenantContent.default />
       </>
     )
   }

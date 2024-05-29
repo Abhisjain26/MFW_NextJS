@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Style from './entertainment.module.css'
+import Style from './index.module.css'
 import { Icon, Image } from '@akinon/next/components';
 import Layout from '../category/layout';
 import Breadcrumb from '../breadcrumb';

@@ -1,0 +1,60 @@
+.heading_main {
+    color: #003744;
+    font-family: Georgia, Regular;
+    font-size: 40px;
+}
+
+.tanent_content {
+    font-family: Georgia, Regular;
+    border: 1px solid #E987B4;
+    padding: 20px;
+}
+
+.tanent_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tanent_top_content {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    text-align: end;
+}
+
+.tanent_top_title {
+    font-weight: 600;
+}
+
+.tenant_image {
+    width: 200px;
+}
+
+.tenant_image_i {
+    width: 100%;
+    height: 100%;
+}
+
+.button_paypal {
+    background: #FFC439;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #343434;
+    border: none;
+    width: 50%;
+}
+.button_debit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: none;
+    width: 50%;
+    background-color: #003744;
+}
+.button_debit_image{
+    height: 15px;
+    margin-top: 5px;
+    padding-right: 5px;
+}
