@@ -101,25 +101,21 @@ export const ProductItem = (props: Props) => {
           <Link href={absolute_url} onClick={() => pushProductClicked(product)}>
             {image_url ? (
               <Image
-
-                fill
+                // fill
                 loading="lazy"
                 src={image_url}
                 alt={product_name}
-                aspectRatio={1}
-                sizes="
-                  (max-width: 768px) 50vw,
-                  (max-width: 1024px) 30vw,
-                  33vw"
-                crop="center"
+                width={100}
+                height={100} 
               />
             ) : (
               <Image
                 className="h-full"
                 src="/noimage.jpg"
-                fill
-                aspectRatio={1}
-                sizes="100vw"
+                width={100}
+                height={100}
+                // fill
+                // sizes="100vw"
                 alt={product_name}
                 imageClassName="object-cover"
               />
@@ -223,3 +219,8 @@ height:100%;
     }
   }
 `
+
+
+// https://9868d7.cdn.akinoncloud.com/products/2024/05/31/19597/6fc6d7e2-28e0-415c-a8d7-da7f272638a5.webp
+// https://9868d7.cdn.akinoncloud.com/products/2024/05/31/19597/6fc6d7e2-28e0-415c-a8d7-da7f272638a5.webp
+// https://thumb.akinon.net/9868d7/products/2024/05/31/19597/6fc6d7e2-28e0-415c-a8d7-da7f272638a5.

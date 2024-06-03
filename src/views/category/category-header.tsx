@@ -62,7 +62,7 @@ export const CategoryHeader = (props: Props) => {
     <Wrapper>
       {/* <Breadcrumb breadcrumbList={breadcrumbList} /> */}
 
-      <div className="flex flex-col gap-4 mb-4 text-gray-950 text-sm">
+      <div className="flex flex-col gap-4 mb-4 text-gray-950 text-sm category_header_mobile">
         <div className="flex items-center border list_main_content">
           <span className="hidden lg:block">
             <span data-testid="list-count">{totalCount}</span>{' '}
@@ -119,8 +119,8 @@ export const CategoryHeader = (props: Props) => {
               className="absolute right-1 top-1/2 transform -translate-y-1/2"
             />
           </Button>
-          <div className='flex items-center'>
-            <h3 className='uppercase text-base sort_by_mobile font-medium'>Sort by :</h3>
+          <div className='flex items-center filter_mobile'>
+            <h3 className='uppercase text-base sort_by_mobile font-medium '>Sort by :</h3>
             <Select
               options={sortOptions}
               value={sortOptions.find(({ is_selected }) => is_selected).value}
@@ -184,6 +184,10 @@ const Wrapper = Styled.section`
     }
     .filter_mobile{
       font-size:10px;
+      width:50%;
+    }
+    .category_header_mobile{
+      width:100%;
     }
   }
 `

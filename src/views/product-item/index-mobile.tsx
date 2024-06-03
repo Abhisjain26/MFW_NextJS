@@ -27,6 +27,8 @@ export const ProductMobileItem = (props: Props) => {
     const [showPopup, setShowPopup] = useState(false);
     // TODO: Static image will change (TR)
     const { product, width, height, index } = props;
+    console.log(product);
+    
     const [viewed, setViewed] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
     const { FavButton } = useFavButton(product.pk);
@@ -69,6 +71,7 @@ export const ProductMobileItem = (props: Props) => {
             );
         }
     };
+
     // const handleNavigate = () => {
     //   navigate('/orders/checkout' , {state: {message:product.pk}});
     // };
@@ -88,6 +91,7 @@ export const ProductMobileItem = (props: Props) => {
             >
                 <div className="relative mb-3 border-pink-400 h-full">
                     <Link href={absolute_url} onClick={() => pushProductClicked(product)}>
+
                         {image_url ? (
                             <Image
 
@@ -96,10 +100,7 @@ export const ProductMobileItem = (props: Props) => {
                                 src={image_url}
                                 alt={product_name}
                                 aspectRatio={1}
-                                sizes="
-                  (max-width: 768px) 50vw,
-                  (max-width: 1024px) 30vw,
-                  33vw"
+                                sizes="auto"
                                 crop="center"
                             />
                         ) : (
@@ -108,7 +109,7 @@ export const ProductMobileItem = (props: Props) => {
                                 src="/noimage.jpg"
                                 fill
                                 aspectRatio={1}
-                                sizes="100vw"
+                                sizes="auto"
                                 alt={product_name}
                                 imageClassName="object-cover"
                             />

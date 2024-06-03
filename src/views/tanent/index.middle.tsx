@@ -12,7 +12,7 @@ export default function TANENTMIDDLEContent({ data }) {
         <div className='container container_md'>
             <p className='mt-5'><b>{data.attributes.first_column_title.value}</b></p>
             <p className='mt-2'>{data.attributes.second_column_title.value}</p>
-            <div>
+            <div className='mb-5'>
                 {data.attributes.hero_slider.map((index,i) => (
                     <p className='mt-2 ms-2' key={i}>{index.value.text}</p>
                 ))}

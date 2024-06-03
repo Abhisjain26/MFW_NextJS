@@ -17,6 +17,8 @@ import { useSession } from 'next-auth/react';
 import { Image } from '@akinon/next/components/image';
 
 export default function ProductInfo({ data }: ProductPageProps) {
+  console.log(data.variants);
+
   const { t } = useLocalization();
   const { data: session } = useSession();
   const [currentUrl, setCurrentUrl] = useState(null);
@@ -123,9 +125,6 @@ export default function ProductInfo({ data }: ProductPageProps) {
     }
   };
 
-
-
-
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (e) => {
@@ -159,16 +158,6 @@ export default function ProductInfo({ data }: ProductPageProps) {
           retailPrice={data.product.retail_price}
         />
       </div>
-      <div className="flex flex-col">
-        {data.variants.map((variant) => (
-          <Variant
-            key={variant.attribute_key}
-            {...variant}
-            className="items-center mt-8"
-            onChange={() => setProductError(null)}
-          />
-        ))}
-      </div>
 
       <div className="quantity-main">
         <h3>Quantity:</h3>
@@ -184,10 +173,17 @@ export default function ProductInfo({ data }: ProductPageProps) {
         </div>
       </div>
 
-
-
-
-      <div className="selectgroup">
+      <div className="flex flex-wrap gap-2">
+        {data.variants.map((variant) => (
+          <Variant
+            key={variant.attribute_key}
+            {...variant}
+            className="items-center mt-2"
+            onChange={() => setProductError(null)}
+          />
+        ))}
+      </div>
+      {/* <div className="selectgroup">
         <div className="selectgroupinner color bottom-0 right-0 justify-center fill-primary-foreground hover:fill-primary sm:relative sm:w-full sm:mt-2 sm:font-regular">
           <h3>Color*</h3>
           <select className="bottom-0 right-0 w-1/2 h-10 z-[20] justify-center sm:relative sm:w-full sm:mt-2 sm:font-regular">
@@ -203,12 +199,7 @@ export default function ProductInfo({ data }: ProductPageProps) {
             <option value="otherOption">L</option>
           </select>
         </div>
-
-
-
-      </div>
-
-
+      </div> */}
       {productError && (
         <div className="mt-4 text-xs text-center text-error">
           {productError}

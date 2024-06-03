@@ -21,6 +21,7 @@ interface ListPageProps {
 
 export default function ListPage(props: ListPageProps) {
   const { data } = props;
+    console.log(data);
     
   const [isMenuOpen, setIsMenuOpen] = useState(false); // TODO: Move to redux
 
@@ -56,7 +57,7 @@ export default function ListPage(props: ListPageProps) {
 
   return (
     <>
-      <div className="container px-4 mx-auto lg:px-0 lg:my-4">
+      <div className="container px-4 mx-auto lg:px-0 lg:my-4 category_infocontainer">
         <div className="grid grid-cols-[19rem_1fr]">
           <Filters isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
           <div

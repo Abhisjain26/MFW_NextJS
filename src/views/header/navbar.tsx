@@ -32,7 +32,7 @@ export default function Navbar(props: NavbarProps) {
   const [filteredData, setFilteredData] = useState([]);
   const [change, setChange] = useState('')
   const router = useRouter();
-  const windowurl = window.location.pathname
+  const windowurl = typeof window !== 'undefined' ? window.location.pathname : '';
   const handleTabClick = (index) => {
     setSelectedTabIndex(index);
     dispatch(setOpenedMenu(null));
